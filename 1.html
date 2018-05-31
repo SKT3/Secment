@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Secment</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+
+	<meta name="medium" content="mult" />
+	<meta name="video_height" content="480"></meta>
+	<meta name="video_width" content="640"></meta>
+	<link rel="image_src" href="Hoteldata/thumbnail.jpg" />
+	 <meta name="directory" content="PATH/"></meta>
+	 <link rel="target_url" href="Hotel.html" />
+	<meta name="generator" content="Panotour Pro V2.5.7 64bits" />
+
+	<!--<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>-->
+	<!--<meta name="apple-mobile-web-app-capable" content="yes"/>-->
+	<!--<meta name="apple-mobile-web-app-status-bar-style" content="default">-->
+
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+	<link rel="stylesheet" href="styles/build/build.css" type="text/css" media="all" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.4.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="Hoteldata/lib/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+
+        function readDeviceOrientation() {
+            // window.innerHeight is not supported by IE
+            var winH = window.innerHeight ? window.innerHeight : jQuery(window).height();
+            var winW = window.innerWidth ? window.innerWidth : jQuery(window).width();
+            //force height for iframe usage
+            if(!winH || winH == 0){
+                winH = '100%';
+            }
+            // set the height of the document
+            jQuery('html').css('height', winH);
+            // scroll to top
+            window.scrollTo(0,0);
+        }
+        jQuery( document ).ready(function() {
+            if (/(iphone|ipod|ipad|android|iemobile|webos|fennec|blackberry|kindle|series60|playbook|opera\smini|opera\smobi|opera\stablet|symbianos|palmsource|palmos|blazer|windows\sce|windows\sphone|wp7|bolt|doris|dorothy|gobrowser|iris|maemo|minimo|netfront|semc-browser|skyfire|teashark|teleca|uzardweb|avantgo|docomo|kddi|ddipocket|polaris|eudoraweb|opwv|plink|plucker|pie|xiino|benq|playbook|bb|cricket|dell|bb10|nintendo|up.browser|playstation|tear|mib|obigo|midp|mobile|tablet)/.test(navigator.userAgent.toLowerCase())) {
+                if(/iphone/.test(navigator.userAgent.toLowerCase()) && window.self === window.top){
+                    jQuery('body').css('height', '100.18%');
+                }
+                // add event listener on resize event (for orientation change)
+                if (window.addEventListener) {
+                    window.addEventListener("load", readDeviceOrientation);
+                    window.addEventListener("resize", readDeviceOrientation);
+                    window.addEventListener("orientationchange", readDeviceOrientation);
+                }
+                //initial execution
+                setTimeout(function(){readDeviceOrientation();},10);
+            }
+        });
+
+        function accessWebVr(){
+            unloadPlayer();
+
+            setTimeout(function(){ loadPlayer(true); }, 100);
+        }
+        function accessStdVr(){
+            unloadPlayer();
+
+            setTimeout(function(){ loadPlayer(false); }, 100);
+        }
+        function loadPlayer(isWebVr) {
+            if (isWebVr) {
+                embedpano({
+                    id:"krpanoSWFObject"
+                    ,xml:"Hoteldata/Hotel_vr.xml"
+                    ,target:"panoDIV"
+                    ,passQueryParameters:true
+                    ,bgcolor:"#000000"
+                    ,html5:"only+webgl"
+                    ,focus: false
+                    ,vars:{skipintro:true,norotation:true}
+                });
+            } else {
+
+                var isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+                embedpano({
+                    id:"krpanoSWFObject"
+
+                    ,swf:"Hoteldata/Hotel.swf"
+
+                    ,target:"panoDIV"
+                    ,passQueryParameters:true
+                    ,bgcolor:"#000000"
+                    ,focus: false
+                    ,html5:isBot ? "always" : "prefer"
+
+                });
+            }
+            //apply focus on the visit if not embedded into an iframe
+            if(top.location === self.location){
+                kpanotour.Focus.applyFocus();
+            }
+        }
+        function unloadPlayer(){
+            if(jQuery('#krpanoSWFObject')){
+                removepano('krpanoSWFObject');
+            }
+        }
+        function isVRModeRequested() {
+            var querystr = window.location.search.substring(1);
+            var params = querystr.split('&');
+            for (var i=0; i<params.length; i++){
+                if (params[i].toLowerCase() == "vr"){
+                    return true;
+                }
+            }
+            return false;
+        }
+	</script>
+
+	<script type="text/javascript" src="scripts/karp.js"></script>
+
+	<script type="text/javascript" src="Hoteldata/Hotel.js"></script>
+	<script type="text/javascript">
+        if (isVRModeRequested()){
+            accessWebVr();
+        }else{
+            accessStdVr();
+        }
+	</script>
+
+
+	<!--<script src="krpano.js"></script>-->
+	<style type="text/css">
+		/*@-ms-viewport { width: device-width; }*/
+		/*@media only screen and (min-device-width: 800px) { html { overflow:hidden; } }*/
+		/** { padding: 0; margin: 0; }*/
+		/*html { height: 100%; }*/
+		/*body { height: 100%; overflow:hidden; }*/
+		div#container { height: 100%; min-height: 100%; width: 50%; margin: 0 auto; }
+		div#tourDIV {
+			height:100%;
+			position:relative;
+			overflow:hidden;
+		}
+		div#panoDIV {
+			height:100%;
+			position:relative;
+			overflow:hidden;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+		}
+	</style>
+
+	<style type="text/css">
+		div#panoDIV.cursorMoveMode {
+			cursor: move;
+			cursor: url(Hoteldata/graphics/cursors_move_html5.cur), move;
+		}
+		div#panoDIV.cursorDragMode {
+			cursor: grab;
+			cursor: -moz-grab;
+			cursor: -webkit-grab;
+			cursor: url(Hoteldata/graphics/cursors_drag_html5.cur), default;
+		}
+	</style>
+
+</head>
+<body>
+<div class="container" id="js-container">
+	<header class="header">
+		<div class="wrapper">
+			<a href="1.html" class="logo">
+				<img src="images/logo2x.png" alt="logo" width="150" height="39" />
+			</a>
+
+			<button class="btn btn-menu" id="js-menu-trigger">
+				<span class="btn-menu-box">
+					<span class="btn-menu-inner"></span>
+				</span>
+			</button>
+
+			<nav class="nav-primary" id="js-menu-target">
+				<ul>
+					<li><a href="javascript:;" class="js-scroll" data-scroll-target="#accent-services">Services</a></li>
+					<li><a href="javascript:;" class="js-scroll" data-scroll-target="#accent-about">About</a></li>
+					<li><a href="javascript:;" class="js-scroll" data-scroll-target="#accent-contacts">Contacts</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="accents">
+		<section class="accent accent-services" id="accent-services">
+			<div class="boxes boxes-services">
+				<a href="javascript:;" data-scroll-target="#accent-services-visual" class="box box-services js-scroll">
+					<picture class="picture">
+						<img src="images/temp/services1.jpg" alt="" width="500" height="800" />
+					</picture>
+
+					<div class="content">
+						<figure class="figure">
+							<img src="images/figure-visual2x.png" alt="" width="160" height="160" />
+						</figure>
+
+						<h4 class="title">Visual</h4>
+
+						<div class="rich-text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo aliquid sint a voluptatem facere mollitia aut eveniet velit optio, aliquam voluptas rerum officiis laborum totam voluptates illum quidem temporibus, quibusdam.</p>
+						</div>
+					</div>
+				</a>
+
+				<a href="javascript:;" data-scroll-target="#accent-services-bim" class="box box-services js-scroll">
+					<picture class="picture">
+						<img src="images/temp/services2.jpg" alt="" width="500" height="800" />
+					</picture>
+
+					<div class="content">
+						<figure class="figure">
+							<img src="images/figure-visual-b2x.png" alt="" width="160" height="160" />
+						</figure>
+
+						<h4 class="title">BIM Models</h4>
+
+						<div class="rich-text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo aliquid sint a voluptatem facere mollitia aut eveniet velit optio, aliquam voluptas rerum officiis laborum totam voluptates illum quidem temporibus, quibusdam.</p>
+						</div>
+					</div>
+				</a>
+
+				<a href="javascript:;" data-scroll-target="#accent-services-vrar" class="box box-services js-scroll">
+					<picture class="picture">
+						<img src="images/temp/services3.jpg" alt="" width="500" height="800" />
+					</picture>
+
+					<div class="content">
+						<figure class="figure">
+							<img src="images/figure-vrar2x.png" alt="" width="160" height="160" />
+						</figure>
+
+						<h4 class="title">VR & AR</h4>
+
+						<div class="rich-text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo aliquid sint a voluptatem facere mollitia aut eveniet velit optio, aliquam voluptas rerum officiis laborum totam voluptates illum quidem temporibus, quibusdam.</p>
+						</div>
+					</div>
+				</a>
+
+				<a href="javascript:;" data-scroll-target="#accent-services-drawings" class="box box-services js-scroll">
+					<picture class="picture">
+						<img src="images/temp/services4.jpg" alt="" width="500" height="800" />
+					</picture>
+
+					<div class="content">
+						<figure class="figure">
+							<img src="images/figure-visual-b2x.png" alt="" width="160" height="160" />
+						</figure>
+
+						<h4 class="title">2D drawings</h4>
+
+						<div class="rich-text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo aliquid sint a voluptatem facere mollitia aut eveniet velit optio, aliquam voluptas rerum officiis laborum totam voluptates illum quidem temporibus, quibusdam.</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</section>
+
+		<section class="accent accent-about" id="accent-about">
+			<div class="wrapper">
+				<article class="article">
+					<h1>Studio Secment</h1>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quisquam aliquam veniam aut. Quo maxime, laboriosam temporibus labore culpa tempora, numquam distinctio assumenda error harum, commodi corporis voluptas dolor debitis.</p>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quisquam aliquam veniam aut. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam magnam obcaecati harum numquam vero, quidem, sit dolor fugiat, ex laborum eos. Voluptatem, commodi, voluptatibus. Porro fuga, ipsa reprehenderit ipsum qui!Lorem ipsum dolor sit amet, consectetur.Quo maxime, laboriosam temporibus labore culpa tempora, numquam distinctio assumenda error harum, commodi corporis voluptas dolor debitis.</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="accent accent-services-preview" id="accent-services-visual">
+			<div class="accent-head">
+				<div class="wrapper">
+					<figure class="figure">
+						<img src="images/figure-visual-b2x.png" alt="" width="160" height="160" />
+					</figure>
+
+					<h3 class="accent-title">Visual</h3>
+				</div>
+			</div>
+
+			<div class="accent-body">
+				<div class="boxes boxes-services-preview">
+					<a href="images/temp/services1.jpg" data-fancybox="visual" class="box">
+						<picture class="picture">
+							<img src="images/temp/services1.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services1.jpg" data-fancybox="visual" class="box">
+						<picture class="picture">
+							<img src="images/temp/services1.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services1.jpg" data-fancybox="visual" class="box">
+						<picture class="picture">
+							<img src="images/temp/services1.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services1.jpg" data-fancybox="visual" class="box">
+						<picture class="picture">
+							<img src="images/temp/services1.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services1.jpg" data-fancybox="visual" class="box">
+						<picture class="picture">
+							<img src="images/temp/services1.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services1.jpg" data-fancybox="visual" class="box">
+						<picture class="picture">
+							<img src="images/temp/services1.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services1.jpg" data-fancybox="visual" class="box">
+						<picture class="picture">
+							<img src="images/temp/services1.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="accent accent-services-preview" id="accent-services-bim">
+			<div class="accent-head">
+				<div class="wrapper">
+					<figure class="figure">
+						<img src="images/figure-bim-b2x.png" alt="" width="160" height="160" />
+					</figure>
+
+					<h3 class="accent-title">BIM Models</h3>
+				</div>
+			</div>
+
+			<div class="accent-body">
+				<div class="boxes boxes-services-preview">
+					<a href="images/temp/services2.jpg" data-fancybox="bim" class="box">
+						<picture class="picture">
+							<img src="images/temp/services2.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services2.jpg" data-fancybox="bim" class="box">
+						<picture class="picture">
+							<img src="images/temp/services2.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services2.jpg" data-fancybox="bim" class="box">
+						<picture class="picture">
+							<img src="images/temp/services2.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services2.jpg" data-fancybox="bim" class="box">
+						<picture class="picture">
+							<img src="images/temp/services2.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services2.jpg" data-fancybox="bim" class="box">
+						<picture class="picture">
+							<img src="images/temp/services2.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services2.jpg" data-fancybox="bim" class="box">
+						<picture class="picture">
+							<img src="images/temp/services2.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services2.jpg" data-fancybox="bim" class="box">
+						<picture class="picture">
+							<img src="images/temp/services2.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services2.jpg" data-fancybox="bim" class="box">
+						<picture class="picture">
+							<img src="images/temp/services2.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="accent accent-services-preview" id="accent-services-vrar">
+			<div class="accent-head">
+				<div class="wrapper">
+					<figure class="figure">
+						<img src="images/figure-vrar-b2x.png" alt="" width="160" height="160" />
+					</figure>
+
+					<h3 class="accent-title">VR & AR</h3>
+				</div>
+			</div>
+
+			<div class="accent-body">
+				<div class="boxes boxes-services-preview">
+					<a href="images/temp/services3.jpg" data-fancybox="vrar" class="box">
+						<picture class="picture">
+							<img src="images/temp/services3.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services3.jpg" data-fancybox="vrar" class="box">
+						<picture class="picture">
+							<img src="images/temp/services3.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services3.jpg" data-fancybox="vrar" class="box">
+						<picture class="picture">
+							<img src="images/temp/services3.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/services3.jpg" data-fancybox="vrar" class="box">
+						<picture class="picture">
+							<img src="images/temp/services3.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="accent accent-services-preview" id="accent-services-drawings">
+			<div class="accent-head">
+				<div class="wrapper">
+					<figure class="figure">
+						<img src="images/figure-drawings-b2x.png" alt="" width="160" height="160" />
+					</figure>
+
+					<h3 class="accent-title">2D drawings</h3>
+				</div>
+			</div>
+
+			<div class="accent-body">
+				<div class="boxes boxes-services-preview">
+					<a href="images/temp/services4.jpg" data-fancybox="drawings" class="box">
+						<picture class="picture">
+							<img src="images/temp/services4.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/2D/rekonstrukcii_1.jpg" data-fancybox="drawings" class="box">
+						<picture class="picture">
+							<img src="images/temp/2D/rekonstrukcii_1.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+
+					<a href="images/temp/2D/rekonstrukcii_2.jpg" data-fancybox="drawings" class="box">
+						<picture class="picture">
+							<img src="images/temp/2D/rekonstrukcii_2.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+					<a href="images/temp/2D/rekonstrukcii_3.jpg" data-fancybox="drawings" class="box">
+						<picture class="picture">
+							<img src="images/temp/2D/rekonstrukcii_3.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+					<a href="images/temp/2D/rekonstrukcii_4.jpg" data-fancybox="drawings" class="box">
+						<picture class="picture">
+							<img src="images/temp/2D/rekonstrukcii_4.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+					<a href="images/temp/2D/rekonstrukcii_5.jpg" data-fancybox="drawings" class="box">
+						<picture class="picture">
+							<img src="images/temp/2D/rekonstrukcii_5.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+					<a href="images/temp/2D/rekonstrukcii_6.jpg" data-fancybox="drawings" class="box">
+						<picture class="picture">
+							<img src="images/temp/2D/rekonstrukcii_6.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+					<a href="images/temp/2D/rekonstrukcii_7.jpg" data-fancybox="drawings" class="box">
+						<picture class="picture">
+							<img src="images/temp/2D/rekonstrukcii_7.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+					<a href="images/temp/2D/preview.jpg" data-fancybox="drawings" class="box">
+						<picture class="picture">
+							<img src="images/temp/2D/preview.jpg" alt="" width="500" height="800" />
+						</picture>
+					</a>
+				</div>
+			</div>
+			<div class="boxes boxes-services-preview">
+				<picture class="video-embedded">
+					<iframe title="YouTube video player" class="youtube-player" type="text/html"
+							width="640" height="390" src="http://www.youtube.com/embed/YacKyRlc840"
+							frameborder="0" allowFullScreen></iframe>
+				</picture>
+				<picture class="video-embedded">
+					<iframe title="YouTube video player" class="youtube-player" type="text/html"
+							width="640" height="390" src="http://www.youtube.com/embed/VlVfHNDu1ds"
+							frameborder="0" allowFullScreen></iframe>
+				</picture>
+				<picture class="video-embedded">
+					<iframe width="500" height="800"
+							src="https://www.youtube.com/embed/2mIwY_XsnKM">
+					</iframe>
+				</picture>
+				<picture class="video-embedded">
+					<iframe width="500" height="800"
+							src="https://www.youtube.com/embed/RDb7PRBTeSA">
+					</iframe>
+				</picture>
+				<picture class="video-embedded">
+					<iframe width="500" height="800"
+							src="https://www.youtube.com/embed/RDb7PRBTeSA">
+					</iframe>
+				</picture>
+			</div>
+
+		</section>
+		<section class="accent accent-services-preview" id="accent-services-drawings">
+			<div class="accent-head">
+				<div class="wrapper">
+					<figure class="figure">
+						<img src="images/figure-drawings-b2x.png" alt="" width="160" height="160" />
+					</figure>
+
+					<h3 class="accent-title">2D drawings Video</h3>
+				</div>
+			</div>
+			<div class="accent-body">
+				<div class="boxes boxes-services-preview">
+					<picture class="video-embedded">
+						<iframe title="YouTube video player" class="youtube-player" type="text/html"
+								width="640" height="390" src="http://www.youtube.com/embed/YacKyRlc840"
+								frameborder="0" allowFullScreen></iframe>
+					</picture>
+					<picture class="video-embedded">
+						<iframe title="YouTube video player" class="youtube-player" type="text/html"
+								width="640" height="390" src="http://www.youtube.com/embed/VlVfHNDu1ds"
+								frameborder="0" allowFullScreen></iframe>
+					</picture>
+					<picture class="video-embedded">
+						<iframe width="500" height="800"
+								src="https://www.youtube.com/embed/2mIwY_XsnKM">
+						</iframe>
+					</picture>
+					<picture class="video-embedded">
+						<iframe width="500" height="800"
+								src="https://www.youtube.com/embed/RDb7PRBTeSA">
+						</iframe>
+					</picture>
+					<picture class="video-embedded">
+						<iframe width="500" height="800"
+								src="https://www.youtube.com/embed/RDb7PRBTeSA">
+						</iframe>
+					</picture>
+				</div>
+			</div>
+		</section>
+
+		<div id="container">
+
+			<div id="tourDIV">
+				<div id="panoDIV">
+					<noscript>
+
+						<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="100%" height="100%" id="Hoteldata/Hotel">
+							<param name="movie" value="Hoteldata/Hotel.swf"/>
+							<param name="allowFullScreen" value="true"/>
+						</object>
+
+					</noscript>
+				</div>
+
+				<script type="text/javascript" src="Hoteldata/Hotel.js"></script>
+				<script type="text/javascript">
+                    if (isVRModeRequested()){
+                        accessWebVr();
+                    }else{
+                        accessStdVr();
+                    }
+				</script>
+			</div>
+		</div>
+
+		<section class="accent accent-contacts" id="accent-contacts">
+			<div class="wrapper">
+				<h3 class="accent-title">Get in touch with us</h3>
+
+				<article class="article">
+					<p>Address: 1680 Sofia, Pirotsca street 26, <br />Phone: <a href="tel:0899111111">0899 111 111</a>, <br />Email: <a href="mailto:office@secment.com">office@secment.com</a></p>
+				</article>
+			</div>
+		</section>
+	</div><!-- /.accents -->
+
+	<footer class="footer">
+		<div class="wrapper">
+			<p class="copy">All Rights Reserved ® 2018</p>
+		</div>
+	</footer>
+</div>
+<script src="scripts/build/build.js"></script>
+</body>
+</html>

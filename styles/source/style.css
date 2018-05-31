@@ -1,0 +1,22 @@
+/* I. Plugins
+=============================================================== */
+@import "plugins/toastr.css";
+@import "plugins/jquery.fancybox.css";
+@import "plugins/slick.css";
+
+/* II. Generic
+=============================================================== */
+@import 'partials/_settings.css';
+@import 'partials/_generic.css';
+
+/* III. Regions
+=============================================================== */
+@import 'partials/_regions.css';
+
+/* IV. Modules
+=============================================================== */
+@import 'partials/_modules.css';
+
+/* V. Responsive
+=============================================================== */
+@import 'partials/_responsive.css';
