@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{$_current_lang}">
+<head>
+    {include file="layouts/public/_head.htm"}
+</head>
+<body>
+<div class="container" id="js-container">
+    <div class="main checkout">
+        <div class="wrapper">
+            <div class="checkout-content">
+                <header class="checkout-header">
+                    <a href="{url_for controller=pages route_name=index}
+" class="logo"><img src="{$_public}frontend/assets/images/logo2x.png" alt="logo"></a>
+
+                    <div class="user-preview">
+                        {if $session->public_is_logged_in}
+                            <p class="checkout-greet">{$_labels.hello} <a href="{url_for controller=profiles}">{$session->public_user->first_name} {$session->public_user->last_name}</a>!</p>
+                        {else}
+                            <p class="checkout-login">{$_labels.CART.register} <a href="{url_for app=users controller=users action=login}">{$_labels.CART.login}</a></p>
+                        {/if}
+                    </div>
+                </header>
+
+
+                <main class="checkout-main">
+                    <h1 class="title-primary">{$_labels.CART.finish_order}</h1>
+
+                    <div class="steps">
+                        <div class="steps-item {if $_action eq 'index'}is-selected {elseif $allow eq 'true'} is-completed {/if}">
+                            <span class="number">01</span>
+                            <span class="label">{$_labels.CART.cart}</span>
+                        </div>
+
+                        <div class="steps-item {if $_action eq 'step2'}is-selected {elseif $allow2 }is-completed{/if}">
+                            <span class="number">02</span>
+                            <span class="label">{$_labels.CART.personal_info}</span>
+                        </div>
+
+                        <div class="steps-item {if $_action eq 'step3'}is-selected {elseif $allow3 }is-completed{/if}">
+                            <span class="number">03</span>
+                            <span class="label">{$_labels.CART.delivery_way}</span>
+                        </div>
+
+                        <div class="steps-item {if $_action eq 'step4'}is-selected {elseif $allow4 }is-completed{/if}">
+                            <span class="number">04</span>
+                            <span class="label">{$_labels.CART.payment}</span>
+                        </div>
+
+                        <div class="steps-item {if $_action eq 'step5'}is-selected {elseif $allow5 }is-completed{/if}">
+                            <span class="number">05</span>
+                            <span class="label">{$_labels.CART.view_order}</span>
+                        </div>
+                    </div>
+
+                  {$content_for_layout}
+
+                </main><!-- /.checkout-main -->
+            </div><!-- /.checkout-content -->
+
+            <aside class="checkout-aside">
+                {include file="public/basket/_aside.htm"}
+            </aside>
+        </div>
+    </div><!-- /.main -->
+</div>
+
+<script type="text/javascript" src="{$_public}frontend/assets/build/build.js"></script>
+{show_flash_messages_public}
+</body>
+</html>

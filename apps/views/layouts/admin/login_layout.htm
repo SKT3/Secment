@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$_locale}" lang="{$_locale}">
+	<head>
+		<title>{$_labels.CMS.title}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="Description" content="{$meta.description}" />
+		<meta name="Keywords" content="{$meta.keywords}" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic,latin,greek' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="{$_public}css/admin/reset.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="{$_public}css/admin/login.css" media="screen" />
+		<script type="text/javascript" src="{$_public}js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript">
+		jQuery().ready(function(){
+			$('#user').focus();
+		});
+		jQuery(document).ready(function(){
+			if (!('placeholder' in document.createElement('input'))) {
+				$('input[placeholder]')
+					.blur(function() {
+						var $this = $(this);
+
+						if ($this.val() === '') {
+							$this
+								.val($this.attr('placeholder'));
+						}
+					})
+					.focus(function() {
+						var $this = $(this);
+
+						if ($this.val() === $this.attr('placeholder')) {
+							$this
+								.val('');
+						}
+					})
+					.each (function() {
+						var $this = $(this);
+
+						$this
+							.val($this.attr('placeholder'));
+					});
+			}
+		});
+		</script>
+	</head>
+	<body id="login">
+		<div>&nbsp;</div>
+		<div id="container">
+			<div id="map">
+				<form method="post" action="">
+					<div class="errors">{if isset($invalid_login)}<strong><img src="{$_public}images/admin/bgr-login-error.jpg" align="absmiddle" /> {$invalid_login}</strong>{else}{/if}</div>
+					<fieldset>
+						<ol>
+							<li><input type="text" id="user" name="user" tabindex="1" placeholder="Username:" /></li>
+							<li><input type="password" id="pass" name="pass" tabindex="2" placeholder="Password:" /></li>
+						</ol>
+						<button type="submit" tabindex="3">Log In</button>
+					</fieldset>
+				</form>
+				<div class="copy">
+					&copy; TheMags {$smarty.now|date_format:'%Y'}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

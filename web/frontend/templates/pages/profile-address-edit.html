@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<!--#include virtual="../partials/header.shtml"-->
+
+	<div class="main">
+		<div class="main-head">
+			<div class="wrapper">
+				<div class="main-head-inner">
+					<div class="main-head-inner-wrap">
+						<nav class="breadcrumbs">
+							<ul>
+								<li><a href="index.html">Начало</a></li>
+								<li>Моят профил</li>
+							</ul>
+						</nav>
+						
+						<h1 class="title-primary">Моят профил</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- !!! ADD class="full" WHEN SIDEBAR IS MISSING !!! -->
+		<div class="main-body full">
+			<div class="wrapper">
+				<main class="main-content">
+					<div class="block block-small block-profile-address-edit">
+						<div class="pad pad-secondary">
+							<div class="block-content">
+								<div class="form form-basic form-address">
+									<p class="form-title">Редакция на адрес</p>
+								
+									<form action="#">
+										<div class="form-row">
+											<label for="address_title" class="form-label required">Име на адреса:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="text" name="address_title" id="address_title" required />
+												</div>
+											</div>
+										</div>
+									
+										<div class="cols cols-full">
+											<div class="col col8of12">
+												<div class="form-row form-row-inline">
+													<label for="address_city" class="form-label required">Град:</label>
+												
+													<div class="form-controls">
+														<div class="field field-text">
+															<input type="text" name="address_city" id="address_city" required />
+														</div>
+													</div>
+												</div>
+											</div>
+																						
+											<div class="col col4of12">
+												<div class="form-row form-row-inline">
+													<label for="address_post_code" class="form-label required">Пощенски код:</label>
+												
+													<div class="form-controls">
+														<div class="field field-text">
+															<input type="text" name="address_post_code" id="address_post_code" required />
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<label for="address_name" class="form-label required">Адрес:</label>
+										
+											<div class="form-controls">
+												<div class="field field-area">
+													<input type="text" name="address_name" id="address_name" />
+												</div>
+											</div>
+										</div>
+									
+										<div class="btns">
+											<button class="btn btn-primary">Редактирай</button>
+										</div>
+									</form>
+								</div><!-- /.form -->
+							</div>
+						</div><!-- /.pad -->
+					</div><!-- /.block -->
+				</main>
+			</div>
+		</div>
+	</div><!-- /.main -->
+
+	<!--#include virtual="../partials/footer.shtml"-->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+</body>
+</html>

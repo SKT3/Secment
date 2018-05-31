@@ -1,0 +1,17 @@
+{if $data}
+{foreach from=$data key=label_title item=label}
+	{if $input_name}{assign var=new_input_name value=$input_name|cat:'['|cat:$label_title|cat:']'}{else}{assign var=new_input_name value=$file|cat:'['|cat:$label_title|cat:']'}{/if}
+	{if $label|@is_array}
+	<li>
+		<label><strong>{$label_title}</strong></label>
+		<br /><br />
+	</li>
+	{include file='admin/labels/_list.htm' data=$label input_name=$new_input_name}
+	{else}
+	<li>
+		<label>{$label_title|escape}</label>
+		<textarea name="{$new_input_name}" style="height:30px;">{$label}</textarea>
+	</li>
+	{/if}
+{/foreach}
+{/if}

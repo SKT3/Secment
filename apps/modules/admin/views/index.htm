@@ -1,0 +1,23 @@
+<h2>{$_labels.TOPMENU.modules} - {$_labels.MAIN_ACTIONS.index}</h2>
+
+<div id="modules_list">
+	{foreach from=$list item=module name=modules}
+	{assign var=name value=$module.name}
+	{if $admin_helper->module_can($name)}
+		<div class="module {$module.name}">
+			<img src="{$_root}apps/modules/{$module.name}/icon.png" width="60" />
+			<strong>{$_labels.$name.title}</strong>
+			<div class="actions">
+				
+				<ul>
+					{foreach from=$module.config.ADMIN item=value name=actions key=action}
+						{if $value eq 1}
+							<li><a href="{url_for module=$module.name maction=$action}">{$_labels.{$module.name}.ACTIONS.$action|default:$_labels.MAIN_ACTIONS.$action}</a></li>
+						{/if}
+					{/foreach}
+				</ul>
+			</div>
+		</div>
+	{/if}
+	{/foreach}
+</div>

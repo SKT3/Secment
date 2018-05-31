@@ -1,0 +1,297 @@
+<form id="main_form" enctype="multipart/form-data" action="" method="post">
+        <fieldset>
+            <legend>{$_labels.MAIN_ACTIONS.edit}</legend>
+            <ol>
+                <li>
+                    <label for="parent_id">{$_labels.DB_FIELDS.parent_id}</label>
+                    <select name="parent_id" id="parent_id" class="chosen">
+                        <option value="{$section->id}"{if $form_object->parent_id eq $section->id} selected{/if} data-slug="">Главна страница</option>
+                        {foreach from=$pages item=page}
+                        <option value="{$page->id}"{if $form_object->parent_id eq $page->id} selected{/if} data-slug="{$page->slug}">{$page->title}</option>
+                        {if $page->has_children()}
+                            {foreach from=$page->get_children() item=p}
+                                {include file='admin/pages/_subpages_option.htm' page=$p current=$form_object->parent_id}
+                            {/foreach}
+                        {/if}
+                        {/foreach}
+                    </select>
+                </li>
+                <li>
+                    <label for="page_type">{$_labels.DB_FIELDS.page_type}:</label>
+                    <select name="page_type" id="page_type">
+                        {foreach from=$_labels.PAGE_TYPE item=title key=type}
+                        <option value="{$type}"{if $form_object->page_type eq $type} selected{/if}>{$title}</option>
+                        {/foreach}
+                    </select>
+                </li>
+                <li>
+                    <label for="title">{$_labels.DB_FIELDS.title}:</label>
+                    <input type="text" name="title" id="title" value="{$form_object->title|escape}" />
+                </li>
+
+                <li>
+                    <label for="slug">{$_labels.DB_FIELDS.slug}:</label>
+                    <input type="text" name="slug" id="slug" value="{$form_object->slug|escape}" {if !$form_object->custom_slug}readonly{/if} />
+                    <br class="clear" />
+
+                    <label>&nbsp;</label>
+                    <input type="checkbox" name="custom_slug" id="custom_slug" value="1" {if $form_object->custom_slug}checked="checked"{/if} onclick="javascript:$('#slug').attr('readonly', function(idx, oldval) { return !oldval; });" />
+                    <small>Редактирай URL (само ако се налага) </small>
+                </li>
+
+                <li>
+                    <label for="old_slug">{$_labels.DB_FIELDS.old_slug}:</label>
+                    <input type="text" name="old_slug" id="old_slug" value="{$form_object->old_slug|escape}" placeholder="/old-address.html" />
+                </li>
+                <li>
+                    <label for="in_topbar">{$_labels.DB_FIELDS.in_topbar}:</label>
+                    {html_options options=$_labels.in_topbar_values name="in_topbar" selected=$form_object->in_topbar class="short"}
+                </li>
+                <li>
+                    <label for="in_main_menu">{$_labels.DB_FIELDS.in_main_menu}:</label>
+                    {html_options options=$_labels.yesno name="in_main_menu" selected=$form_object->in_main_menu class="short"}
+                </li>
+                <li>
+                    <label for="in_footer">{$_labels.DB_FIELDS.in_footer}:</label>
+                    {html_options options=$_labels.in_footer_values name="in_footer" selected=$form_object->in_footer class="short"}
+                </li>
+                <li>
+                    <label for="is_accent_homepage">{$_labels.DB_FIELDS.is_accent_homepage}:</label>
+                    {html_options options=$_labels.accent_homepage_values name="is_accent_homepage" selected=$form_object->is_accent_homepage class="short"}
+                </li>
+                <li>
+                    <label for="layout">{$_labels.DB_FIELDS.layout}:</label>
+                    <select name="layout" id="layout">
+                        {foreach from=$layouts item=layout}
+                            <option value="{$layout}"{if $form_object->layout eq $layout} selected{/if}>{$_labels.LAYOUT.$layout}</option>
+                        {/foreach}
+                    </select>
+                </li>
+                <li>
+                    {to_file_upload name=images id=$form_object->id model=page class_name=image}
+                </li>
+
+                <li>
+                    {to_file_upload name=files id=$form_object->id model=page class_name=file}
+                </li>
+
+                <li>
+                    <label for="summary">{$_labels.DB_FIELDS.summary}:</label>
+                    <textarea id="summary" name="summary" class="rich-text">{$form_object->summary}</textarea>
+                </li>
+                <li>
+                    <label for="content">{$_labels.DB_FIELDS.content}:</label>
+                    <textarea id="content" name="content" class="rich-text">{$form_object->content}</textarea>
+                </li>
+                <li>
+                    <label for="visibility">{$_labels.DB_FIELDS.visibility}:</label>
+                    <label style="clear:none;width:auto;white-space:nowrap;margin-right:20px;">
+                        <input type="radio" name="visibility" id="visibility" value="2" {if $form_object->visibility eq 2}checked="checked"{/if} />
+                        {$_labels.VISIBILITY.2}
+                    </label>
+
+                    <label style="clear:none;width:auto;white-space:nowrap;margin-right:20px;">
+                        <input type="radio" name="visibility" id="visibility" value="1" {if $form_object->visibility eq 1}checked="checked"{/if} />
+                        {$_labels.VISIBILITY.1}
+                    </label>
+                    <label style="clear:none;width:auto;white-space:nowrap;">
+                        <input type="radio" name="visibility" id="visibility" value="0" {if $form_object->visibility eq 0}checked="checked"{/if} />
+                        {$_labels.VISIBILITY.0}
+                    </label>
+                    <br class="clear" />
+                </li>
+                {if $form_object->page_type eq 'link'}
+                        <br class="clear" />
+                        <label for="type">Основна страница:</label>
+                        <select name="options[page_id]" id="options_page_id" class="chosen">
+                            {foreach from=$all_pages item=page}
+                            <option value="{$page->id}"{if $options.page_id eq $page->id} selected{/if}>{$page->title}</option>
+                            {if $page->has_children()}
+                                {foreach from=$page->get_children() item=p}
+                                    {include file='admin/pages/_subpages_option.htm' page=$p current=$options.page_id}
+                                {/foreach}
+                            {/if}
+                            {/foreach}
+                        </select>
+                        <br class="clear" />
+                        <br class="clear" />
+                        <label for="type">{$_labels.DB_FIELDS.page_type}:</label>
+                        <select name="options[page_type]">
+                            <option value="link" {if $options.page_type eq 'link'} selected{/if}>Link</option>
+                            <option value="mirror" {if $options.page_type eq 'mirror'} selected{/if}>Mirror</option>
+                        </select>
+                        <br class="clear" />
+                        <br class="clear" />
+                        <label>Страница от тип Link:</label>
+                        <div style="float:left; width:590px; padding:7px 10px; border: 1px solid #C0C5C6; background: #EEE; color: #464646;"><p>Това е страница, която при отварянето и пренасочва към избраната страница, и реално работи само като redirect - не се запазва секцията в която е сложена при навигация - може да се използва за Бързи връзки, валутни курсове и т.н.</p></div>
+                        <br class="clear" />
+                        <br class="clear" />
+                        <label>Страница от тип Mirror:</label>
+                         <div style="float:left; width:590px; padding:7px 10px; border: 1px solid #C0C5C6; background: #EEE; color: #464646;"><p>Това е страница, която при отварянето и взима съдържанието на избраната страница, и го показва в дадената секция - в този случай се получават 2 страници с идентично съдържание, като може да се редактира само основната(която не е Mirror).
+                            За да избегнем дублирано съдържание се слага canonical tag към основната страница.</p>
+                        </div>
+                        <br class="clear" /><br class="clear" />
+                        <br class="clear" />
+                        <input type="hidden" name="id" value="{$form_object->id}" />
+                        <label>&nbsp;</label>
+                        {/if}
+
+                <li>
+                    <div class="form-errors"></div>
+                    <div class="buttons">
+                        <input type="hidden" name="id" value="{$form_object->id}" />
+                        <button type="button" onclick="window.location.href='{url_for controller=pages}';" class="button">{$_labels.BUTTONS.cancel}</button>
+                        <button type="submit" class="button ok">{$_labels.BUTTONS.edit}</button>
+                    </div>
+                </li>
+            </ol>
+        </fieldset>
+    </form>
+<script type="text/javascript">
+    $(function(){
+        $('#title').on('blur', function(){
+            if(!$('#custom_slug').is(':checked')) {
+                $.ajax({
+                    url: xhr_url+'?method=generate_slug',
+                    data: {ldelim} 'slug' : $(this).val(), 'parent' : $('#parent_id option:selected').val(), 'parent_slug': $('#parent_id option:selected').data('slug'){rdelim},
+                    type: 'POST',
+                    success: function(data){
+                        if(data.substr(0,1)!='/') {
+                            data = '/' + data;
+                        }
+                        $('#slug').val(data);
+                    }
+                });
+            }
+        });
+        $("#parent_id").change(function (event) {
+            if(!$('#custom_slug').is(':checked')) {
+                $.ajax({
+                    url: xhr_url+'?method=generate_slug',
+                    data: {ldelim}'slug' : $('#title').val(), 'parent' : $('option:selected', event.target).val(), 'parent_slug': $('option:selected', event.target).data('slug'){rdelim},
+                    type: 'POST',
+                    success: function(data){
+                        if(data.substr(0,1)!='/') {
+                            data = '/' + data;
+                        }
+                        $('#slug').val(data);
+                    }
+                });
+            }
+        });
+
+      /*  change_layout(old_page_type = ($('#page_type option:selected').val() ? $('#page_type option:selected').val() : '{$form_object->page_type}'), false);
+            $("#page_type").change(function() {
+        change_layout(this.value, true);
+        });*/
+    });
+
+    function openFM(target){
+        $("#filemanager").html($('<iframe width="100%" height="500" scrolling="no" />').attr("src", "{url_for controller=files action=index tinymce=images appsys=admin}&target="+target)).dialog({
+            autoOpen: true,
+            resizable: false,
+            height: 550,
+            width: '980px',
+            modal: true,
+        }).dialog('open');
+    }
+
+    function trigger_FM_change(){
+
+    }
+
+
+    /*$('#page_options').dialog({
+        autoOpen: false,
+        resizable: false,
+        height: 'auto',
+        width: '100%',
+        modal: true,
+        title: $('.edit-actions .options').text(),
+        zIndex: 4999,
+        show: { effect: "drop", duration: 300 },
+        hide: { effect: "drop", duration: 300 },
+    });
+
+    $('#banners_settings').dialog({
+        autoOpen: false,
+        resizable: false,
+        height: 'auto',
+        width: '100%',
+        modal: true,
+        title: $('.edit-actions .options').text(),
+        zIndex: 4999,
+        show: { effect: "drop", duration: 300 },
+        hide: { effect: "drop", duration: 300 },
+    });
+
+
+    $('.options').click(function() {
+        $('#page_options').dialog('open');
+    });*/
+
+    {if $form_object->id}
+    $('#main_form').submit(function() {
+        setTimeout(function(){
+            $('.form-errors').html('');
+            $.ajax({
+                url: xhr_url+'?method=savePageSettings',
+                data: $('#main_form').serialize(),
+                type: 'POST',
+                dataType: 'JSON',
+                success: function(data){
+                    if(data.errors){
+                        $('.form-errors').html(data.errors);
+                    }else if(data.success){
+                        //$('#frame').attr("src", $('#frame').attr("src"));
+                        window.location.href = $('#breadcrumb li:eq(1) a').attr('href');
+                    }
+
+                }
+            });
+        },200);
+        return false;
+    });
+
+     $('ul.sortable.sortable_carousels').sortable({
+        placeholder: "ui-state-highlight",
+        start: function( event, ui ) {
+            ui.placeholder.css('height', ui.item.outerHeight());
+        }
+    });
+
+    $('#banners_items').on('change', function(evt, params) {
+        if(params.selected) {
+            $('.sortable_banners').append('<li style="border: 1px solid #aaa; line-height: 13px; padding: 6px 20px 6px 5px; margin: 3px 0 3px 0px; position: relative; cursor:move; background:#f1f1f1; height:28px" id="banner_'+params.selected+'"><input type="hidden" name="options[order][]" value="'+params.selected+'" />'+$('#banners_items option[value='+params.selected+']').text()+'</li>');
+        } else {
+            $('.sortable_banners li#banner_'+params.deselected).remove();
+        }
+      });
+
+    $('#carousels_items').on('change', function(evt, params) {
+        if(params.selected) {
+            $('.sortable_carousels').append('<li style="border: 1px solid #aaa; line-height: 13px; padding: 6px 20px 6px 5px; margin: 3px 0 3px 0px; position: relative; cursor:move; background:#f1f1f1; height:28px" id="carousel_'+params.selected+'"><input type="hidden" name="options[order_carousels][]" value="'+params.selected+'" />'+$('#carousels_items option[value='+params.selected+']').text()+'</li>');
+        } else {
+            $('.sortable_carousels li#carousel_'+params.deselected).remove();
+        }
+      });
+    {/if}
+    // leave visible only elements without class or which class is the same as selected page type
+function change_layout(page_type, confirm_action) {
+    if(!confirm_action || confirm("{$_labels.are_you_sure_change_page_type}")) {
+        var expression = new RegExp('\\s?\\b' + page_type + '\\b\\s?', 'ig');
+        $('form > fieldset > ol > li').each(function(index, element) {
+            if(element.hasAttribute('class')) {
+                $(element).hasClass(page_type) ? element.setAttribute('style', 'display:none;') : element.removeAttribute('style');
+            }
+            if(element.hasAttribute('data-restricted_for')) {
+                element.getAttribute('data-restricted_for').match(expression) ? element.setAttribute('style', 'display:none;') : element.removeAttribute('style');
+            }
+        });
+
+        old_page_type = page_type;
+    } else {
+        $('#page_type option[value=' + old_page_type + ']').prop('selected', true);
+    }
+}
+</script>

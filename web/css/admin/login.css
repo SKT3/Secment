@@ -1,0 +1,104 @@
+* :focus { outline: none; }
+html {
+	height:100%;
+	background: #ececec url(../../images/admin/bgr-login.jpg) no-repeat top center;
+}
+body {
+	font:normal 12px/14px Tahoma, sans-serif;
+	color: #333;
+	margin:0;
+	padding:0;
+}
+
+#map {
+	margin:0 auto;
+	margin-top:10%;
+	height:449px;
+	background:url(../../images/admin/bgr-login-map.png) no-repeat top center;
+}
+
+input,
+textarea,
+button {
+	font-size: 12px;
+	color: #333;
+}
+h1#logo {
+	width: 120px;
+	height: 90px;
+	background: url(../../images/admin/logo.gif) no-repeat bottom center;
+	margin: 0 auto;
+	text-indent: -9999px;
+	position: absolute;
+	left:1%;
+	bottom:1%;
+}
+form {
+	display: block;
+	width: 525px;
+	height: 260px;
+	margin: 0 auto;
+	background: url(../../images/admin/bgr-login-container.png) no-repeat top left;
+}
+
+.errors {
+	padding: 40px 0 0 0;
+	height: 14px;
+}
+
+strong {
+	display: block;
+	font-size: 14px;
+	color: #000;
+	text-align: center;
+}
+
+fieldset {
+	display: block;
+	padding: 20px;
+	width:319px;
+	margin:0 auto;
+}
+
+ol li {
+	overflow: hidden;
+	padding-bottom: 5px;
+}
+
+input {
+	width: 309px;
+	padding: 5px;
+	height:23px;
+	font-size:14px;
+	color:#1b1b1b;
+	border:0;
+	background:url(../../images/admin/bgr-login-input.jpg) no-repeat top left;
+	margin-bottom:10px;
+	line-height: 23px;
+}
+
+label {
+	float: left;
+	width: 75px;
+	padding: 5px 0 2px 0;
+}
+
+button {
+	display: block;
+	margin: 10px auto;
+	text-align:center;
+	width:109px;
+	height:37px;
+	line-height:37px;
+	font-size:14px;
+	background: url(../../images/admin/bgr-login-button.png) no-repeat center center;
+	border: 0;
+	color:#FFF;
+	cursor: pointer;
+}
+
+.copy {
+	width:auto;
+	margin:0 auto;
+	text-align:center;
+}

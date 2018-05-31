@@ -1,0 +1,4 @@
+[settings]
+resourcepath = "C:/Projects/CG_Rolling/webMerchantDemo/WebContent/WEB-INF/resources/1000/resource.cgn"
+alias = "1000-1000-Alias"
+

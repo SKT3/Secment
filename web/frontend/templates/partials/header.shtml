@@ -1,0 +1,134 @@
+<header class="header">
+	<div class="header-top">
+		<div class="wrapper">
+			<p class="contact-us">Телефон на потребителя <a href="tel:070014600">0700 14 600</a></p>
+
+			<nav class="nav-lang">
+				<!--#include virtual="../partials/nav-lang.shtml"-->
+			</nav>
+
+			<nav class="nav-secondary">
+				<!--#include virtual="../partials/nav-secondary.shtml"-->
+			</nav>
+		</div>
+	</div><!-- /.header-top -->
+
+	<div class="form form-search" id="js-search-target">
+		<div class="wrapper">
+			<form action="#">
+				<svg aria-hidden="true" class="icon icon-svg icon-search">
+					<use xlink:href="../../assets/images/svg-sprite.svg#search"></use>
+				</svg>
+
+				<div class="field field-text">
+					<input type="text" name="search" placeholder="Търсете в сайта" autocomplete="off" />
+				</div>
+
+				<ul class="search-results js-search-results"></ul>
+
+				<button class="btn btn-primary">Търси</button>
+			</form>
+		</div>
+	</div><!-- /.form -->
+
+	<div class="header-bottom">
+		<div class="wrapper">
+			<a href="index.html" class="logo">
+				<img src="../../assets/images/logo2x.png" alt="logo" />
+			</a>
+
+			<button type="button" class="btn btn-menu" id="js-menu-trigger" data-active-target="#js-menu">
+				<span class="btn-menu-box">
+					<span class="btn-menu-inner"></span>
+				</span>
+			</button>
+
+			<nav class="nav-cart" id="js-nav-cart">
+				<a href="checkout-step1.html" class="nav-cart-head" id="js-nav-cart-trigger">
+					<svg aria-hidden="true" class="icon icon-svg icon-cart">
+						<use xlink:href="../../assets/images/svg-sprite.svg#cart"></use>
+					</svg>
+					<sup>3</sup>
+				</a>
+				
+				<div class="nav-cart-body" id="js-nav-cart-target">
+					<div class="nav-cart-summary">
+						<div class="nav-cart-summary-top">
+							<p class="title">Твоята поръчка</p>
+
+							<a href="javascript:;" class="btn btn-close" id="js-nav-cart-close">
+								<svg aria-hidden="true" class="icon icon-svg icon-close">
+									<use xlink:href="../../assets/images/svg-sprite.svg#close"></use>
+								</svg>
+							</a>
+						</div>
+						
+						<div class="nav-cart-summary-middle" id="js-cart-quick-summary">
+							<table class="table table-cart-quick">
+								<thead>
+									<tr>
+										<th>Продукт</th>
+										<th>Кол.</th>
+										<th>Ед. цена</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>МАШИНА ЗА ПЛОЧКИ ПРОФЕСИОНАЛНА RD-TC14 60см</td>
+										<td>1</td>
+										<td>109.90</td>
+									</tr>
+									<tr>
+										<td>Ъглошлайф wev 10-125 quick метабо</td>
+										<td>14</td>
+										<td>723.90</td>
+									</tr>
+									<tr>
+										<td>НОЖ ЗА ПРОБ.ТРИОН RSB FIT HANDLE БОШ</td>
+										<td>4</td>
+										<td>35.88</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td>Крайна цена</td>
+										<td colspan="2">723.90</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+						
+						<div class="nav-cart-summary-bottom">
+							<a href="#" class="btn btn-link">Продължи с пазаруването</a>
+
+							<a href="checkout-step1.html" class="btn btn-primary">Завърши поръчката</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+
+			<a href="javascript:;" class="btn btn-search" id="js-search-trigger" data-active-target="#js-search-target">
+				<svg aria-hidden="true" class="icon icon-svg icon-search">
+					<use xlink:href="../../assets/images/svg-sprite.svg#search"></use>
+				</svg>
+				<svg aria-hidden="true" class="icon icon-svg icon-close">
+					<use xlink:href="../../assets/images/svg-sprite.svg#close"></use>
+				</svg>
+			</a>
+			
+			<nav class="nav-primary" id="js-nav-primary">
+				<!--#include virtual="../partials/menu.shtml"-->
+			</nav>
+		</div>
+	</div><!-- /.header-bottom -->
+
+	<div class="menu" id="js-menu">
+		<nav class="nav-secondary-mobile">
+			<!--#include virtual="../partials/nav-secondary.shtml"-->
+		</nav>
+		
+		<nav class="nav-primary-mobile">
+			<!--#include virtual="../partials/menu.shtml"-->
+		</nav>
+	</div>
+</header>

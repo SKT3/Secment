@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    {include file="layouts/public/_head.htm"}
+<head>
+<body>
+<div class="container" id="js-container">
+    <header class="header">
+        {include file="layouts/public/_header.htm"}
+    </header>
+
+    <div class="accents">
+        {$content_for_layout}
+    </div>
+
+
+    <footer class="footer">
+        {include file="layouts/public/_footer.htm"}
+    </footer>
+
+    <div class="overlay-global" id="js-overlay"></div>
+
+</div>
+
+<script type="text/javascript" src="{$_public}frontend/assets/build/build.js"></script>
+<!--{foreach from=$included_js item=item}-->
+<!--<script src="{$_public}js/{$item}.js"></script>-->
+<!--{/foreach}-->
+<script type="text/javascript">
+    $(document).ready(function() {ldelim}
+        $('.parallax').parallax();
+    {rdelim});
+</script>
+{show_flash_messages_public}
+</body>
+</html>

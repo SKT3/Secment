@@ -1,0 +1,106 @@
+<div class="gallery" id="upload_{$imageupload.options.id}">
+	<label>{$_labels.DB_FIELDS.gallery}</label>
+	<div class="fileinput-button button">
+		Upload file{if $imageupload.options.multiple}s{/if}
+		<input id="{$imageupload.options.id}" type="file" {if !$imageupload.options.multiple}class="single"{else}multiple="multiple"{/if} name="{$imageupload.options.keyname}" data-url="{url_for action=xhr method=upload_image id=$imageupload.options.current_object_id keyname=$imageupload.options.keyname model=$imageupload.options.model}" />
+	</div>
+
+	<ul class="files" data-sort="{url_for action=xhr method=sort_images}">
+
+	</ul>
+</div>
+<script type="text/javascript">
+{literal}
+$(function () {
+	$.ajax({
+	  	url: '{/literal}{url_for action=xhr method=get_images id=$imageupload.options.current_object_id keyname=$imageupload.options.keyname model=$imageupload.options.model}{literal}',
+  		success: function(data){
+  			if(data.images){
+  				$.each(data.images, function(i, elem){
+					if($('#{/literal}{$imageupload.options.id}{literal}').hasClass('single')){
+						$('#upload_{/literal}{$imageupload.options.id}{literal} .files').append('<li id="f_'+elem.id+'">\
+							<img src="'+elem.img+'?'+(new Date().valueOf())+'" alt="" height="50" /> \
+							<a class="link" href="'+elem.img+'" target="_blank"></a> \
+							<strong>'+elem.name+'</strong> \
+							<em>('+elem.size+')</em> \
+							<button class="delete button" type="button" data-url="'+elem.delete_url+'">X</button> \
+						</li>');
+					}else{
+	  					$('#upload_{/literal}{$imageupload.options.id}{literal} .files').append('<li id="f_'+elem.id+'">\
+							<span class="handle"></span> \
+							<img src="'+elem.img+'?'+(new Date().valueOf())+'" alt="" height="50" /> \
+							<a class="link" href="'+elem.img+'" target="_blank"></a> \
+							<strong>'+elem.name+'</strong> \
+							<em>('+elem.size+')</em> \
+							<button class="delete button" type="button" data-url="'+elem.delete_url+'">X</button> \
+						</li>');
+					}
+  				});
+  			}
+ 		},
+ 		dataType: 'JSON'
+ 	});
+	$('{/literal}#{$imageupload.options.id}{literal}').fileupload({
+		dataType: 'json',
+		autoUpload: true,
+		sequentialUploads: true,
+		acceptFileTypes: '/(\.|\/)(gif|jpe?g|png)$/i' ,
+		send: function(e, data) {
+			$("#ajax-load").css("visibility", 'visible');
+			$("#ajax-load").css("z-index", 1000);
+		},
+		done: function (e, data) {
+			if(data.result.error){
+				alert(data.result.error.{/literal}{$imageupload.options.keyname}{literal});
+				return false;
+			}
+			$("#ajax-load").css("visibility", 'hidden');
+			$("#ajax-load").css("z-index", 0);
+
+			if($('#{/literal}{$imageupload.options.id}{literal}').hasClass('single'))
+			{
+				$('#upload_{/literal}{$imageupload.options.id}{literal} .files li').remove();
+				$('#upload_{/literal}{$imageupload.options.id}{literal} .files').append('<li id="f_'+data.result.id+'">\
+					<img src="'+data.result.img+'?'+(new Date().valueOf())+'" alt="" height="50" /> \
+					<a class="link" href="'+data.result.img+'" target="_blank"></a> \
+					<strong>'+data.result.name+'</strong> \
+					<em>('+data.result.size+')</em> \
+					<button class="delete button" type="button" data-url="'+data.result.delete_url+'">X</button> \
+				</li>');
+			}
+			else {
+				$('#upload_{/literal}{$imageupload.options.id}{literal} .files').append('<li id="f_'+data.result.id+'" style="display:none;">\
+					<span class="handle"></span> \
+					<img src="'+data.result.img+'?'+(new Date().valueOf())+'" alt="" height="50" /> \
+					<a class="link" href="'+data.result.img+'" target="_blank"></a> \
+					<strong>'+data.result.name+'</strong> \
+					<em>('+data.result.size+')</em> \
+					<button class="delete button" type="button" data-url="'+data.result.delete_url+'">X</button> \
+				</li>');
+				$('#f_'+data.result.id).slideDown('normal');
+			}
+		},
+	});
+});
+
+$('#upload_{/literal}{$imageupload.options.id}{literal} .files button.delete').live('click',function(){
+	obj = this;
+	if(confirm('Delete image: '+ $(this).parent().find('strong').text())){
+		$.get($(this).attr('data-url'),{},function(){
+			$(obj).parent().slideUp('normal',function(){
+				$(this).remove();
+			});
+		})
+	}
+});
+
+$('#upload_{/literal}{$imageupload.options.id}{literal} .files').sortable({
+	handle: ".handle",
+	placeholder: "ui-state-highlight",
+	update: function(event,ui) {
+		$.get($('#upload_{/literal}{$imageupload.options.id}{literal} .files').attr('data-sort')+'&'+$('#upload_{/literal}{$imageupload.options.id}{literal} .files').sortable('serialize'))
+	},
+});
+$('#upload_{/literal}{$imageupload.options.id}{literal} .files').disableSelection();
+{/literal}
+</script>

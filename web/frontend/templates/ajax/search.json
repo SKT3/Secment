@@ -1,0 +1,4 @@
+{
+	"success": true,
+	"html": "<li>\n\t<a href=\"#\" class=\"search-results-item\">\n\t<figure class=\"picture\">\n\t<img src=\"../../assets/images/temp/accent-new1.jpg\" alt=\"\" />\n\t</figure>\n\t\n\t<div class=\"content\">\n\t<p class=\"title\">Adidas Kanadia M17446</p>\n\t\n\t<div class=\"prices\">\n\t<span class=\"price\"><strong>159</strong><small>лв.</small></span>\n\t</div>\n\t</div>\n\t</a>\n</li>\n<li>\n\t<a href=\"#\" class=\"search-results-item\">\n\t<figure class=\"picture\">\n\t<img src=\"../../assets/images/temp/accent-new2.jpg\" alt=\"\" />\n\t</figure>\n\t\n\t<div class=\"content\">\n\t<p class=\"title\">Adidas M17446</p>\n\t\n\t<div class=\"prices\">\n\t<span class=\"price\"><strong>119</strong><small>лв.</small></span>\n\t</div>\n\t</div>\n\t</a>\n</li>"
+}

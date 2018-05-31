@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$_locale}" lang="{$_locale}">
+	<head>
+		<title>{$_labels.meta.title} - (TheMags v3.0b)</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="Description" content="TheMags Control Panel" />
+		<meta name="Keywords" content="TheMags, control panel, cms, content management system, administration" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic,latin,greek' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="{$_public}css/admin/reset.css" media="screen" />
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" type="text/css" href="{$_public}css/admin/default.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="{$_public}css/admin/theme.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="{$_public}css/admin/jquery.gritter.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="{$_public}css/admin/jquery-ui-sweboo.css?{$smarty.now}" media="screen" />
+		<link rel="stylesheet" type="text/css" href="{$_public}css/admin/jquery.autocomplete.css?{$smarty.now}" media="screen" />
+		<link rel="stylesheet" type="text/css" href="{$_public}css/admin/tooltip.css?{$smarty.now}" media="screen" />
+		<link rel="stylesheet" type="text/css" href="{$_public}css/admin/jquery.fileupload-ui.css?{$smarty.now}" media="screen" />
+		<link rel="stylesheet" type="text/css" href="{$_public}css/admin/chosen.css?{$smarty.now}" media="screen" />
+
+		<script src="{$_public}js/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+		<script type="text/javascript">
+		var _root = '{$_root}';
+		var xhr_url = '{url_for action=xhr}';
+			function confirm_delete(id)
+			{
+				if(confirm('{$_labels.confirm_delete} #' + id + ' ?')) {
+					var url = '{if $module}{url_for controller=admin module=$module maction=$delete_action|default:"delete"}{else}{url_for controller=$controller action=delete}{/if}/' + id;
+					setTimeout( function() {
+						self.location = url;
+					},0);
+				}
+			};
+
+			function confirm_delete_category(id) {
+				if(confirm('{$_labels.confirm_delete_subcategory}')) {
+					var url = '{if $module}{url_for controller=admin module=$module maction=delete_category}{else}{url_for controller=$controller action=delete}{/if}/' + id;
+					setTimeout( function() {
+						self.location = url;
+					},0);
+				}
+			};
+		</script>
+		<script src="{$_public}js/lib/jquery-ui.js" type="text/javascript"></script>
+		<script src="{$_public}js/admin/jquery.gritter.min.js" type="text/javascript"></script>
+		<script src="{$_public}js/admin/jquery.tablednd.js" type="text/javascript"></script>
+		<script src="{$_public}js/admin/timepicker.js?{$smarty.now}" type="text/javascript"></script>
+		<script src="{$_public}js/admin/tooltip.js?{$smarty.now}" type="text/javascript"></script>
+		<script src="{$_public}js/admin/jquery.fileupload.js?{$smarty.now}" type="text/javascript"></script>
+		<script src="{$_public}js/admin/chosen.jquery.min.js?{$smarty.now}" type="text/javascript"></script>
+		{if !$noac}
+		<script src="{$_public}js/lib/jquery.autocomplete.js?{$smarty.now}" type="text/javascript"></script>
+		{/if}
+		<script src="{$_public}js/admin/default.js?{$smarty.now}" type="text/javascript"></script>
+
+		<!--[if IE 7]>
+			<link rel="stylesheet" type="text/css" href="{$_public}css/admin/ie.css" media="screen" />
+		<![endif]-->
+		<style type="text/css">
+			.ui-tabs-vertical {
+				width: 100%;
+			}
+			.ui-tabs.ui-tabs-vertical .ui-tabs-nav {
+				width: 20%;
+			}
+			.ui-tabs.ui-tabs-vertical .ui-tabs-panel {
+				width: 80%;
+			}
+			#main_form fieldset div.mce-tinymce, .main_form fieldset div.mce-tinymce {
+				float: left;
+				margin-bottom: 10px;
+				width: 60%;
+			}
+			.ui-tabs.ui-tabs-vertical .ui-tabs-panel {
+				text-indent: 0;
+				padding: 20px;
+			}
+		</style>
+		{foreach from=$include_css item=file}
+			<link rel="stylesheet" type="text/css" href="{$_public}css/admin/{$file}.css?{$smarty.now}" media="screen" />
+		{/foreach}
+
+	</head>
+	<body>
+		<div id="ajax-load"></div>
+		<div id="wrapper">
+			<div id="header">
+				<div class="wrapper">
+					<h1><a href="{url_for controller='' appsys='admin'}">TheMags</a></h1>
+
+					<div id="navigation">
+						{generate_admin_menu}
+					</div>
+					<div class="user_menu">
+						<div class="languages">
+							<label for="change_language">{$_labels.language}:</label>
+							<select name="lang" id="change_language" onchange="self.location = this.value;">
+							{assign var='short_local' value=$_locale|substr:0:2}
+							{foreach from=$_languages item=language key=short_lang}
+								{assign var='what' value="/$short_local/"}
+								{assign var='with' value="/$short_lang/"}
+								<option {if $_current_lang eq $short_lang}selected="selected"{/if} value="{$smarty.server.REQUEST_URI|replace:$what:$with|escape}">{$_labels.LANGUAGES.$language}</option>
+							{/foreach}
+							</select>
+						</div>
+						{$_labels.DB_FIELDS.user}: <a href="{url_for controller=admin_users maction=edit id=$userinfo->id appsys=admin}">{$userinfo->username}</a> /
+						<a href="{url_for controller=login appsys='admin'}/logout" class="exit" title="{$_labels.logout}">{$_labels.logout}</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+
+			{if $errors}
+			<div class="errors">
+				<ul>
+					<li class="close">close</li>
+					{foreach from=$errors key=key item=error}
+						{if is_numeric($key)}
+							<li>{$error}</li>
+						{else}
+							<li>{$key}: {$error}</li>
+						{/if}
+					{/foreach}
+				</ul>
+			</div>
+			{/if}
+
+			<div id="container">
+				<div class="wrapper">
+					{if $_controller neq 'home'}{include file="layouts/admin/breadcrumb.htm"}{/if}
+					<div class="content">
+						{$content_for_layout}
+					</div>
+				</div>
+			</div>
+
+			<div id="footer">
+				<div class="wrapper">
+					<address>&copy; TheMags {$smarty.now|date_format:"%Y"}</address>
+				</div>
+			</div>
+		</div>
+
+		{js_flash_messages}
+
+		{foreach from=$include_javascript item=file}
+			<script src="{$_public}js/admin/{$file}.js?{$smarty.now}" type="text/javascript"></script>
+		{/foreach}
+	</body>
+</html>

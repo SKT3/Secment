@@ -1,0 +1,30 @@
+<h2>{$_labels.TOPMENU.groups} - {$_labels.MAIN_ACTIONS.add}</h2>
+<form id="main_form" enctype="multipart/form-data" action="" method="post">
+	<fieldset>
+		<legend>{$_labels.MAIN_ACTIONS.add}</legend>
+
+		<label for="title">{$_labels.DB_FIELDS.title}:</label>
+		<input type="text" name="title" id="title" value="{$form_object->title|escape}" />
+		<br />
+
+		<h4 class="permission_list_title">{$_labels.not_permissions_to}:</h4>
+
+		<dl id="permission_list">
+		{foreach from=$permissions key=real_module item=module}
+			<dt>
+				<label>
+					<input type="checkbox" value="{$real_module}" class="chk parent" id="chk_{$real_module}" name="permissions[]" {if $real_module|in_array:$form_object->permissions}checked="checked"{/if} /> {$module.title}
+				</label>
+			</dt>
+			{if isset($module.actions)}
+				<dd id="chk_actions_{$real_module}">{html_checkboxes name='permissions' selected=$form_object->permissions class="chk_$real_module" options=$module.actions separator='<br />'}</dd>
+			{/if}
+		{/foreach}
+		</dl>
+
+		<div class="buttons">
+            <button type="button" class="cancel" onclick="window.location='{$session->admin_return_to}';">{$_labels.BUTTONS.cancel}</button>
+            <button type="submit" class="ok">{$_labels.BUTTONS.$action}</button>
+        </div>
+	</fieldset>
+</form>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<!--#include virtual="../partials/header.shtml"-->
+
+	<div class="main">
+		<div class="main-head">
+			<div class="wrapper">
+				<div class="main-head-inner">
+					<div class="main-head-inner-wrap">
+						<nav class="breadcrumbs">
+							<ul>
+								<li><a href="index.html">Начало</a></li>
+								<li>Регистрация</li>
+							</ul>
+						</nav>
+						
+						<h1 class="title-primary">Регистрация</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- !!! ADD class="full" WHEN SIDEBAR IS MISSING !!! -->
+		<div class="main-body full">
+			<div class="wrapper">
+				<main class="main-content">
+					<div class="block block-small block-entrance">
+						<div class="pad pad-secondary">
+							<nav class="nav-content">
+								<ul>
+									<li><a href="login.html">Вход</a></li>
+									<li class="selected"><a href="register.html">Регистрация</a></li>
+								</ul>
+							</nav>
+
+							<div class="block-content">
+								<div class="form form-basic form-register">
+									<p class="form-title">Регистрация</p>
+
+									<form action="#">
+										<div class="form-row">
+											<label for="first_name" class="form-label required">Име:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="text" name="first_name" id="first_name" required />
+												</div>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<label for="last_name" class="form-label required">Фамилия:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="text" name="last_name" id="last_name" required />
+												</div>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<label for="email" class="form-label required">E-mail:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="email" name="email" id="email" required />
+												</div>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<label for="password" class="form-label required">Парола:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="password" name="password" id="password" required />
+												</div>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<label for="password_confirm" class="form-label required">Повторете паролата:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="password" name="password_confirm" id="password_confirm" required />
+												</div>
+											</div>
+										</div>
+											
+										<div class="form-group">
+											<div class="form-row">
+												<div class="choose check">
+													<input type="checkbox" name="club_card" id="club_card" />
+													<label for="club_card">Заявка за GS Club карта </label>
+												</div>
+											</div>
+
+											<div class="form-row">
+												<div class="choose check">
+													<input type="checkbox" name="newsletter" id="newsletter" />
+													<label for="newsletter">Заявка за получаване на електронен бюлетин</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="btns">
+											<button class="btn btn-primary">Регистрация</button>
+										</div>
+									</form>
+								</div><!-- /.form -->
+							</div>
+						</div><!-- /.pad -->
+					</div><!-- /.block -->
+				</main>
+			</div>
+		</div>
+	</div><!-- /.main -->
+
+	<!--#include virtual="../partials/footer.shtml"-->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+</body>
+</html>

@@ -1,0 +1,86 @@
+<div class="msg msg-info">
+	<p class="title">Здравейте,</p>
+
+	<div class="rich-text">
+		<p>Вашата количка съдържа поне един извънгабаритен артикул или общо тегло над 1000кг. Цената за транспорт на доставката ще бъде уточнена с Вас при разговор с Администратор Поръчки на GS Строймаркет, като бъде съобразена спрямо Ценоразписът за Извънгабаритни и Тежки Товари (<a href="#">линк</a>), както и с Вашите конкретни нужди и предпочитания.</p>
+
+		<p>Благодарим за разбирането!</p>
+	</div>
+</div>
+
+<div class="boxes boxes-type-9">
+	<div class="box box-type-9">
+		<picture class="picture">
+			<img src="../../assets/images/temp/products-order1.jpg" alt="" />
+
+			<span class="ribbon ribbon-qty">12</span>
+		</picture>
+
+		<div class="content">
+			<p class="title">НОЖ ЗА ПРОБ.ТРИОН RSB FIT HANDLE БОШ</p>
+
+			<div class="box-prices-wrap">
+				<p class="box-price">Ед. цена: <strong>35.88</strong> лв.</p>
+				<p class="box-price">Кр. цена: <strong>430.56</strong> лв.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="box box-type-9">
+		<picture class="picture">
+			<img src="../../assets/images/temp/products-order2.jpg" alt="" />
+
+			<span class="ribbon ribbon-qty">1</span>
+		</picture>
+
+		<div class="content">
+			<p class="title">КУТИЯ MEGA CANTILEVER 19"</p>
+
+			<div class="box-prices-wrap">
+				<p class="box-price">Ед. цена: <strong>73.40</strong> лв.</p>
+				<p class="box-price">Кр. цена: <strong>73.40</strong> лв.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="box box-type-9">
+		<picture class="picture">
+			<img src="../../assets/images/temp/products-order3.jpg" alt="" />
+
+			<span class="ribbon ribbon-qty">1</span>
+		</picture>
+
+		<div class="content">
+			<p class="title">ВИНТОВЕРТ АКУМУЛАТОРЕН с.БОШ GSR 12V-15 3x2AH L-BOXX</p>
+
+			<div class="box-prices-wrap">
+				<p class="box-price">Ед. цена: <strong>35.88</strong> лв.</p>
+				<p class="box-price">Кр. цена: <strong>35.88</strong> лв.</p>
+			</div>
+		</div>
+	</div>
+</div><!-- /.boxes -->
+
+<div class="checkout-summary">
+	<div class="summary">
+		<div class="summary-row">
+			<p class="label">Междинна цена:</p>
+			<p class="price"><strong>565.88</strong> лв.</p>
+		</div>
+	
+		<div class="summary-row">
+			<p class="label">ДДС:</p>
+			<p class="price"><strong>113.18</strong> лв.</p>
+		</div>
+
+		<div class="summary-row">
+			<p class="label">Доставка: <span>(Калкулира се, след избор на доставка)</span></p>
+			<p class="price"><strong>0.00</strong> лв.</p>
+		</div>
+	
+		<div class="summary-row">
+			<p class="label">Крайна цена:</p>
+			<p class="price"><strong>679.06</strong> лв.</p>
+		</div>
+	</div>
+</div><!-- /.checkout-summary -->

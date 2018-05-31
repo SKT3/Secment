@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<!--#include virtual="../partials/header.shtml"-->
+
+	<div class="main">
+		<div class="main-head">
+			<div class="wrapper">
+				<div class="main-head-inner">
+					<div class="main-head-inner-wrap">
+						<nav class="breadcrumbs">
+							<ul>
+								<li><a href="index.html">Начало</a></li>
+								<li>Моят профил</li>
+							</ul>
+						</nav>
+						
+						<h1 class="title-primary">Моят профил</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- !!! ADD class="full" WHEN SIDEBAR IS MISSING !!! -->
+		<div class="main-body full">
+			<div class="wrapper">
+				<main class="main-content">
+					<div class="block block-profile block-profile-newsletter">
+						<div class="pad pad-secondary">
+							<nav class="nav-content">
+								<ul>
+									<li><a href="profile-personal.html">Лични данни</a></li>
+									<li><a href="profile-password-change.html">Смяна на парола</a></li>
+									<li><a href="profile-history.html">История на поръчките</a></li>
+									<li class="selected"><a href="profile-newsletter.html">Електронен бюлетин</a></li>
+									<li><a href="index.html">Изход</a></li>
+								</ul>
+							</nav>
+
+							<div class="block-content">
+								<div class="form form-profile form-newsletter">
+									<h2 class="form-title">Електронен бюлетин</h2>
+
+									<p class="form-note">Регистрирайте се за нашия електронен бюлетин и получавайте първи актуална информация за нашите нови и промоционални продукти.</p>
+									
+									<div class="pad pad-basic">
+										<form action="#">
+											<div class="form-row">
+												<label for="newsletter" class="form-label">Въведете вашия е-mail</label>
+											
+												<div class="form-controls">
+													<div class="field field-text">
+														<input type="email" name="newsletter" id="newsletter" />
+													</div>
+													
+													<button class="btn btn-primary">Добавете</button>
+												</div>
+											</div>
+										</form>
+									</div><!-- /.pad -->
+								</div><!-- /.form -->
+							</div>
+						</div><!-- /.pad -->
+					</div><!-- /.block -->
+				</main>
+			</div>
+		</div>
+	</div><!-- /.main -->
+
+	<!--#include virtual="../partials/footer.shtml"-->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+</body>
+</html>

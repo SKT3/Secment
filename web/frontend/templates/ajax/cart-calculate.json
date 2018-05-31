@@ -1,0 +1,10 @@
+{
+	"success": true,
+	"values": {
+		"calcResult": "32.13",
+		"inputPrimaryRounded": "22",
+		"inputSecondaryRounded": "33",
+		"total": "125.33",
+		"relatedSelector": "#js-qty-secondary"
+	}
+}

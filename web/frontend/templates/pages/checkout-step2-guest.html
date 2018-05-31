@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<div class="main checkout">
+		<div class="wrapper">
+			<div class="checkout-content">
+				<header class="checkout-header">
+					<a href="index.html" class="logo">
+						<img src="../../assets/images/logo2x.png" alt="logo" />
+					</a>
+
+					<div class="user-preview">
+						<!-- !!! Guest user !!! -->
+						<p class="checkout-login">Имате вече регистрация? <a href="#">Влезте от тук</a></p>
+
+						<!-- !!! Loggedin user !!! -->
+						<!-- <p class="checkout-greet">Здравейте, <a href="profile-personal.html">Никола Гударовски</a>!</p> -->
+					</div>
+				</header>
+
+				<main class="checkout-main">
+					<h1 class="title-primary">Завършете поръчката</h1>
+
+					<div class="steps">
+						<div class="steps-item is-completed">
+							<span class="number">01</span>
+							<span class="label">Количка</span>
+						</div>
+
+						<div class="steps-item is-selected">
+							<span class="number">02</span>
+							<span class="label">Лична информация</span>
+						</div>
+
+						<div class="steps-item">
+							<span class="number">03</span>
+							<span class="label">Начин на доставка</span>
+						</div>
+
+						<div class="steps-item">
+							<span class="number">04</span>
+							<span class="label">Начин на плащане</span>
+						</div>
+
+						<div class="steps-item">
+							<span class="number">05</span>
+							<span class="label">Преглед на поръчката</span>
+						</div>
+					</div>
+
+					<div class="form form-checkout step2">
+						<form action="#" novalidate>
+							<hr />
+							
+							<fieldset>
+								<legend>Лична информация</legend>
+
+								<div class="cols cols-full">
+									<div class="col col4of12">
+										<div class="form-row form-row-inline">
+											<label for="personal_first_name" class="form-label required">Име:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="text" name="personal_first_name" id="personal_first_name" required />
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="col col4of12">
+										<div class="form-row form-row-inline">
+											<label for="personal_last_name" class="form-label required">Фамилия:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="text" name="personal_last_name" id="personal_last_name" required />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- /.cols -->
+
+								<div class="cols cols-full">
+									<div class="col col8of12">
+										<div class="form-row form-row-inline">
+											<label for="contact_email" class="form-label required">Вашия е-mail:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="email" name="contact_email" id="contact_email" required />
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="col col4of12">
+										<div class="form-row form-row-inline">
+											<label for="contact_tel" class="form-label required">Телефон:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="tel" name="contact_tel" id="contact_tel" required />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- /.cols -->
+							</fieldset>
+
+							<hr />
+
+							<fieldset>
+								<legend>Фирмени данни</legend>
+
+								<div class="form-row">
+									<div class="choose-group">
+										<div class="choose check">
+											<input type="checkbox" name="legal_persona_check" id="legal_persona_check" class="js-related-trigger" data-related-id="1" />
+											<label for="legal_persona_check">Вие сте юридическо лице?</label>
+										</div>
+									</div>
+								</div><!-- /.form-row -->
+
+								<div class="related-target js-related-target" data-related-id="1">
+									<div class="cols cols-full">
+										<div class="col col4of12">
+											<div class="form-row form-row-inline">
+												<label for="legal_organization" class="form-label">Фирма:</label>
+											
+												<div class="form-controls">
+													<div class="field field-text">
+														<input type="text" name="legal_organization" id="legal_organization" />
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col col4of12">
+											<div class="form-row form-row-inline">
+												<label for="legal_person" class="form-label">МОЛ:</label>
+											
+												<div class="form-controls">
+													<div class="field field-text">
+														<input type="text" name="legal_person" id="legal_person" />
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col col4of12">
+											<div class="form-row form-row-inline">
+												<label for="legal_bulstat" class="form-label">БУЛСТАТ:</label>
+											
+												<div class="form-controls">
+													<div class="field field-text">
+														<input type="text" name="legal_bulstat" id="legal_bulstat" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- /.cols -->
+								</div>
+
+								<div class="related-target js-related-target" data-related-id="1">
+									<div class="cols cols-full">
+										<div class="col col12of12">
+											<div class="form-row form-row-inline">
+												<label for="legal_address" class="form-label">Адрес:</label>
+											
+												<div class="form-controls">
+													<div class="field field-text">
+														<input type="text" name="legal_address" id="legal_address" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- /.cols -->
+								</div>
+							</fieldset>
+
+							<hr />
+
+							<fieldset>
+								<legend>Регистрация</legend>
+
+								<div class="form-row">
+									<div class="choose-group">
+										<div class="choose check">
+											<input type="checkbox" name="register_check" id="register_check" class="js-related-trigger" data-related-id="2" />
+											<label for="register_check">Искате да се регистрирате? (Отнема няколко секунди)</label>
+										</div>
+									</div>
+								</div><!-- /.form-row -->
+
+								<div class="related-target js-related-target" data-related-id="2">
+									<div class="cols cols-full">
+										<div class="col col4of12">
+											<div class="form-row form-row-inline">
+												<label for="register_password" class="form-label">Парола:</label>
+											
+												<div class="form-controls">
+													<div class="field field-text">
+														<input type="password" name="register_password" id="register_password" />
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col col4of12">
+											<div class="form-row form-row-inline">
+												<label for="register_password_confirm" class="form-label">Повторете парола:</label>
+											
+												<div class="form-controls">
+													<div class="field field-text">
+														<input type="password" name="register_password_confirm" id="register_password_confirm" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- /.cols -->
+								</div>
+							</fieldset>
+
+							<hr />
+
+							<div class="btns">
+								<a href="#" class="btn btn-article"><i class="icon icon-arrow-left"></i>Върнете се към количката</a>
+
+								<button class="btn btn-primary">Изберете начин на доставка</button>
+							</div>
+						</form>
+					</div><!-- /.form -->
+				</main><!-- /.checkout-main -->
+			</div><!-- /.checkout-content -->
+
+			<aside class="checkout-aside">
+				<!--#include virtual="../partials/checkout-aside.shtml"-->
+			</aside>
+		</div>
+	</div><!-- /.main -->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+</body>
+</html>

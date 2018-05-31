@@ -1,0 +1,522 @@
+---
+META: 
+  title: GS Stroimarket
+  keywords: GS Stroimarket
+  description: GS Stroimarket
+  users: 
+    login: Вход
+    register: Регистрация
+    forgotten_password: Забравена Парола
+  pages: 
+    index: Начало
+CMS: 
+  title: Администрация на GS Stroimarket
+logout: Изход
+language: Език
+filter: Филтър
+actions: Действия
+all: Всички
+show: Покажи
+no_results_found: Няма намерени резултати
+main_actions: Действия
+not_permissions_to: Няма права до
+back: Назад
+order_saved: Подредбата е запазена
+confirm_delete: Сигурни ли сте, че искате да изтриете запис?
+confirm_delete_subcategory: Сигурни ли сте, че искате да изтриете категорията? Ще се изтрият всички записи принадлежащи към тази категория.
+add: Добавяне
+preview: Преглед
+home: Начало
+no_records_found: Няма Намерени Резултати
+welcome: Добре дошли в административния панел на
+choose: Избери
+view_all: Виж всички
+error: Грешка
+see_more: Виж още
+read_more: Повече
+hello: Здравейте,
+user_phone: Телефон на потребителя
+order: Твоята поръчка
+work_time_mon_fri: |
+  Понеделник - петък
+work_time_saturday: Събота
+work_time_sunday: Неделя
+work_time: Работно време
+new: Ново
+campaign: Акция
+tip: Строителни Решения
+season_title: RANDOM заглавие на сезонни продукти
+news_title: Новини и статии
+brands_title: Брандове
+LAYOUT: 
+  index: Стандартен
+yes: Да
+no: Не
+leftright: 
+  0: Ляво
+  1: Дясно
+new_window_values: 
+  0: Не
+  1: Да
+yesno: 
+  0: Не
+  1: Да
+hide_title_values: 
+  0: Не
+  1: Да
+reviewed_values: 
+  0: Не
+  1: Да
+active_values: 
+  0: Не
+  1: Да
+apply_for_all_values: 
+  0: Не
+  1: Да
+is_used_values: 
+  0: Не
+  1: Да
+in_main_menu_values: 
+  0: Не
+  1: Да
+buy_by_2_units_values: 
+  0: Не
+  1: Да
+add_to_basket_values: 
+  0: Не
+  1: Да
+buy_on_request_values: 
+  0: Не
+  1: Да
+oversized_values: 
+  0: Не
+  1: Да
+show_unit_1_values: 
+  0: Не
+  1: Да
+show_unit_2_values: 
+  0: Не
+  1: Да
+in_footer_values: 
+  0: Не
+  1: Ляво
+  2: |
+    Дясно - 1
+  3: |
+    Дясно - 2
+  4: |
+    Дясно - 3
+in_topbar_values: 
+  0: Не
+  1: Да
+is_accent_values: 
+  0: Не
+  1: Да
+is_promotion_values: 
+  0: Не
+  1: Да
+accent_homepage_values: 
+  0: Не
+  1: Да
+promo_view_values: 
+  0: Не
+  1: Да
+new_product_values: 
+  0: Не
+  1: Да
+banner_type_values: 
+  1: Банер с една позиция
+  2: Банер с две позиции
+  3: Банер с три позиции
+  5: Банер с пет позиции
+ADMIN: 
+  general_properties: Главни настройки
+  page: Страница
+  link_options: Настройки за Link / Mirror
+PAGE_TYPE: 
+  home: Начална
+  services: Услуги
+  partners: Партньори
+  contacts: Контакти
+  stores: Магазини
+  news: Новини
+  faq: Често Задавани Въпроси
+  sitemap: Карта на сайта
+  timeline: История
+  careers: Кариери
+  text_page: Текстова
+  about_us: За Нас
+  tips: Строителни Решения
+  profile: Профил
+  promotions: Промоции
+  payment: Плащане
+  delivery: Доставка
+  virtual_walk: Виртуална Разходка
+CSS_CLASSES: 
+  0: Без стил
+  someclass: Къстъм клас
+VISIBILITY: 
+  0: Неактивен
+  1: Видим само в Preview
+  2: Видим на сайта
+FILEMANAGER: 
+  upload_file: Качване на файлове
+  make_dir: Създайте директория
+  dir_or_file: Директория/Файл
+  delete: Изтрий избраните
+  mark_for_delete: Маркирай за изтриване
+  rename: Преименувай
+  delete_context: Изтрий
+  up: Директория нагоре
+LANGUAGES: 
+  bg-BG: Български
+  en-US: Aнглийски
+  de-DE: Немски
+FILTERS: 
+  qty: <span class="qty">(%d)</span>
+  brands: 
+    title: Марки
+  price: 
+    title: Цена
+    from_to: |
+      %sлв. - %sлв.
+    from: до %sлв.
+BUTTONS: 
+  show_all: Покажи всички
+  filter: Филтрирай
+  add: Добави
+  edit: Редактиране
+  cancel: Отказ
+  return: Назад
+  save_order: Запази подредбата
+  restore_order: Възстанови подредбата
+  save: Запази
+  delete: Изтрий
+  add_placeholder: Добави Placeholder
+  delete_placeholder: Изтрий последния Placeholder
+  change: Промени
+  add_address: Добавете нов адрес
+  send: Изпрати
+  buy: Купи сега
+  search: Потърси
+WIDGETS: 
+  add: Добави нов уиджет
+  edit: Редактирай уиджет
+  delete: Изтрий уиджет
+BREADCRUMBS_ACTIONS: 
+  news: Новини
+  careers: Кариери
+  index: Списък
+  add: Добавяне
+  edit: Редактиране
+  delete: Изтриване
+  view: Преглед
+MAIN_ACTIONS: 
+  index: Списък
+  add: Добавяне
+  edit: Редактиране
+  delete: Изтриване
+  view: Преглед
+  preview: Преглед
+  back: Назад
+  rebuild_block_cache: Ре-гененирай кеша
+  requests: Запитване
+  careers: Кариери
+  cities: Градове
+  categories: Категории
+  tips: Съветите на майстора
+  brands: Марки
+  manufacturers: Производители
+  sync_prices: Синхронизация на Цени
+  export_products: Експорт Продукти
+  regions_prices: Община -> Цени Без Тегло
+PAGING: 
+  next: Следваща
+  previous: Предишна
+  first: Първа
+  last: Последна
+FLASH_MESSAGES: 
+  add: Записът е добавен успешно
+  edit: Записът е редактиран успешно
+  delete: Записът е изтрит успешно
+DB_FIELDS: 
+  id: ID
+  admin_group_id: Група
+  username: Потребителско име
+  user: Потребител
+  name: Наименование
+  userpass: Парола
+  password: Парола
+  confirm_password: Повторете парола
+  first_name: Име
+  last_name: Фамилия
+  setting_key: Ключ
+  val: Стойност
+  description: Описание
+  date: Дата
+  hour: Час
+  datetime: Дата и час
+  file: Файл
+  image: Изображение
+  picture: Снимка
+  default_image: Снимка
+  title: Заглавие
+  accent: Акцент
+  summary: Кратко описание
+  active: Активност
+  url: URL
+  parent_id: Подстраница на
+  parent_cat_id: Подкатегория на
+  lvl: Ниво
+  category_id: Категория
+  from_date: От дата
+  to_date: До дата
+  created_at: Дата на създаване
+  updated_at: Дата на обновяване
+  address: Адрес
+  email: Е-мейл
+  email_confirm: Потвърди Е-мейл
+  phone: Телефон
+  meta_title: Meta Title
+  meta_keywords: Meta Keywords
+  meta_description: Meta Description
+  content: Основен Текст
+  quote: Цитат
+  slug: Слъг
+  images: Снимки
+  files: Файлове
+  old_slug: Старо URL
+  page_type: Тип страница
+  exclude_from_menu: Скрий от менюто
+  layout: Изглед
+  css_class: CSS Клас
+  visibility: Видимост
+  use_cache: Блокът се кешира
+  items: Елементи
+  author: Автор
+  subtitle: Подзаглавие
+  admin_user_id: Администратор
+  reviewed: Прегледано
+  link: Линк
+  working_time: Работно време
+  related_news: Свързани новини
+  video: Видео
+  price: Цена
+  banner_type: Тип банер
+  published_datetime: Дата на публикуване
+  related_tips: Свързани съвети
+  manufacturer_id: Производител
+  new_price: Нова цена
+  old_price: Стара Цена
+  brand_id: Марка
+  buy_by_2_units: Възможност за покупка по две МЕ?
+  nomenclature_num: Номенк. №
+  catalog_num: Каталожен номер
+  minimal_supply: Минимална наличност
+  unit_1_main: Мерна единица 1
+  unit_2: Мерна единица 2
+  buy_on_request: Бутон По запитване
+  oversized: Извънгабаритна Стока
+  unit_ratio: Съотношение м.ед.
+  accent_homepage: Акцент Главна страница
+  color: цвят
+  old_shop_id: Магазин Старо ID
+  on_request: По запитване
+  promo_view: Изглед Промоция
+  new_product: Нов Продукт
+  currency_unit: Валута
+  logo: Лого
+  city_id: Град ID
+  in_topbar: В Топ бар
+  in_footer: Във Футър
+  in_main_menu: В основно Меню
+  is_accent_homepage: Акцент на Начална страница
+  updated: Обновени
+  new: Нови
+  deactivated: Деактивирани
+  no_update: Необновени
+DB_SAVE_ERRORS: 
+  not_empty: Не може да е празно
+  select_city: Изберете Град
+  already_exists: Вече съществува
+  password_not_match: Паролите не съвпадат
+  email_not_match: Е-мейлите не съвпадат
+  invalid_email: Невалиден е-мейл адрес
+  invalid_captcha: Невалиден код за сигурност
+  wrong_url_format: Невалиден Линк
+  too_long: Броят символи е прекалено голям
+  banner_type_error: Броят на позициите към банер трябва да отговарят на неговия тип
+  invalid_banner_items: Не може да има 4 позиции към тип банер
+  invalid_login: Неуспешено логване
+  invalid_email_or_password: Имейл адресът или паролата са неправилни
+  registered_with_facebook: Регистрирали сте се с Facebook -> влезте в профила си с FB за да получите нова парола
+  registered_with_google: Регистрирали сте се с Google -> влезте в профила си с Google за да получите нова парола
+  wrong: Something Went Wrong
+  promo_code: Невалиден Промо код
+PERMISSIONS: 
+  index: Списък
+  add: Добавяне
+  edit: Редактиране
+  delete: Изтриване
+KEYWORDS: 
+  files: Файлове
+  images: Изображения
+  confirm_delete: Do you confirm deletion
+  current_file: Текущ файл
+  order_saved: Подредбата е записана
+  invalid_login: Невалидни потребителско име/парола
+  invalid_email: Невалиден E-мейл
+TOPMENU: 
+  home: Начало
+  pages: Страници
+  modules: Модули
+  files: Файлов мениджър
+  settings: Настройки
+  labels: Преводи
+  administration: Администрация
+  groups: Групи
+  users: Администратори
+  admin_users: Администратори
+  logs: Логове
+  syncs: Синхронизация
+  imports: Импорт / Експорт
+  admin_sync: Синхронизация
+  admin_import: Импорт / Експорт
+PUBLICMENU: 
+  home: Начало
+CURRENCY: 
+  lv: лв.
+PRICE: 
+  format: <strong>%.2f</strong> лв.
+PROFILE: 
+  personal_data: Лични данни
+  personal_info: Лична информация
+  password_change: Смяна на парола
+  history_orders: История на поръчките
+  electronic_bulletin: Електронен бюлетин
+  personal_data_text: Може да редактирате личните си данни тук
+  company_data: Данни за фирма
+  company_name: Фирма
+  mol: МОЛ
+  bulstat: БУЛСТАТ
+  address: Адрес
+  addresses: Адреси
+  your_address: Вашият адрес
+  receiver: Получател
+  city: Град
+  zip_code: Пощенски код
+  subscription_message: Регистрирайте се за нашия електронен бюлетин и получавайте първи актуална информация за нашите нови и промоционални продукти.
+  email_enter: Въведете вашия е-mail
+  password_old: Въведете настоящата си парола
+  password_new: Въведете новата парола
+  password_confirm: Повторете новата парола
+  save: Запишете промяната
+  date: Дата
+  order: Поръчка
+  order_data: Данни за поръчка
+  order_status: Статус на поръчката
+  show_details: Виж детайли
+  final_price: Кр. цена
+  final_price_full: Крайна цена
+  delivery_type: Начин на доставка
+  payment_type: Начин на плащане
+  type: Тип
+  intermediate_price: Междинна цена
+  vat: ДДС
+  delivery: Доставка
+  delivery_message: Калкулира се, след избор на доставка
+  logout: Изход
+  agree: Съгласявам се с
+  conditions: общите условия
+CART: 
+  view_order: Преглед на поръчката
+  payment: Начин на плащане
+  delivery_way: Начин на доставка
+  personal_info: Лична информация
+  cart: Количка
+  finish_order: Завършете поръчката
+  register: Имате вече регистрация?
+  login: Влезте от тук
+  product: Продукт
+  quantity: Кол
+  quantity_full: Количество
+  one_price: Ед. цена
+  final_price: Крайна цена
+  discount: Отстъпка
+  continue_shopping: Продължете с пазаруването
+  middle_price: Междинна цена
+  vat: ДДС
+  delivery: Доставка
+  delivery_info: Информация за доставка
+  calculate_msg: (Калкулира се, след избор на доставка)
+  final_price_short: Кр. цена
+  delivery_choose: Изберете начин на доставка
+  our_shop: От наш магазин
+  office_choose: Изберете офис
+  your_address: Вашият адрес
+  personal_info_return: Върнете се към лична информация
+  payment_choose: Изберете начин на Плащане
+  company_data: Фирмени данни
+  legal_entity: Вие сте юридическо лице?
+  basket_return: Върнете се към количката
+  email: Вашия е-mail
+  cash_on_delivery: Наложен платеж
+  msg: (това включва и плащане на каса на магазина)
+  bank_transaction: Банков превод
+  credit_debit_card: Кредитна / Дебитна карта
+  e_pay: еPay
+  pay_pal: PayPal
+  payment_return: Върнете се към начин на доставка
+  to_address: До адрес
+  registrate: Регистрация
+  registry_choose: Искате да се регистрирате? (Отнема няколко секунди)
+  address_name: Име на адреса
+  zip_code_short: ПК
+  code_enter: Ако имате код за отстъпка, въведете тук
+  add: Добавете
+  new_address: Добави друг адрес
+  more_info: Допълнителна информация
+  delivery_msg: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit eveniet excepturi, ratione voluptatum, odio quis quasi fugit eos necessitatibus velit rerum sapiente veniam temporibus incidunt nobis dolorem quisquam mollitia voluptas. Sint nam eveniet facere inventore cupiditate,suscipit odio fugiat earum temporibus alias animi, qui, quas ut repellendus. Quae perferendis, a.
+  complete_message: Lorem Ipsum е елементарен примерен текст, използван в печатарската и типографската индустрия. Lorem Ipsum е индустриален стандарт от около 1500 година, когато неизвестен печатар взема няколко печатарски букви и ги разбърква,за да напечата с тях книга с примерни шрифтове.
+  complete: Успешно завършихте вашата поръчка
+  fail: Поръчката не е приета
+  fail_message: Lorem Ipsum е елементарен примерен текст, използван в печатарската и типографската индустрия. Lorem Ipsum е индустриален стандарт от около 1500 година, когато неизвестен печатар взема няколко печатарски букви и ги разбърква,за да напечата с тях книга с примерни шрифтове.
+  continue_to_site: Продължете към сайта
+  oversized_msg: >
+    Вашата количка съдържа поне един извънгабаритен артикул или общо тегло над 1000кг. Цената за транспорт на доставката ще бъде уточнена с Вас при разговор с Администратор Поръчки на GS Строймаркет, като бъде съобразена спрямо Ценоразписът за Извънгабаритни иТежки Товари (<a
+    href="#">линк</a>), както и с Вашите конкретни нужди и предпочитания.
+  oversized_thanks: Благодарим за разбирането!
+  oversized_hello: Здравейте,
+  oversized: Извън Габаритен
+  discount_msg: Уважаеми клиенти, отстъпки при въведен промо код или номер на клубна карта се начисляват само върху продукти, които не са в промоция!
+  empty_cart: Моля добавете продукти в количката
+  terms: Общи условия
+  agree: Доброволно предоставям личните си данни за обработка.
+  unavailable_online: Неналично онлайн
+  available_online: Налично онлайн
+NOT_FOUND: 
+  message: Търсената от вас страница, не бе намерена
+  breadcrumb: |
+    404 - Страницата, която търсите не бе намерена
+  home: Начало
+  redirect_home: Към начална страница
+PAYMENT: 
+  1: Наложен платеж
+  2: Кредитна / Дебитна карта
+  3: ePay
+  4: PayPal
+DELIVERY: 
+  1: От наш магазин
+  2: До адрес
+LANGUAGES_PUBLIC: 
+  bg: BG
+  en: EN
+  de: DE
+PAYMENT_STATUS: 
+  1: Изпълнена
+  2: Отказана
+  3: Обработва се
+FILTER: 
+  1: Сортирай
+  2: Цена
+  3: Марка

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<div class="main checkout">
+		<div class="wrapper">
+			<div class="checkout-content">
+				<header class="checkout-header">
+					<a href="index.html" class="logo">
+						<img src="../../assets/images/logo2x.png" alt="logo" />
+					</a>
+
+					<div class="user-preview">
+						<!-- !!! Guest user !!! -->
+						<!-- <p class="checkout-login">Имате вече регистрация? <a href="#">Влезте от тук</a></p> -->
+
+						<!-- !!! Loggedin user !!! -->
+						<p class="checkout-greet">Здравейте, <a href="profile-personal.html">Никола Гударовски</a>!</p>
+					</div>
+				</header>
+
+				<main class="checkout-main">
+					<h1 class="title-primary">Завършете поръчката</h1>
+
+					<div class="steps">
+						<div class="steps-item is-completed">
+							<span class="number">01</span>
+							<span class="label">Количка</span>
+						</div>
+
+						<div class="steps-item is-completed">
+							<span class="number">02</span>
+							<span class="label">Лична информация</span>
+						</div>
+
+						<div class="steps-item is-selected">
+							<span class="number">03</span>
+							<span class="label">Начин на доставка</span>
+						</div>
+
+						<div class="steps-item">
+							<span class="number">04</span>
+							<span class="label">Начин на плащане</span>
+						</div>
+
+						<div class="steps-item">
+							<span class="number">05</span>
+							<span class="label">Преглед на поръчката</span>
+						</div>
+					</div>
+
+					<div class="form form-checkout step3">
+						<form action="#" id="js-form-delivery" novalidate>
+							<hr />
+							
+							<fieldset>
+								<legend>Изберете начин на доставка</legend>
+
+								<div class="checkout-addresses">
+									<div class="addresses">
+										<div class="addresses-item">
+											<div class="choose radio">
+												<input type="radio" name="delivery_type" id="delivery_type1" data-type="parent" value="1" />
+												<label for="delivery_type1">От наш магазин</label>
+
+												<div class="form-toggle">
+													<div class="cols cols-full">
+														<div class="col col6of12">
+															<div class="form-row form-row-inline">
+																<label for="delivery_store" class="form-label">Изберете офис:</label>
+																
+																<div class="form-controls">
+																	<div class="field field-select">
+																		<select name="delivery_store" id="delivery_store">
+																			<option value="1">Магазин-Каварна, ул. “Строител” 1</option>
+																			<option value="2">Магазин-Каварна, ул. “Строител” 10</option>
+																		</select>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="addresses-item">
+											<div class="choose radio">
+												<input type="radio" name="delivery_type" id="delivery_type2" data-type="parent" value="2" />
+												<label for="delivery_type2">До адрес</label>
+										
+												<div class="form-toggle">
+													<div class="choose radio">
+														<input type="radio" name="delivery_address" id="delivery_address1" value="1" checked="checked" />
+														<label for="delivery_address1">В офиса</label>
+													
+														<div class="form-toggle">
+															<div class="pad pad-basic">
+																<div class="content">
+																	<div class="text">
+																		<p>Град: <strong>Шабла</strong></p>
+																		<p>Пощенски код: <strong>5015</strong></p>
+																		<p>Адрес: <strong>ул. Мусала 25, вх. А, ет. 3, ап.12</strong></p>
+																	</div>
+																</div>
+															</div><!-- /.pad -->
+														</div>
+													</div>
+
+													<div class="choose radio">
+														<input type="radio" name="delivery_address" id="delivery_address2" value="2" />
+														<label for="delivery_address2">Вкъщи</label>
+													
+														<div class="form-toggle">
+															<div class="pad pad-basic">
+																<div class="content">
+																	<div class="text">
+																		<p>Град: <strong>Шабла</strong></p>
+																		<p>Пощенски код: <strong>5015</strong></p>
+																		<p>Адрес: <strong>ул. Мусала 25, вх. А, ет. 3, ап.12</strong></p>
+																	</div>
+																</div>
+															</div><!-- /.pad -->
+														</div>
+													</div>
+
+													<div class="choose radio">
+														<input type="radio" name="delivery_address" id="delivery_address3" value="3" />
+														<label for="delivery_address3">Добави друг адрес</label>
+													
+														<div class="form-toggle">
+															<div class="cols cols-full">
+																<div class="col col6of12">
+																	<div class="form-row form-row-inline">
+																		<label for="personal_name" class="form-label required">Име на адреса:</label>
+																	
+																		<div class="form-controls">
+																			<div class="field field-text">
+																				<input type="text" name="personal_name" id="personal_name" required />
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																														
+																<div class="col col4of12">
+																	<div class="form-row form-row-inline">
+																		<label for="personal_city" class="form-label required">Град:</label>
+																	
+																		<div class="form-controls">
+																			<div class="field field-text">
+																				<input type="text" name="personal_city" id="js-choose-city" required />
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																
+																<div class="col col2of12">
+																	<div class="form-row form-row-inline">
+																		<label for="personal_post_code" class="form-label required">ПК:</label>
+																	
+																		<div class="form-controls">
+																			<div class="field field-text">
+																				<input type="text" name="personal_post_code" id="personal_post_code" required />
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div><!-- /.cols -->
+															
+															<div class="cols cols-full">
+																<div class="col col12of12">
+																	<div class="form-row form-row-inline">
+																		<label for="personal_address" class="form-label required">Адрес:</label>
+																	
+																		<div class="form-controls">
+																			<div class="field field-text">
+																				<input type="text" name="personal_address" id="personal_address" required />
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div><!-- /.cols -->
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- /.addresses -->
+								</div><!-- /.checkout-addresses -->
+
+								<div class="form-row">
+									<label for="delivery_note" class="form-label required">Допълнителна информация:</label>
+																		
+									<div class="form-controls">
+										<div class="field field-text">
+											<textarea name="delivery_note" id="delivery_note" required></textarea>
+										</div>
+									</div>
+								</div><!-- /.form-row -->
+							</fieldset>
+
+							<hr />
+
+							<div class="btns">
+								<a href="#" class="btn btn-article"><i class="icon icon-arrow-left"></i>Върнете се към лична информация</a>
+
+								<button class="btn btn-primary">Изберете начин на доставка</button>
+							</div>
+						</form>
+					</div><!-- /.form -->
+				</main><!-- /.checkout-main -->
+			</div><!-- /.checkout-content -->
+
+			<aside class="checkout-aside">
+				<!--#include virtual="../partials/checkout-aside.shtml"-->
+			</aside>
+		</div>
+	</div><!-- /.main -->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+<script>
+	$(document).ready(function() {
+		// choose delivery type
+		var $formDelivery = $('#js-form-delivery');
+
+		if ($formDelivery.length) {
+			var $triggers = $formDelivery.find('input[type="radio"]');
+			var $toggleHolders = $formDelivery.find('.form-toggle');
+			var $allFormElements = $toggleHolders.find('input, select, textarea');
+
+			function summaryUpdate() {
+				$.ajax({
+					url: '../ajax/cart-delivery.json',
+					type: 'POST',
+					dataType: 'json',
+					data: $formDelivery.serialize(),
+					success: function(json) {
+						if (json.success) {
+							$('.checkout-summary').html('');
+							$('.checkout-summary').html(json.html);
+						}
+					}
+				});
+			}
+
+			// disable inactive fields
+			$allFormElements.each(function() {
+				$(this).prop('disabled', true);
+			});
+
+			$triggers.on('change', function() {
+				var $this = $(this);
+				var $currentFormElements = $this.closest('.choose').find('.form-toggle').find('input, select, textarea');
+
+				$allFormElements.each(function() {
+					$(this).prop('disabled', true);
+				});
+
+				if ($this.data('type') === 'parent') {
+					var $currentFormElementsExcluded = $this.closest('.choose').find('.form-toggle .form-toggle').find('input, select, textarea');
+
+					if ($this.is(':checked')) {
+						$currentFormElements.each(function() {
+							$(this).prop('disabled', false);
+						});
+
+						if ($currentFormElementsExcluded.length) {
+							$currentFormElementsExcluded.each(function() {
+								$(this).prop('disabled', true);
+							});
+						}
+					}
+				} else {
+					$this.closest('.form-toggle').find('input[type="radio"]').each(function() {
+						$(this).prop('disabled', false);
+					});
+
+					$currentFormElements.each(function() {
+						$(this).prop('disabled', false);
+					});
+				}
+
+				summaryUpdate();
+			});
+
+			$('#js-choose-city').on('change', function() {
+				summaryUpdate();
+			});
+		}
+
+		// cities autocomplete
+		var cities = [
+			{"value": "Sofia"},
+			{"value": "Sofia1"},
+			{"value": "Sofia2"},
+			{"value": "Sofia3"},
+			{"value": "Varna"},
+			{"value": "Sofia"},
+			{"value": "Sofia1"},
+			{"value": "Sofia2"},
+			{"value": "Sofia3"},
+			{"value": "Varna"},
+			{"value": "Sofia"},
+			{"value": "Sofia1"},
+			{"value": "Sofia2"},
+			{"value": "Sofia3"},
+			{"value": "Varna"},
+			{"value": "Sofia"},
+			{"value": "Sofia1"},
+			{"value": "Sofia2"},
+			{"value": "Sofia3"},
+			{"value": "Varna"},
+			{"value": "Plovdiv"}
+		];
+
+		$('#js-choose-city').autocomplete({
+			lookup: cities,
+		});
+	});
+</script>
+</body>
+</html>

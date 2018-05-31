@@ -1,0 +1,35 @@
+{tinymce controller=pages}
+<div class="wrapper" id="cnt">
+	<div class="layout-3-4">
+		<!-- Left navigation -->
+		<div class="layout-1-4">
+			<a href="javascript:;" class="addBlock" rel="right">Add block</a>
+			#menu
+		</div>
+
+		<!-- Content of page -->
+		<div class="layout-2-4 last text-resize">
+			<a href="javascript:;" class="addBlock" rel="right">Add block</a>
+			<h1 class="heading">{$form_object->title}</h1>
+
+			<div class="push"></div>
+		</div>
+	</div>
+
+	<aside class="layout-1-4 last">
+		<a href="javascript:;" class="addBlock" rel="right">Add block</a>
+	</aside>
+	<div class="push"></div>
+</div>
+
+<script type="text/javascript">
+{literal}
+	var height = 500;
+	setInterval(function(){
+		if($('body').height() < 500){
+			height = 500;
+		}
+		parent.setFrameHeight(height)
+	},500);
+{/literal}
+</script>

@@ -1,0 +1,9 @@
+{
+	"success": true,
+	"products_count": 2,
+	"cart_quick": "<table class=\"table table-cart-quick\"><thead><tr><th>Продукт</th><th>Кол.</th><th>Ед. цена</th></tr></thead><tbody><tr><td>Test Product 1</td><td>1</td><td>10.90</td></tr><tr><td>Test Product 2</td><td>14</td><td>23.90</td></tr></tbody><tfoot><tr><td>Крайна цена</td><td colspan=\"2\">723.90</td></tr></tfoot></table>",
+	"cart": {
+		"row_total": "12.34",
+		"summary": "<div class=\"summary\"><div class=\"summary-row\"><p class=\"label\">Междинна цена:</p><p class=\"price\"><strong>10.88</strong> лв.</p></div><div class=\"summary-row\"><p class=\"label\">ДДС:</p><p class=\"price\"><strong>2.20</strong> лв.</p></div><div class=\"summary-row\"><p class=\"label\">Крайна цена:</p><p class=\"price\"><strong>13.62</strong> лв.</p></div></div>"
+	}
+}

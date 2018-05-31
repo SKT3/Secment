@@ -1,0 +1,8 @@
+{if $page}
+	<option value="{$page->id}"{if $current eq $page->id} selected{/if} data-slug="{$page->slug}">{"&nbsp;"|str_repeat:$page->lvl}{$page->title}</option>
+	{if $page->has_children()}
+		{foreach from=$page->get_children() item=sub name=subs key=sid}
+			{include file='admin/pages/_subpages_option.htm' page=$sub}
+		{/foreach}
+	{/if}
+{/if}

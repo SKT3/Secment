@@ -1,0 +1,6 @@
+---
+FLASH_MESSAGES: 
+  password_changed_successful: Успешно смемена парола
+  old_password_doesnt_match: Грешна настояща парола
+  not_empty: Не може да е празно поле
+  password_doesnt_match: Паролите не съвпадат

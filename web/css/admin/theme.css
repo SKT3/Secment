@@ -1,0 +1,256 @@
+/* See http://www.colorzilla.com/gradient-editor/ for gradient builder */
+/* See http://border-radius.com/ for border radius builder*/
+/* See http://css3gen.com/box-shadow/ for box shadow generator */
+
+/* BOX SIZING */
+* {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+}
+
+.mce-container * {
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece {
+	background-color: rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb {
+	background-color: rgba(53, 57, 71, 0.6);
+	width: 4px;
+	height: 4px;
+	-webkit-border-radius: 0px;
+}
+::-webkit-scrollbar {
+	width: 4px;
+	height:4px;
+	-webkit-border-radius: 0px;
+}
+
+#footer {
+	background-color: #9f080d;
+}
+
+
+
+/***************************************** List Display & List Filter *****************************************/
+	.list , .filter {
+		background: #FFF;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+		float: left;
+	}
+
+	.filter {
+		width: 26%;
+		margin-right: 2%;
+	}
+
+	.filter h3 {
+		background: #F8F8F8;
+		color: #000;
+		font-size: 16.5px;
+		font-weight: normal;
+		padding: 8px 15px 10px;
+		border-bottom: 1px solid #DDD;
+		line-height: 24px;
+		display: block;
+		position: relative;
+	}
+
+	.filter table {
+		width: 100%;
+	}
+
+	.filter td {
+		width: 50%;
+	}
+
+	.filter label {
+		display: inline-block;
+		/*float: left;*/
+		width: 100%;
+	}
+
+	.filter input{
+		width: 100%;
+		/*float: right;*/
+		box-sizing:border-box;
+		-moz-box-sizing:border-box; /* Firefox */
+	}
+	.filter select  {
+		width: 100%;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box; /* Firefox */
+
+	}
+
+
+	.filter button {
+		float: right;
+		line-height: 14px;
+	}
+	.filter h3 button {
+		position: absolute;
+		top:10px;
+		right:10px;
+		/*padding:2px 5px;*/
+		background:none;
+		color:#000;
+	}
+
+	.filter h3 button:hover {
+		background:#000;
+		color: #FFF;
+	}
+
+	.list {
+		width: 72%;
+	}
+
+	.list.no-filter {
+		width: 100%;
+	}
+
+	.list th {
+	   border-bottom: 2px solid #DDD;
+	   padding: 8px;
+	   line-height: 1.428571429;
+	   font-size: 14px;
+	}
+
+	.list td, .filter td {border-bottom: 1px solid #ddd; padding: 8px; vertical-align: middle; font-size: 13px; word-break: break-word;}
+
+
+/*************************************** Add Module Tabs *************************************/
+#add_module.ui-dialog-content {
+	padding:0;
+	overflow: hidden;
+}
+#add_module #tabs.ui-tabs {
+	padding:0;
+}
+.ui--tabs.ui-tabs-vertical { padding:0; }
+.ui-tabs-vertical { width: 920px; border: none; margin:10px 0 10px 10px; }
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav { padding: 0; float: left; width: 220px; border: none; background: none; padding:none; }
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border:none; border-bottom: 1px solid #333; border-radius: 0;  border:1px solid #E8E8E8; border-width: 1px 0 1px 0 !important; border-bottom-width:2px !important;}
+.ui-tabs-vertical .ui-tabs-nav li a { display:block; width: 100%; padding:5px 0; text-indent: 0px; }
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a {padding:0; font-size:12px; padding:5px 0;}
+.ui-tabs-vertical .ui-tabs-nav li a img { vertical-align: middle;}
+.ui-tabs-vertical .ui-tabs-nav li.ui-state-default {background: #FFF; }
+.ui-tabs-vertical .ui-tabs-nav li.ui-state-hover {  background: #FFF; }
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active, .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active.ui-state-hover { background: #F8F8F8; border:1px solid #E1E1E1; border-width: 1px 0 1px 0 !important; border-bottom-width:2px !important; border-right:1px solid #F8F8F8; width: 100%;}
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active a { color:#000; }
+.ui-tabs.ui-tabs-vertical .ui-tabs-panel { padding: 10px 0; float: left; width: 698px; background: #F8F8F8; text-indent: 20px; min-height: 300px; border:none; box-shadow: none; border:1px solid #E1E1E1; border-width: 1px; }
+
+
+/***************************************** Paginator *****************************************/
+
+	#paginator ol.pagination li a {color: #ffffff;}
+
+	#paginator ol.pagination li a span {
+		background-color: #9f080d;
+		/*border: 1px solid #555555;*/
+		color: #FFFFFF;
+	}
+
+	#paginator ol.pagination li a:hover span, #paginator ol.pagination li a.active span {
+		color: #9f080d;
+		background-color:#F8F8F8;
+		/*border: 1px solid #E3E3E3;*/
+	}
+
+
+/***************************************** Form Elements *****************************************/
+input[type=text],
+input[type=password],
+input[type=file],
+textarea,
+select {
+	border: 1px solid #c0c5c6;
+	background: #eeeeee;
+	color:#464646;
+}
+
+input:focus, select:focus, textarea:focus {background:#ffffff;}
+
+.error input,
+.error textarea,
+.error select {
+ background: #f6cac5;
+}
+
+.error .err {color:#AA0000;}
+
+
+/***************************************** Flash Messages *****************************************/
+.gritter-item {color:#fff;}
+
+.gritter-item-wrapper {
+	background: rgb(142,193,229);
+	background: -moz-linear-gradient(top,  rgb(142,193,229) 0%, rgb(105,171,220) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(142,193,229)), color-stop(100%,rgb(105,171,220)));
+	background: -webkit-linear-gradient(top,  rgb(142,193,229) 0%,rgb(105,171,220) 100%);
+	background: -o-linear-gradient(top,  rgb(142,193,229) 0%,rgb(105,171,220) 100%);
+	background: -ms-linear-gradient(top,  rgb(142,193,229) 0%,rgb(105,171,220) 100%);
+	background: linear-gradient(to bottom,  rgb(142,193,229) 0%,rgb(105,171,220) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ec1e5', endColorstr='#69abdc',GradientType=0 );
+
+}
+
+
+/* Pages */
+.dd {
+	background: #FFF;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	/*padding:20px;*/
+}
+
+
+
+#main_form fieldset textarea, .main_form fieldset textarea.plain-text-big {
+	height:350px;
+}
+
+#main_form fieldset textarea.small {
+	height:80px;
+}
+
+#price-rows {
+	width: 1000px;
+}
+
+	#price-rows > div {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 10px 5px 400px;
+	}
+
+		#price-rows > div > * {
+			flex: 0 0 24%;
+		}
+		#price-rows > div > a {
+			flex: 0 0 4%;
+			margin-left: 50px;
+			color: red;
+			width: 1%;
+			font-size: x-large;
+		}
+
+		#add_price {
+			float: right;
+			color: white;
+			border: 2px ;
+			font-size: larger;
+			width: auto;
+			padding: 10px 5px 10px 5px;
+			background-color: #9f080d;
+		}
+
+.head_span > span {
+	margin:0 auto;
+	font-size: large;
+	margin-right: 10px;
+	padding: 9px 0px 5px 0px;
+	font-family: "Rockwell Extra Bold";
+}

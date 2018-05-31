@@ -1,0 +1,6 @@
+{
+	"success": true,
+	"message": "Успешно добавихте продукт в количката си.",
+	"products_count": 2,
+	"cart_quick": "<table class=\"table table-cart-quick\"><thead><tr><th>Продукт</th><th>Кол.</th><th>Ед. цена</th></tr></thead><tbody><tr><td>Test Product 1</td><td>1</td><td>10.90</td></tr><tr><td>Test Product 2</td><td>14</td><td>23.90</td></tr></tbody><tfoot><tr><td>Крайна цена</td><td colspan=\"2\">723.90</td></tr></tfoot></table>"
+}

@@ -1,0 +1,121 @@
+<div class="gallery" id="upload_{$file_extraupload.options.id}">
+	<!-- <label>{$_labels.DB_FIELDS.gallery}</label> -->
+	<div class="fileinput-button button">
+		Upload file{if $file_extraupload.options.multiple}s{/if}
+		<input id="{$file_extraupload.options.id}" type="file" {if !$file_extraupload.options.multiple}class="single"{else}multiple="multiple"{/if} name="{$file_extraupload.options.keyname}" data-url="{url_for action=xhr method=upload_file file_model=FileExtra id=$file_extraupload.options.current_object_id keyname=$file_extraupload.options.keyname model=$file_extraupload.options.model}" />
+	</div>
+
+	<ul class="files" data-sort="{url_for action=xhr method=sort_files}">
+
+	</ul>
+</div>
+
+<script type="text/javascript">
+{literal}
+
+$(function () {
+	$.ajax({
+	  	url: '{/literal}{url_for action=xhr method=get_files file_model=FileExtra id=$file_extraupload.options.current_object_id keyname=$file_extraupload.options.keyname current_model="" model=$file_extraupload.options.model}{literal}',
+  		success: function(data){
+  			if(data.files){
+  				$.each(data.files, function(i, elem){
+  					if($('#{/literal}{$file_extraupload.options.id}{literal}').hasClass('single')){
+						$('#upload_{/literal}{$file_extraupload.options.id}{literal} .files').append('<li id="f_'+elem.id+'">\
+							<input class="middle trigger_blur" type="text" data-file-object-id="'+elem.id+'" name="caption['+elem.id+']" value="'+elem.caption+'" /> \
+							<a class="link" href="'+elem.img+'" target="_blank"></a> \
+							<strong>'+elem.name+'</strong> \
+							<em>('+elem.size+')</em> \
+							<button class="delete button" type="button" data-url="'+elem.delete_url+'">X</button> \
+						</li>');
+					}else{
+	  					$('#upload_{/literal}{$file_extraupload.options.id}{literal} .files').append('<li id="f_'+elem.id+'">\
+	  						<input class="middle trigger_blur" type="text" data-file-object-id="'+elem.id+'" name="caption['+elem.id+']" value="'+elem.caption+'" /> \
+							<span class="handle"></span> \
+							<a class="link" href="'+elem.img+'" target="_blank"></a> \
+							<strong>'+elem.name+'</strong> \
+							<em>('+elem.size+')</em> \
+							<button class="delete button" type="button" data-url="'+elem.delete_url+'">X</button> \
+						</li>');
+					}
+  				});
+  			}
+ 		},
+ 		dataType: 'JSON'
+ 	});
+	$('{/literal}#{$file_extraupload.options.id}{literal}').fileupload({
+		dataType: 'json',
+		autoUpload: true,
+		sequentialUploads: true,
+		acceptFileTypes: '/(\.|\/)(gif|jpe?g|png|pdf|doc?x)$/i' ,
+		send: function(e, data) {
+			$("#ajax-load").css("visibility", 'visible');
+			$("#ajax-load").css("z-index", 1000);
+		},
+		done: function (e, data) {
+			if(data.result.error){
+				console.log(data.result.error);
+				alert(data.result.error.{/literal}{$file_extraupload.options.keyname}{literal});
+				return false;
+			}
+			$("#ajax-load").css("visibility", 'hidden');
+			$("#ajax-load").css("z-index", 0);
+
+			if($('#{/literal}{$file_extraupload.options.id}{literal}').hasClass('single'))
+			{
+				$('#upload_{/literal}{$file_extraupload.options.id}{literal} .files li').remove();
+				$('#upload_{/literal}{$file_extraupload.options.id}{literal} .files').append('<li id="f_'+data.result.id+'">\
+					<input class="middle trigger_blur" type="text" data-file-object-id="'+data.result.id+'" name="caption['+data.result.id+']" value="" /> \
+					<strong>'+data.result.name+'</strong> \
+					<em>('+data.result.size+')</em> \
+					<button class="delete button" type="button" data-url="'+data.result.delete_url+'">X</button> \
+				</li>');
+			}
+			else { 
+				$('#upload_{/literal}{$file_extraupload.options.id}{literal} .files').append('<li id="f_'+data.result.id+'" style="display:none;">\
+					<input class="middle trigger_blur" type="text" data-file-object-id="'+data.result.id+'" name="caption['+data.result.id+']" value="" /> \
+					<span class="handle"></span> \
+					<strong>'+data.result.name+'</strong> \
+					<em>('+data.result.size+')</em> \
+					<button class="delete button" type="button" data-url="'+data.result.delete_url+'">X</button> \
+				</li>');
+				$('#f_'+data.result.id).slideDown('normal');
+			}
+		},
+	});
+});
+
+//update extra attributes 
+
+$("#main_form").on("blur",".trigger_blur",function() {
+	file_id = ($(this).data('file-object-id')) ? $(this).data('file-object-id') : null ;
+	action_type = '{/literal}{if $file_extraupload.options.current_object_id}edit{else}add{/if}{literal}';
+	caption = ($(this).val()) ? $(this).val() : null;
+	$.ajax({
+	  	url: '{/literal}{url_for action=xhr}{literal}?method=files_extra_attributes&action_type='+action_type+'&file_model=fileExtra&id='+file_id+'&caption='+caption,
+  		dataType: 'JSON',
+  		success: function(data) {	
+  			},
+  		});	
+});
+
+$('#upload_{/literal}{$file_extraupload.options.id}{literal} .files button.delete').live('click',function(){
+	obj = this;
+	if(confirm('Delete file: '+ $(this).parent().find('strong').text())){
+		$.get($(this).attr('data-url'),{},function(){
+			$(obj).parent().slideUp('normal',function(){
+				$(this).remove();
+			});
+		})
+	}
+});
+
+$('#upload_{/literal}{$file_extraupload.options.id}{literal} .files').sortable({
+	handle: ".handle",
+	placeholder: "ui-state-highlight",
+	update: function(event,ui) {
+		$.get($('#upload_{/literal}{$file_extraupload.options.id}{literal} .files').attr('data-sort')+'&'+$('#upload_{/literal}{$file_extraupload.options.id}{literal} .files').sortable('serialize'))
+	},
+});
+//$('#upload_{/literal}{$file_extraupload.options.id}{literal} .files').disableSelection();
+{/literal}
+</script>

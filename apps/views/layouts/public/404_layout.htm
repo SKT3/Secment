@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    {include file="layouts/public/_head.htm"}
+<body>
+<div class="container" id="js-container">
+    <header class="header">
+        {include file="layouts/public/_header.htm"}
+    </header>
+    <div class="main">
+        <div class="main-head">
+            <div class="wrapper">
+                <div class="main-head-inner">
+                    <div class="main-head-inner-wrap">
+                        <nav class="breadcrumbs">
+                            <ul>
+                                <li><a href="index.html">{$_labels.NOT_FOUND.home}</a></li>
+                                <li>{$_labels.NOT_FOUND.breadcrumb}</li>
+                            </ul>
+                        </nav>
+
+                        <h1 class="title-primary">{$_labels.NOT_FOUND.breadcrumb}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-body full">
+            <div class="wrapper">
+                <main class="main-content">
+                    <div class="block block-404">
+                        <div class="pad pad-primary">
+                            <article class="article article-404">
+                                <img src="{$_public}images/404.jpg" alt=""/>
+
+                                <p>&nbsp;</p>
+
+                                <h2>{$_labels.NOT_FOUND.message}</h2>
+
+                                <p>&nbsp;</p>
+
+                                <p><a href="#" class="btn btn-primary">{$_labels.NOT_FOUND.redirect_home}</a></p>
+                            </article>
+                        </div><!-- /.pad -->
+                    </div><!-- /.block -->
+                </main>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        {include file="layouts/public/_footer.htm"}
+    </footer>
+
+    <div class="overlay-global" id="js-overlay"></div>
+
+</div>
+<script type="text/javascript" src="{$_public}frontend/assets/build/build.js"></script>
+{foreach from=$included_js item=item}
+<script src="{$_public}js/{$item}.js"></script>
+{/foreach}
+</body>
+</html>
+
+

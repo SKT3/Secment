@@ -1,0 +1,13 @@
+<!-- !!! Guest user !!! -->
+<ul>
+	<li><a href="login.html">Вход</a></li>
+	<li><a href="register.html">Регистрация</a></li>
+</ul>
+
+<!-- !!! Loggedin user !!! -->
+<!-- <p class="header-greet">Здравейте, <a href="profile-personal.html">Никола Гударовски</a>!</p> -->
+
+<ul>
+	<li><a href="contacts.html">Контакти</a></li>
+	<li><a href="careers-listing.html">Кариери</a></li>
+</ul>

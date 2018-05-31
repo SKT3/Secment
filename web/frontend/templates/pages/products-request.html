@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<!--#include virtual="../partials/header.shtml"-->
+
+	<div class="main">
+		<div class="main-head">
+			<div class="wrapper">
+				<div class="main-head-inner">
+					<div class="main-head-inner-wrap">
+						<nav class="breadcrumbs">
+							<ul>
+								<li><a href="index.html">Начало</a></li>
+								<li><a href="products-categories-listing.html">Инструменти и техника</a></li>
+								<li><a href="products-categories-listing.html">Ръчни инструменти</a></li>
+								<li>Изпратете запитване</li>
+							</ul>
+						</nav>
+						
+						<h2 class="title-primary">Изпратете запитване</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- !!! ADD class="full" WHEN SIDEBAR IS MISSING !!! -->
+		<div class="main-body full">
+			<div class="wrapper">
+				<main class="main-content">
+					<div class="block block-small block-entrance">
+						<div class="pad pad-secondary">
+							<div class="block-content">
+								<div class="form form-basic form-register">
+									<p class="form-title">Изпратете запитване</p>
+					
+									<form action="#">
+										<div class="form-row">
+											<label for="request-full-name" class="form-label required">Име:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="text" name="name" id="request-full-name" required />
+												</div>
+											</div>
+										</div>
+					
+										<div class="form-row">
+											<label for="request-email" class="form-label required">E-mail:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="email" name="email" id="request-email" required />
+												</div>
+											</div>
+										</div>
+					
+										<div class="form-row">
+											<label for="request-tel" class="form-label required">Телефон:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="tel" name="tel" id="request-tel" required />
+												</div>
+											</div>
+										</div>
+					
+										<div class="form-row">
+											<label for="request-city" class="form-label required">Населено място:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="text" name="city" id="request-city" required />
+												</div>
+											</div>
+										</div>
+					
+										<div class="form-row">
+											<label for="request-subject" class="form-label required">Тема на запитването:</label>
+										
+											<div class="form-controls">
+												<div class="field field-text">
+													<input type="text" name="subject" id="request-subject" required disabled value="ЪГЛОШЛАЙФ с.БОШ GWS 1000 + ДИАМАНТЕН ДИСК" />
+												</div>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<label for="request-message" class="form-label required">Съобщение:</label>
+										
+											<div class="form-controls">
+												<div class="field field-area">
+													<textarea name="message" id="request-message" required></textarea>
+												</div>
+											</div>
+										</div>
+					
+										<div class="btns">
+											<button class="btn btn-primary">Изпрати</button>
+										</div>
+									</form>
+								</div><!-- /.form -->
+							</div>
+						</div><!-- /.pad -->
+					</div><!-- /.block -->
+				</main>
+			</div>
+		</div>
+	</div><!-- /.main -->
+
+	<!--#include virtual="../partials/footer.shtml"-->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+<script>
+	// cities autocomplete
+	var cities = [
+		{"value": "Sofia"},
+		{"value": "Sofia1"},
+		{"value": "Sofia2"},
+		{"value": "Sofia3"},
+		{"value": "Varna"},
+		{"value": "Plovdiv"}
+	];
+
+	$('#request-city').autocomplete({
+		lookup: cities,
+	});
+</script>
+</body>
+</html>	

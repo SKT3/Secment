@@ -1,0 +1,8 @@
+ADMIN:
+    list			:	1
+    add				:	1
+    edit			:	1
+    delete			:	1
+
+FIELDS_EXCLUDE:
+    key				:	1

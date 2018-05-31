@@ -1,0 +1,5 @@
+{if isset($smarty.get.order)}
+<div id="paginator"{if $has_filter} class="has_filter"{/if}>{paging from=$pages range=4 order=$smarty.get.order}</div>
+{else}
+<div id="paginator"{if $has_filter} class="has_filter"{/if}>{paging from=$pages range=4 order=null}</div>
+{/if}

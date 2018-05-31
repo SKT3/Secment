@@ -1,0 +1,24 @@
+<div id="welcome">
+	{$_labels.welcome} {$_labels.meta.title}
+</div>
+<div id="dashboard">
+	{foreach from=$modules item=module name=modules}
+	{if $admin_helper->module_can($module)}
+	<div class="dashboard-widget">
+		<h3>{$_labels.last_edited} <strong>{$_labels.$module.title}</strong></h3>
+		<ul>
+			{foreach from=$last_edited.$module item=item}
+			<li>
+				<span class="date">{$item->updated_at|date_format:"%d.%m.%Y"}</span>
+				<a href="{url_for route_name=modules_admin appsys=modules controller=admin module=$module maction=edit id=$item->id}">
+					{$item|strip_tags|truncate:80|default:'--------'}
+				</a>
+			</li>
+			{/foreach}
+		</ul>
+		<a href="{url_for route_name=modules_admin appsys=modules controller=admin module=$module maction=index}" class="view-all button">{$_labels.view_all}</a>
+	</div>
+	{/if}
+	{/foreach}
+</div>
+<div class="clear"></div>

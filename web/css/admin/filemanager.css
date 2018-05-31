@@ -1,0 +1,217 @@
+.tinymce #wrapper {
+    width: 930px;
+    min-width: 930px;
+}
+#file-manager {
+
+}
+.tinymce #file-manager {
+    max-width: 938px;
+    height: 500px;
+    overflow: auto;
+    padding:20px;
+}
+.tinymce #file-manager h2 {
+    display: none;
+}
+.tinymce #file-manager .filter, .tinymce #file-manager .list {
+    width: 100%;
+}
+#file-manager ul {
+    padding:0 5px;
+    margin:0 0 15px 0;
+    min-height: 100px;
+}
+
+#file-manager .list button.delete {
+    margin:0 10px 15px 10px;
+}
+
+    #file-manager ul li {
+        position: relative;
+        height: 46px;
+        padding: 5px 0;
+        border-bottom: 1px solid #ddd;
+    
+    }
+    
+    #file-manager ul li div.preview {
+        float:left;
+    }
+
+    #file-manager ul li .el {
+        display: block;
+        overflow: hidden;
+        width: 36px;
+        height: 36px;
+        float: left;
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+    }
+    
+        #file-manager ul li.image .el {
+            text-indent: -9999px;
+        }
+        
+        #file-manager ul li .el span {
+            display: block;
+            width: 32px;
+            height: 32px;
+            top:0;
+            left:0;
+            background: url(../../images/admin/files.png) no-repeat -64px 0;
+            
+            text-indent: -9999px;
+        }
+            #file-manager ul li.doc .el span {
+                background-position: -32px 0;
+            }
+            #file-manager ul li.image .el span {
+                background-position: -96px 0;
+            }
+            #file-manager ul li.archive .el span {
+                background-position: -128px 0;
+            }
+        
+    #file-manager ul li strong {
+        display: block;
+        overflow: hidden;
+        padding: 0px 10px;
+        margin: 0 5px;
+        height: 36px;
+        line-height: 36px;
+        
+        font-size: 14px;
+        font-weight: normal;
+        
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    #file-manager ul li .context-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        
+        margin: -6px 0 0 13px;
+        
+        border: 1px solid #DDD;
+        box-shadow: 2px 2px 4px #999;
+        background: white;
+        
+        z-index: 2;
+    }
+    
+        #file-manager ul li .context-menu a {
+            display: block;
+            max-width: 100px;
+            padding: 10px;
+            
+            font-size: 10px;
+            
+            text-decoration: none;
+            
+            transition: all ease-in-out 0.2s;            
+        }
+            #file-manager ul li .context-menu a:hover {
+                background: #ddd;
+                color: white;
+            }
+    
+    #file-manager ul li .delete {
+        display: block;
+        float: left;
+        overflow: hidden;
+        width: 22px;
+        height: 22px;
+        margin: 7px 10px 0 3px;
+        background: url(../../images/admin/file-remove.png) no-repeat 0 0;
+        
+        text-indent: -9999px;
+        
+        transition: none;
+        
+        opacity: 0.5;
+    }
+    
+        #file-manager ul li .delete:hover {
+            background-position: 0 0;
+            opacity: 1;
+        }
+        
+        #file-manager ul li .delete.checked {
+            background-position: 0 -22px;
+            opacity: 1;
+        }
+        
+        
+    #file-manager nav {
+        overflow: hidden;
+        padding: 10px 0;
+        height: 32px;
+        
+        background: #F8F8F8;
+        border: 1px solid #BBBBC3;
+    }
+    
+        #file-manager .list .up {
+            float: left;
+            overflow: hidden;
+            width: 32px;
+            height: 32px;
+            
+            background: url(../../images/admin/back.png) no-repeat 0 0;
+            
+            text-indent: -9999px;
+            transition: all ease-in-out 0.1s;
+        }
+        
+        #file-manager nav .up:hover,
+        #file-manager nav .delete:hover {
+            opacity: 0.5;
+        }
+        
+        #file-manager nav .delete {
+            display: none;
+            background-position: -32px 0;
+        }
+        
+        #file-manager nav form {
+            float: right;
+            overflow: hidden;
+            padding-top: 1px;
+        }
+        
+        #file-manager nav form label {
+            float: left;
+            padding: 8px 5px 0 0;
+            font-size: 11px;
+        }
+        
+        #file-manager nav form input {
+            float: left;
+            margin: 3px 5px 0 0;
+        }
+        
+        #file-manager nav form button {
+            vertical-align: middle;
+        }
+        
+        
+        
+.tinymce header,
+.tinymce #breadcrumb,
+.tinymce #footer {
+    display: none;
+}
+
+.tinymce #container .wrapper {
+    min-height: 590px;
+}

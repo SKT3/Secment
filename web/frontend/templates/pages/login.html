@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<!--#include virtual="../partials/header.shtml"-->
+
+	<div class="main">
+		<div class="main-head">
+			<div class="wrapper">
+				<div class="main-head-inner">
+					<div class="main-head-inner-wrap">
+						<nav class="breadcrumbs">
+							<ul>
+								<li><a href="index.html">Начало</a></li>
+								<li>Вход</li>
+							</ul>
+						</nav>
+						
+						<h1 class="title-primary">Вход</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- !!! ADD class="full" WHEN SIDEBAR IS MISSING !!! -->
+		<div class="main-body full">
+			<div class="wrapper">
+				<main class="main-content">
+					<div class="block block-small block-entrance">
+						<div class="pad pad-secondary">
+							<nav class="nav-content">
+								<ul>
+									<li class="selected"><a href="login.html">Вход</a></li>
+									<li><a href="register.html">Регистрация</a></li>
+								</ul>
+							</nav>
+
+							<div class="block-content">
+								<h2 class="block-title">Вход</h2>
+								
+								<div class="cols cols-full">
+									<div class="col col6of12">
+										<div class="form form-login">
+											<p class="form-title">Вход с регистрация</p>
+								
+											<form action="#">
+												<div class="form-row">
+													<label for="email" class="form-label required">E-mail:</label>
+												
+													<div class="form-controls">
+														<div class="field field-text">
+															<input type="email" name="email" id="email" required />
+														</div>
+													</div>
+												</div>
+												
+												<div class="form-row">
+													<label for="password" class="form-label required">Парола:</label>
+												
+													<div class="form-controls">
+														<div class="field field-text">
+															<input type="password" name="password" id="password" required />
+														</div>
+													</div>
+												</div>
+								
+												<div class="btns">
+													<a href="password-forget.html" class="btn btn-link password-reset">Забравена парола</a>
+
+													<button class="btn btn-primary">Вход</button>
+												</div>
+											</form>
+										</div><!-- /.form -->
+									</div>
+								
+									<div class="col col6of12">
+										<div class="callout-login">
+											<p class="title">Вход със социалните мрежи</p>
+											
+											<p class="note">Използвайте личния си акаунт в социалните мрежи.</p>
+
+											<div class="btns">
+												<a href="#" class="btn btn-socials-login facebook"><svg aria-hidden="true" class="icon icon-svg"><use xlink:href="../../assets/images/svg-sprite.svg#facebook"></use></svg> Вход с Facebook</a>
+											</div>
+
+											<p class="divider">или</p>
+
+											<div class="btns">
+												<a href="#" class="btn btn-socials-login google"><svg aria-hidden="true" class="icon icon-svg"><use xlink:href="../../assets/images/svg-sprite.svg#google"></use></svg> Вход с google +</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div><!-- /.pad -->
+					</div><!-- /.block -->
+				</main>
+			</div>
+		</div>
+	</div><!-- /.main -->
+
+	<!--#include virtual="../partials/footer.shtml"-->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+</body>
+</html>

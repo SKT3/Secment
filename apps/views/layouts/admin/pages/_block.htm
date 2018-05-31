@@ -1,0 +1,14 @@
+<div class="placeholder" id="{$rel}">
+    <a href="javascript:;" class="addBlock" rel="{$rel}">{$_labels.WIDGETS.add}</a> 
+    {foreach from=$blocks item=block}
+        {assign var=name value=$block.module}
+        {assign var=action value=$block.action}
+        <div class="widget" id="{$block.widget_id}" data-url="{$block.url}" data-state="{$block.state}">
+            <div class="widget-header">
+                <span class="title">{$_labels.$name.title} - {$_labels.$name.BLOCKS.$action}</span>
+                <a href="javascript:;" class="delete-widget" rel="tooltip" title="{$_labels.WIDGETS.delete}">{$_labels.WIDGETS.delete}</a>
+                <a href="javascript:;" class="edit-widget" rel="tooltip" title="{$_labels.WIDGETS.edit}">{$_labels.WIDGETS.edit}</a>
+            </div>
+        </div>
+    {/foreach}
+</div>

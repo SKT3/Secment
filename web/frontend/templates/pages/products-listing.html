@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<!--#include virtual="../partials/header.shtml"-->
+
+	<div class="main">
+		<div class="main-head">
+			<div class="wrapper">
+				<div class="main-head-inner color-category-3">
+					<svg aria-hidden="true" class="icon icon-svg">
+						<use xlink:href="../../assets/images/svg-sprite.svg#figure3"></use>
+					</svg>
+					
+					<div class="main-head-inner-wrap">
+						<nav class="breadcrumbs">
+							<ul>
+								<li><a href="index.html">Начало</a></li>
+								<li><a href="products-categories-listing.html">Инструменти и техника</a></li>
+								<li>Ръчни инструменти</li>
+							</ul>
+						</nav>
+						
+						<h1 class="title-primary">Ръчни инструменти</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- !!! ADD class="full" WHEN SIDEBAR IS MISSING !!! -->
+		<div class="main-body">
+			<div class="wrapper">
+				<form action="#" method="GET" id="js-form-filter">
+					<aside class="sidebar">
+						<div class="form form-filters-aside">
+							<div class="filters-aside">
+								<div class="filters-aside-item">
+									<div class="filters-aside-item-head">
+										<p class="title">Цена</p>
+									</div>
+							
+									<div class="filters-aside-item-body js-custom-scroll">
+										<div class="choose check">
+											<input type="checkbox" name="filter_price" id="filter_price_1" value="1">
+											<label for="filter_price_1">до 50лв.</label>
+										</div>
+
+										<div class="choose check">
+											<input type="checkbox" name="filter_price" id="filter_price_2" value="2">
+											<label for="filter_price_2">50лв. - 100лв.</label>
+										</div>
+
+										<div class="choose check">
+											<input type="checkbox" name="filter_price" id="filter_price_3" value="3">
+											<label for="filter_price_3">100лв. - 150лв.</label>
+										</div>
+
+										<div class="choose check">
+											<input type="checkbox" name="filter_price" id="filter_price_4" value="4">
+											<label for="filter_price_4">150лв. - 200лв.</label>
+										</div>
+
+										<div class="choose check">
+											<input type="checkbox" name="filter_price" id="filter_price_5" value="5">
+											<label for="filter_price_5">200лв. - 250лв.</label>
+										</div>
+
+										<div class="choose check">
+											<input type="checkbox" name="filter_price" id="filter_price_6" value="6" checked="checked">
+											<label for="filter_price_6">250лв. - 300лв.</label>
+										</div>
+
+										<div class="choose check">
+											<input type="checkbox" name="filter_price" id="filter_price_7" value="7">
+											<label for="filter_price_7">над 300лв.</label>
+										</div>
+									</div>
+
+									<div class="btns">
+										<a href="#" class="btn btn-link">Изчисти</a>
+									</div>
+								</div>
+							
+								<div class="filters-aside-item">
+									<div class="filters-aside-item-head">
+										<p class="title">Марка</p>
+									</div>
+							
+									<div class="filters-aside-item-body js-custom-scroll">
+										<div class="choose check">
+											<input type="checkbox" name="filter-brand" id="filter-brand1" />
+											<label for="filter-brand1">Black & Decer</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-brand" id="filter-brand2" />
+											<label for="filter-brand2">Casals</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-brand" id="filter-brand3" />
+											<label for="filter-brand3">Hitachi</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-brand" id="filter-brand4" />
+											<label for="filter-brand4">Raider</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-brand" id="filter-brand5" />
+											<label for="filter-brand5">Makita</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-brand" id="filter-brand6" />
+											<label for="filter-brand6">Black & Decer</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-brand" id="filter-brand7" />
+											<label for="filter-brand7">Casals</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-brand" id="filter-brand8" />
+											<label for="filter-brand8">Hitachi</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-brand" id="filter-brand9" />
+											<label for="filter-brand9">Raider</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-brand" id="filter-brand10" />
+											<label for="filter-brand10">Makita</label>
+											<span class="qty">(12)</span>
+										</div>
+									</div>
+
+									<div class="btns">
+										<a href="#" class="btn btn-link">Изчисти</a>
+									</div>
+								</div>
+							
+								<div class="filters-aside-item">
+									<div class="filters-aside-item-head">
+										<p class="title">Производител</p>
+									</div>
+							
+									<div class="filters-aside-item-body js-custom-scroll">
+										<div class="choose check">
+											<input type="checkbox" name="filter-manufacturer" id="filter-manufacturer1" />
+											<label for="filter-manufacturer1">Black & Decer</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-manufacturer" id="filter-manufacturer2" />
+											<label for="filter-manufacturer2">Casals</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-manufacturer" id="filter-manufacturer3" />
+											<label for="filter-manufacturer3">Hitachi</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-manufacturer" id="filter-manufacturer4" />
+											<label for="filter-manufacturer4">Raider</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-manufacturer" id="filter-manufacturer5" />
+											<label for="filter-manufacturer5">Makita</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-manufacturer" id="filter-manufacturer6" />
+											<label for="filter-manufacturer6">Black & Decer</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-manufacturer" id="filter-manufacturer7" />
+											<label for="filter-manufacturer7">Casals</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-manufacturer" id="filter-manufacturer8" />
+											<label for="filter-manufacturer8">Hitachi</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-manufacturer" id="filter-manufacturer9" />
+											<label for="filter-manufacturer9">Raider</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-manufacturer" id="filter-manufacturer10" />
+											<label for="filter-manufacturer10">Makita</label>
+											<span class="qty">(12)</span>
+										</div>
+									</div>
+
+									<div class="btns">
+										<a href="#" class="btn btn-link">Изчисти</a>
+									</div>
+								</div>
+							
+								<div class="filters-aside-item">
+									<div class="filters-aside-item-head">
+										<p class="title">Ударна функция</p>
+									</div>
+							
+									<div class="filters-aside-item-body js-custom-scroll">
+										<div class="choose radio">
+											<input type="radio" name="filter-function" id="filter-function1" value="1" />
+											<label for="filter-function1">Да</label>
+										</div>
+							
+										<div class="choose radio">
+											<input type="radio" name="filter-function" id="filter-function2" value="0" />
+											<label for="filter-function2">Не</label>
+										</div>
+									</div>
+
+									<div class="btns">
+										<a href="#" class="btn btn-link">Изчисти</a>
+									</div>
+								</div>
+							
+								<div class="filters-aside-item">
+									<div class="filters-aside-item-head">
+										<p class="title">Mощност</p>
+									</div>
+							
+									<div class="filters-aside-item-body js-custom-scroll">
+										<div class="choose check">
+											<input type="checkbox" name="filter-power" id="filter-power1" />
+											<label for="filter-power1">150W</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-power" id="filter-power2" />
+											<label for="filter-power2">200W</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-power" id="filter-power3" />
+											<label for="filter-power3">250W</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-power" id="filter-power4" />
+											<label for="filter-power4">300W</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-power" id="filter-power5" />
+											<label for="filter-power5">350W</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-power" id="filter-power6" />
+											<label for="filter-power6">400W</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-power" id="filter-power7" />
+											<label for="filter-power7">150W</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-power" id="filter-power8" />
+											<label for="filter-power8">200W</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-power" id="filter-power9" />
+											<label for="filter-power9">250W</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-power" id="filter-power10" />
+											<label for="filter-power10">300W</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-power" id="filter-power11" />
+											<label for="filter-power11">350W</label>
+											<span class="qty">(12)</span>
+										</div>
+							
+										<div class="choose check">
+											<input type="checkbox" name="filter-power" id="filter-power12" />
+											<label for="filter-power12">400W</label>
+											<span class="qty">(12)</span>
+										</div>
+									</div>
+
+									<div class="btns">
+										<a href="#" class="btn btn-link">Изчисти</a>
+									</div>
+								</div>
+							</div><!-- /.filters-aside -->
+						</div><!-- /.form -->
+					</aside>
+					
+					<main class="main-content">
+						<div class="toolbar toolbar-products toolbar-products-top">
+							<div class="sort">
+								<div class="field field-select">
+									<select name="sort" id="js-sort">
+										<option value="0">Сортирай</option>
+										<option value="1">Цена</option>
+										<option value="2">Марка</option>
+									</select>
+								</div>
+							</div>
+
+							<nav class="paging">
+								<ul>
+									<li class="prev"><a href="#"></a></li>
+									<li class="selected"><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><span>...</span></li>
+									<li><a href="#">5</a></li>
+									<li class="next"><a href="#"></a></li>
+								</ul>
+							</nav><!-- /.paging -->
+						</div><!-- /.toolbar -->
+
+						<div class="pad pad-primary">
+							<div class="boxes boxes-basic boxes-type-2 boxes-products-list">
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new1.jpg" alt="" />
+
+										<span class="ribbon ribbon-promo">
+											<svg aria-hidden="true" class="icon icon-svg">
+												<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/images/svg-sprite.svg#ribbon-promo"></use>
+											</svg>
+										</span>
+									</picture>
+							
+									<div class="content">
+										<p class="brand">Raider</p>
+					
+										<p class="title">МАШИНА ЗА ПЛОЧКИ ПРОФЕСИОНАЛНА RD-TC14 60см</p>
+							
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>109.99</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+					
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new2.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Metabo</p>
+					
+										<p class="title">Ъглошлайф wev 10-125 quick метабо</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>723.99</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+					
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new3.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Bosch</p>
+					
+										<p class="title">ЧУК ДРЪЖКА ФИБРОСТЪКЛО ТМР DIN1041 300гр</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>35.88</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+					
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new4.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Stanley</p>
+					
+										<p class="title">КУТИЯ MEGA CANTILEVER 19"</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>73.40</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+					
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new5.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Stanley</p>
+					
+										<p class="title">НОЖИЦА ЗА ЛАМАРИНА ДЯСНА УСИЛЕНА СТЕНЛИ</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>35.69</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new1.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Raider</p>
+								
+										<p class="title">МАШИНА ЗА ПЛОЧКИ ПРОФЕСИОНАЛНА RD-TC14 60см</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>109.99</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new2.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Metabo</p>
+								
+										<p class="title">Ъглошлайф wev 10-125 quick метабо</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>723.99</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new3.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Bosch</p>
+								
+										<p class="title">ЧУК ДРЪЖКА ФИБРОСТЪКЛО ТМР DIN1041 300гр</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>35.88</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new4.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Stanley</p>
+								
+										<p class="title">КУТИЯ MEGA CANTILEVER 19"</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>73.40</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new5.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Stanley</p>
+								
+										<p class="title">НОЖИЦА ЗА ЛАМАРИНА ДЯСНА УСИЛЕНА СТЕНЛИ</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>35.69</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new4.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Stanley</p>
+								
+										<p class="title">КУТИЯ MEGA CANTILEVER 19"</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>73.40</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new5.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Stanley</p>
+								
+										<p class="title">НОЖИЦА ЗА ЛАМАРИНА ДЯСНА УСИЛЕНА СТЕНЛИ</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>35.69</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new1.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Raider</p>
+								
+										<p class="title">МАШИНА ЗА ПЛОЧКИ ПРОФЕСИОНАЛНА RD-TC14 60см</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>109.99</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new2.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Metabo</p>
+								
+										<p class="title">Ъглошлайф wev 10-125 quick метабо</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>723.99</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new3.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Bosch</p>
+								
+										<p class="title">ЧУК ДРЪЖКА ФИБРОСТЪКЛО ТМР DIN1041 300гр</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>35.88</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new4.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Stanley</p>
+								
+										<p class="title">КУТИЯ MEGA CANTILEVER 19"</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>73.40</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new5.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Stanley</p>
+								
+										<p class="title">НОЖИЦА ЗА ЛАМАРИНА ДЯСНА УСИЛЕНА СТЕНЛИ</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>35.69</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new1.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Raider</p>
+								
+										<p class="title">МАШИНА ЗА ПЛОЧКИ ПРОФЕСИОНАЛНА RD-TC14 60см</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>109.99</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new2.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Metabo</p>
+								
+										<p class="title">Ъглошлайф wev 10-125 quick метабо</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>723.99</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new3.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Bosch</p>
+								
+										<p class="title">ЧУК ДРЪЖКА ФИБРОСТЪКЛО ТМР DIN1041 300гр</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>35.88</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new4.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Stanley</p>
+								
+										<p class="title">КУТИЯ MEGA CANTILEVER 19"</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>73.40</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new5.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Stanley</p>
+								
+										<p class="title">НОЖИЦА ЗА ЛАМАРИНА ДЯСНА УСИЛЕНА СТЕНЛИ</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>35.69</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new4.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Stanley</p>
+								
+										<p class="title">КУТИЯ MEGA CANTILEVER 19"</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>73.40</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="products-view.html" class="box box-basic box-type-2">
+									<picture class="picture">
+										<img src="../../assets/images/temp/accent-new5.jpg" alt="" />
+									</picture>
+								
+									<div class="content">
+										<p class="brand">Stanley</p>
+								
+										<p class="title">НОЖИЦА ЗА ЛАМАРИНА ДЯСНА УСИЛЕНА СТЕНЛИ</p>
+								
+										<div class="box-price-wrap">
+											<p class="box-price"><strong>35.69</strong> лв.</p>
+										</div>
+									</div>
+								</a>
+							</div><!-- /.boxes -->
+						</div><!-- /.pad -->
+
+						<div class="toolbar toolbar-products toolbar-products-bottom">
+							<nav class="paging">
+								<ul>
+									<li class="prev"><a href="#"></a></li>
+									<li class="selected"><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><span>...</span></li>
+									<li><a href="#">5</a></li>
+									<li class="next"><a href="#"></a></li>
+								</ul>
+							</nav><!-- /.paging -->
+						</div><!-- /.toolbar -->
+					</main>
+				</form>
+			</div>
+		</div>
+	</div><!-- /.main -->
+
+	<div class="accents accents-inner">
+		<section class="accent accent-article">
+			<div class="wrapper">
+				<article class="article">
+					<h1>Описание на категорията</h1>
+
+					<p>Lorem Ipsum е елементарен примерен текст, използван в печатарската и типографската индустрия. Lorem Ipsum е индустриален стандарт от около 1500 година, когато неизвестен печатар взема няколко печатарски букви и ги разбърква, за да напечата с тях книга с примерни шрифтове. Този начин не само е оцелял повече от 5 века, но е навлязъл и в публикуването на електронни издания като е запазен почти без промяна. Популяризиран е през 60те години на 20ти век със издаването на Letraset листи, съдържащи Lorem Ipsum пасажи, популярен е и в наши дни във софтуер за печатни издания като Aldus PageMaker, който включва различни версии на Lorem Ipsum.</p>
+				</article>
+			</div>
+		</section><!-- /.accent -->
+	</div><!-- /.accents -->
+
+	<!--#include virtual="../partials/footer.shtml"-->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+<script>
+	$(document).ready(function() {
+		var $formFilter = $('#js-form-filter');
+		var $filterTriggers = $formFilter.find('input, select');
+		var $accordionFilterItems = $('.filters-aside-item');
+		var $accordionFilterTriggers = $('.filters-aside-item-head');
+
+		if ($formFilter.length) {
+			$filterTriggers.on('change', function() {
+				$formFilter[0].submit();
+			});
+
+			function accordionFilters() {
+				$accordionFilterTriggers.off('click');
+				$accordionFilterTriggers.on('click', function() {
+					$(this).closest('.filters-aside-item').toggleClass('has-flag');
+				});
+			}
+
+			function accordionFiltersCheck() {
+				$accordionFilterItems.find('input[type="checkbox"], input[type="radio"]').each(function() {
+					var $this = $(this);
+
+					if ($this.prop('checked')) {
+						$this.closest('.filters-aside-item').addClass('has-flag');
+					}
+				});
+			}
+
+			var accordionFiltersDebounced = Global.debounce(function() {
+				accordionFiltersCheck();
+			}, 400);
+		}
+
+		if (window.matchMedia("(max-width: 1200px)").matches) {
+			accordionFilters();
+			accordionFiltersCheck()
+		}
+
+		$(window).on('resize', function() {
+			if (window.matchMedia("(max-width: 1200px)").matches) {
+				accordionFilters();
+				accordionFiltersDebounced();
+			}
+		});
+	});
+</script>
+</body>
+</html>	

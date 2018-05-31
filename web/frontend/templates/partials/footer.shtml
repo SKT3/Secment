@@ -1,0 +1,87 @@
+<footer class="footer">
+	<div class="wrapper">
+		<div class="footer-left">
+			<div class="footer-left-menu">
+				<h6 class="footer-title">За нас</h6>
+				
+				<ul class="list-links">
+					<li><a href="about.html">— За GS Строймаркет</a></li>
+					<li><a href="timeline.html">— История</a></li>
+					<li><a href="stores.html">— Магазини</a></li>
+					<li><a href="#">— GS програми</a></li>
+					<li><a href="#">— Услуги</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-left-contacts">
+				<div class="contact-phone">
+					<p>Национален телефон за контакти:</p>
+					<a href="tel:070014600">0700 14 600</a>
+				</div>
+
+				<div class="socials socials-footer">
+					<a href="#" target="_blank" class="socials-item facebook">
+						<svg aria-hidden="true" class="icon icon-svg">
+							<use xlink:href="../../assets/images/svg-sprite.svg#facebook"></use>
+						</svg>
+						<span>Facebook</span>
+					</a>
+
+					<a href="#" target="_blank" class="socials-item google">
+						<svg aria-hidden="true" class="icon icon-svg">
+							<use xlink:href="../../assets/images/svg-sprite.svg#google"></use>
+						</svg>
+						<span>Google +</span>
+					</a>
+				</div>
+			</div>
+		</div><!-- /.footer-left -->
+
+		<div class="footer-right">
+			<div class="footer-top">
+				<div class="cols cols-full cols-footer">
+					<div class="col col1of5">
+						<h6 class="footer-title">За клиентите</h6>
+
+						<ul class="list-links">
+							<li><a href="partners-listing.html">Партньори</a></li>
+							<li><a href="news-listing.html">Новини</a></li>
+							<li><a href="contacts.html">Контакти</a></li>
+							<li><a href="careers-listing.html">Кариери</a></li>
+							<li><a href="#">За реклама</a></li>
+							<li><a href="sitemap.html">Карта на сайта</a></li>
+						</ul>
+					</div>
+					
+					<div class="col col1of5">
+						<h6 class="footer-title">Научи преди да купиш</h6>
+
+						<ul class="list-links">
+							<li><a href="#">Начини за плащане</a></li>
+							<li><a href="#">Транспорт и доставка</a></li>
+							<li><a href="#">Гаранция и рекламации</a></li>
+							<li><a href="#">Често задавани въпроси</a></li>
+						</ul>
+					</div>
+					
+					<div class="col col1of5">
+						<h6 class="footer-title">Майсторски съвети</h6>
+
+						<ul class="list-links">
+							<li><a href="advices-view.html">Как да се справим с влагата и мухъла.</a></li>
+							<li><a href="advices-view.html">Как да зидаме с керамични блокове Porotherm.</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p class="copy">Всички права запазени ©2017 GS Строймаркет</p>
+
+				<p class="trademark">Уеб дизайн и програмиране от <a href="http://www.themags.com/bg/">The Mags</a></p>
+			</div>
+		</div><!-- /.footer-right -->
+	</div>
+</footer>
+
+<div class="overlay-global" id="js-overlay"></div>

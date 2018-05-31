@@ -1,0 +1,17 @@
+<form id="main_form" enctype="multipart/form-data" action="" method="post">
+	<fieldset>
+		<legend>Labels</legend>
+
+		<ol>
+		{foreach from=$yaml_files item=file_content key=file name=files}
+			{if not $smarty.foreach.files.first}<li style="border-bottom:1px dashed #000;margin:20px 0px;"><!-- o --></li>{/if}
+			{include file='admin/labels/_list.htm' data=$file_content}
+		{/foreach}
+		</ol>
+
+		<div class="buttons">
+			<button type="button" class="button cancel" onclick="window.location='{url_for controller=$controller}';">Отказ</button>
+			<button type="submit" class="button ok">Запази</button>
+		</div>
+	</fieldset>
+</form>

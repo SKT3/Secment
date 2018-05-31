@@ -1,0 +1,13 @@
+ADMIN:
+    index	: 1
+    add		: 1
+FIELDS_TYPES:
+    active : dropdown
+    active        : dropdown
+FIELDS_CLASSES:
+    active : short
+    summary: plain-text
+FIELDS_EXCLUDE:
+    created_at : 1
+    updated_at : 1
+    ord	   : 1

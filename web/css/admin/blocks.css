@@ -1,0 +1,3 @@
+
+.ui-sortable-placeholder * { visibility: hidden; }
+.ui-sortable-placeholder { border: none !important; background: #FAFAD2; visibility: visible !important; }

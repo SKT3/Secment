@@ -1,0 +1,10 @@
+{foreach from=$get_tree item=tree}
+	<li id="{$tree.key}"{if $tree.folder} class="folder"{/if}>
+		<a href="#page_{$tree.key}" {if $tree.image} data-image="{$tree.image}"{/if}>{$tree.title}</a>
+		{if $tree.children}
+		<ul>
+			{include file='admin/pages/_get_tree.htm' get_tree=$tree.children}
+		</ul>
+		{/if}
+	</li>
+{/foreach}

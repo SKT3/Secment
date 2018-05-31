@@ -1,0 +1,23 @@
+html {
+	filter: expression(document.execCommand("BackgroundImageCache", false, true));
+}
+
+#top_menu {
+	position: relative;
+	z-index: 1;
+}
+
+#top_menu ul li a {
+	height: 1%;
+}
+
+#top_menu_right {
+	zoom: 1;
+}
+
+input.checkbox {
+	width: 12px;
+	height: 12px;
+}
+
+#modules_list div {display: inline;zoom:1;}

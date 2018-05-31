@@ -1,0 +1,83 @@
+.ac_results {
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	margin: 0px;
+	padding: 4px 5px;
+	
+	cursor: default;
+	display: block;
+	
+	font-size: 11px;
+	line-height: 12px;
+	overflow: hidden;
+	color: #111513;
+	min-height: 20px;
+}
+
+input.ac_input {
+	padding-left: 18px !important;
+	background-image: url(../../images/admin/arrow16x16.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.ac_results li img {
+	float: left;
+	margin-right: 5px;
+}
+
+.ac_results li em {
+	color: #bbbbbb;
+	display: block;
+}
+
+.ac_odd {
+	background-color: #eee;
+}
+
+.ac_over {
+	background-color: #0A246A;
+	color: white;
+}
+
+.ac_results strong {
+	font-weight: bold;
+}
+
+.habtm_result{
+	margin-left:200px;
+}
+
+.habtm_result li {
+	background: #eeeeee;
+	padding: 5px 10px;
+	margin-top: 10px;
+	position: relative;
+}
+
+.habtm_result li:nth-child(2n) {background: #ffffff;}
+
+.habtm_result li:hover {background: #dddddd;}
+
+.habtm_result li a {text-indent: -9999px;position: absolute;}
+.habtm_result li:hover a {
+	right:-4px;
+	top:-4px;
+	display: block;
+	width: 16px;height:16px;
+	background: url(../../images/admin/cancel.png) no-repeat left top;
+}

@@ -1,0 +1,7 @@
+{if $_breadcrumbs}
+<ul id="breadcrumb">
+{foreach from=$_breadcrumbs item=_breadcrumb name=_breadcrumb}
+	<li class="{if $smarty.foreach._breadcrumb.first}home{elseif $smarty.foreach._breadcrumb.last}last{/if}">{if !$smarty.foreach._breadcrumb.last}<a href="{$_breadcrumb[1]}">{$_breadcrumb[0]}</a>{else}<span>{$_breadcrumb[0]}</span>{/if}</li>
+{/foreach}
+</ul>
+{/if}

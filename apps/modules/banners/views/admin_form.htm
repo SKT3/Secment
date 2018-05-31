@@ -1,0 +1,16 @@
+{tinymce controller=$controller}
+<h2>{$_labels.$module.title} - {$_labels.MAIN_ACTIONS.$action}</h2>
+<form id="main_form" enctype="multipart/form-data" action="" method="post" target="save_form">
+	<fieldset>
+		<legend>{$_labels.MAIN_ACTIONS.$action}</legend>
+
+		{$fields}
+
+		<div class="buttons">
+			<button type="button" class="button cancel" onclick="window.location='{$session->admin_return_to}';">{$_labels.BUTTONS.cancel}</button>
+			<button type="submit" class="button ok">{$_labels.BUTTONS.save}</button>
+		</div>
+	</fieldset>
+<div id="filemanager"></div>
+</form>
+<iframe name="save_form" id="save_form" style="width:0;height:0;border:0px solid #fff;"></iframe>

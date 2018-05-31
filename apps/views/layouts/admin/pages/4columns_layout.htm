@@ -1,0 +1,58 @@
+{include file="layouts/public/_html_top.htm"}
+<header>
+    {include file='layouts/public/_navigation.htm'}
+</header>    
+<div class="wrapper" id="cnt">
+    <ol id="breadcrumbs">
+    {foreach from=$breadcrumbs item=breadcrumb name=crumbs}
+        {if !$smarty.foreach.crumbs.last}
+            <li><a href="{$breadcrumb.url}">{$breadcrumb.title}</a> ></li>
+        {else}
+            <li>{$breadcrumb.title}</li>
+        {/if}
+    {/foreach}
+    </ol>
+    <div class="layout-3-4 text-resize">
+        <div class="layout-1-4">
+            {include file="layouts/public/_block.htm" blocks=$blocks.placeholder1 rel='placeholder1'}
+        </div>
+        <div class="layout-1-4">
+            {include file="layouts/public/_block.htm" blocks=$blocks.placeholder2 rel='placeholder2'}
+        </div>
+        <div class="layout-1-4 last">
+            {include file="layouts/public/_block.htm" blocks=$blocks.placeholder3 rel='placeholder3'}
+        </div>
+
+        <div class="push"></div>
+
+        <div class="layout-1-4">
+            {include file="layouts/public/_block.htm" blocks=$blocks.placeholder4 rel='placeholder4'}
+        </div>
+        <div class="layout-1-4">
+            {include file="layouts/public/_block.htm" blocks=$blocks.placeholder5 rel='placeholder5'}
+        </div>
+        <div class="layout-1-4 last">
+            {include file="layouts/public/_block.htm" blocks=$blocks.placeholder6 rel='placeholder6'}
+        </div>
+
+        <div class="push"></div>
+
+        <div class="layout-1-4">
+            {include file="layouts/public/_block.htm" blocks=$blocks.placeholder7 rel='placeholder7'}
+        </div>
+        <div class="layout-1-4">
+            {include file="layouts/public/_block.htm" blocks=$blocks.placeholder8 rel='placeholder8'}
+        </div>
+        <div class="layout-1-4 last">
+            {include file="layouts/public/_block.htm" blocks=$blocks.placeholder9 rel='placeholder9'}
+        </div>
+
+        <div class="push"></div>
+    </div>
+
+    <aside class="layout-1-4 last">
+        {include file="layouts/public/_block.htm" blocks=$blocks.placeholder10 rel='placeholder10'}
+    </aside>        
+    <br class="clearfix" />
+</div>
+{include file="layouts/public/_html_bottom.htm"}

@@ -1,0 +1,100 @@
+{tinymce controller=categories}
+<h2>{$_labels.TOPMENU.categories} - {$_labels.MAIN_ACTIONS.add}</h2>
+<form id="main_form" enctype="multipart/form-data" action="" method="post" novalidate>
+    <fieldset>
+            <legend>{$_labels.MAIN_ACTIONS.edit}</legend>
+            <input type="hidden" name="category_type" value="subcategory" />
+            <ol>
+                <li>
+                    <label for="parent_id">{$_labels.DB_FIELDS.parent_id}</label>
+                    <select name="parent_id" id="parent_id" class="chosen">
+                        <option value="{$section->id}"{if $form_object->parent_id eq $section->id} selected{/if} data-slug="{$section->slug}">ROOT</option>
+                        {foreach from=$categories item=cat}
+                        <option value="{$cat->id}"{if $form_object->parent_id eq $cat->id} selected{/if} data-slug="{$cat->slug}">{$cat->title}</option>
+                        {if $cat->has_children()}
+                            {foreach from=$cat->get_children() item=p}
+                                {include file='admin/categories/_subservices_option.htm' category=$p current=$form_object->parent_id}
+                            {/foreach}
+                        {/if}
+                        {/foreach}
+                    </select>
+                </li>
+
+                <li>
+                    <label for="title">{$_labels.DB_FIELDS.title}:</label>
+                    <input type="text" name="title" id="title" value="{$form_object->title}" />
+                </li>
+
+                <li>
+                    <label for="slug">{$_labels.DB_FIELDS.slug}:</label>
+                    <input type="text" name="slug" id="slug" value="{$form_object->slug}" readonly />
+                                        <br class="clear" />
+
+                    <label>&nbsp;</label>
+                    <input type="checkbox" onclick="javascript:$('#slug').attr('readonly', function(idx, oldval) { return !oldval; });" />
+                    <small>Custom URL</small>
+                </li>
+
+                <li>
+                    <label for="exclude_from_menu">{$_labels.DB_FIELDS.exclude_from_menu}:</label>
+                    {html_options name="exclude_from_menu" id="exclude_from_menu" class="short" options=$_labels.yesno selected=$form_object->exclude_from_menu}
+                </li>
+
+                <li>
+                    <label for="active">{$_labels.DB_FIELDS.active}:</label>
+                    {html_options name="active" id="active" class="short" options=$_labels.yesno selected=$form_object->active}
+                </li>
+
+                <li>
+                    <div class="form-errors"></div>
+                    <div class="buttons">
+                        <input type="hidden" name="id" value="{$form_object->id}" />
+                        <button type="button" class="close button" onclick="window.location='{url_for action=index}';">{$_labels.BUTTONS.cancel}</button>
+                        <button type="submit" class="button">{$_labels.BUTTONS.add}</button>
+                    </div>
+                </li>
+            </ol>
+        </fieldset>
+</form>
+<div id="filemanager"></div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#title').on('blur', function(){
+            $.ajax({
+                url: xhr_url+'?method=generate_slug',
+                data: {ldelim} 'slug' : $(this).val(), 'parent' : $('#parent_id option:selected').val() {rdelim},
+                type: 'POST',
+                success: function(data){
+                    $('#slug').val(data);
+                }
+            });
+        });
+        $("#parent_id").chosen().change(function (event) {
+            $.ajax({
+                url: xhr_url+'?method=generate_slug',
+                data: {ldelim}'slug' : $('#title').val(), 'parent' : $('option:selected', event.target).val() {rdelim},
+                type: 'POST',
+                success: function(data){
+                    $('#slug').val(data);
+                }
+            });
+        });
+    });
+    function openFM(target){
+        $("#filemanager").html($('<iframe width="100%" height="450" scrolling="no" />').attr("src", "{url_for controller=files action=index tinymce=images appsys=admin}&target="+target)).dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 550,
+            width: 980,
+            padding: 0,
+            modal: false,
+            position: ['middle',20],
+            create: function (event) { $(event.target).parent().css('position', 'fixed');},
+        }).dialog('open');
+    }
+
+    function trigger_FM_change(){
+        
+    }
+</script>

@@ -1,0 +1,123 @@
+<div id="file-manager">
+	<h2>{$_labels.TOPMENU.{$_controller}}</h2>
+	{if $smarty.get.editor && $smarty.get.tinymce}
+		<input type="hidden" id="track" name="editor" value="{$smarty.get.editor}" />
+		<input type="hidden" id="tinymce" name="tinymce" value="{$smarty.get.tinymce}" />
+		<input type="hidden" id="place" name="place" value="{$smarty.get.place}" />
+	{/if}
+
+	{if $smarty.get.target}
+		<input type="hidden" id="target" name="target" value="{$smarty.get.target}" />
+	{/if}
+
+	<form name="files" action="" method="post" enctype="multipart/form-data" class="filter">
+		<fieldset>
+			<h3>{$_labels.TOPMENU.{$_controller}}</h3>
+			<legend>{$_labels.TOPMENU.{$_controller}}</legend>
+			<table>
+				<tbody>
+					<tr>
+						<td>
+						{if !$smarty.get.editor && !$smarty.get.tinymce}
+							<label for="file">{$_labels.FILEMANAGER.upload_file}<br />(images, docs, archives)<br />Max: {$upload_mb}MB</label>
+						{else}
+							<label for="file">{$_labels.FILEMANAGER.upload_file}</label>
+						{/if}
+						{if !$smarty.get.editor && !$smarty.get.tinymce}
+						</td>
+						<td>
+						{/if}
+							<input type="file" id="file" multiple="multiple" accept="{$mime_types}" name="files[]" />
+						</td>
+					{if !$smarty.get.editor && !$smarty.get.tinymce}
+					</tr>
+					<tr>
+					{/if}
+						<td>
+							<label for="dir">{$_labels.FILEMANAGER.make_dir}</label>
+						{if !$smarty.get.editor && !$smarty.get.tinymce}
+						</td>
+						<td>
+						{/if}
+							<input type="text" id="dir" name="directory" autocomplete="off" value="" />
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<button type="submit">{$_labels.MAIN_ACTIONS.add}</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>
+	</form>
+	<div class="list">
+		<table width="100%">
+			<thead>
+				<tr>
+					<th width="37"></th>
+					<th style="width:36px; padding:0; margin:0;vertical-align:middle">
+						{if $parent_dir}
+							<a href="{url_for action=index path=$parent_dir place=$smarty.get.place editor=$smarty.get.editor tinymce=$smarty.get.tinymce target=$smarty.get.target}" class="up tooltip" title="{$_labels.FILEMANAGER.up}">{$_labels.FILEMANAGER.up}</a>
+						{elseif !$parent_dir && $smarty.get.path}
+							<a href="{url_for action=index place=$smarty.get.place editor=$smarty.get.editor tinymce=$smarty.get.tinymce target=$smarty.get.target}" class="up tooltip" title="{$_labels.FILEMANAGER.up}">{$_labels.FILEMANAGER.up}</a>
+						{/if}
+					</th>
+					<th>{$_labels.FILEMANAGER.dir_or_file}</th>
+					<th align="right">
+
+					</th>
+				</tr>
+			</thead>
+		</table>
+
+		<ul>
+			{foreach $structure as $el}
+				<li class="{$el.type}">
+					<div class="preview">
+					{if $el.type == 'folder'}
+						 <a href="{url_for action=index delete=$el.name}" rel="{$el.name}" class="delete tooltip" title="{$_labels.FILEMANAGER.mark_for_delete|escape}">{$_labels.FILEMANAGER.mark_for_delete}</a>
+					 {else}
+						 <a href="{url_for action=index delete=$el.name path=$smarty.get.path}" rel="{$el.name}_{$smarty.get.path}" class="delete tooltip" title="{$_labels.FILEMANAGER.mark_for_delete|escape}">{$_labels.FILEMANAGER.mark_for_delete}</a>
+					 {/if}
+					 {if $el.type == 'folder'}
+						 <a href="{url_for action=index path=$el.name editor=$smarty.get.editor place=$smarty.get.place tinymce=$smarty.get.tinymce target=$smarty.get.target}" class="el"><span>{$el.name}</span></a>
+					 {elseif $el.type == 'image'}
+						 {if $el.hide_preview}
+							<a href="{$url_path}{if $smarty.get.path}{$smarty.get.path}/{/if}{$el.name}" class="el" target="_blank"><span>{$el.name}</span></a>
+						 {else}
+							<a href="{$url_path}{if $smarty.get.path}{$smarty.get.path}/{/if}{$el.name}" class="el" target="_blank" style="background-image: url('{$url_path}{if $smarty.get.path}{$smarty.get.path}/{/if}{$el.name}');">{$el.name}</a>
+						 {/if}
+					 {else}
+						 <a href="{$url_path}{if $smarty.get.path}{$smarty.get.path}/{/if}{$el.name}" target="_blank" class="el"><span>{$el.name}</span></a>
+					 {/if}
+					 </div>
+					 <strong title="{$el.short_name}">{if $el.type == 'folder'}/{/if}{$el.name}</strong>
+
+					 <div class="context-menu">
+						<a href="javascript:;" class="btn-rename">{$_labels.FILEMANAGER.rename}</a>
+
+						{if $el.type == 'folder'}
+							<a href="{url_for action=index delete=$el.name}" class="btn-delete" title="{$_labels.FILEMANAGER.delete_context}">{$_labels.FILEMANAGER.delete_context}</a>
+						{else}
+							<a href="{url_for action=index delete=$el.name path=$smarty.get.path}" class="btn-delete" title="{$_labels.FILEMANAGER.delete_context}">{$_labels.FILEMANAGER.delete_context}</a>
+						{/if}
+					 </div>
+				</li>
+			{foreachelse}
+				<li>
+					<strong>&nbsp;</strong>
+				</li>
+			{/foreach}
+		</ul>
+		<button type="button" class="delete" title="{$_labels.FILEMANAGER.delete}">{$_labels.FILEMANAGER.delete}</button>
+
+	</div>
+
+	<br class="clear" />
+</div>
+<script type="text/javascript">
+{if $smarty.get.tinymce}
+	$('body').addClass('tinymce');
+{/if}
+</script>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<MODULES>
+	<MAIN label="home" controller="home" />
+	<MAIN label="pages" controller="pages" />
+	<MAIN label="modules" controller="admin" appsys="modules" />
+	<MAIN label="files" controller="files" />
+	<MAIN label="settings" controller="none">
+		<SUB label="users" controller="admin_users" />
+		<SUB label="imports" controller="admin_import" />
+		<SUB label="syncs" controller="admin_sync" />
+		<SUB label="groups" controller="groups" />
+		<SUB label="logs" controller="logs" />
+		<SUB label="labels" controller="labels" />
+	</MAIN>
+</MODULES>

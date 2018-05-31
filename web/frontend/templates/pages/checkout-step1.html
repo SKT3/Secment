@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<!--#include virtual="../partials/header.shtml"-->
+
+	<div class="main">
+		<div class="main-head">
+			<div class="wrapper">
+				<div class="main-head-inner">
+					<div class="main-head-inner-wrap">
+						<nav class="breadcrumbs">
+							<ul>
+								<li><a href="index.html">Начало</a></li>
+								<li>Вашата количка</li>
+							</ul>
+						</nav>
+						
+						<h1 class="title-primary">Вашата количка</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- !!! ADD class="full" WHEN SIDEBAR IS MISSING !!! -->
+		<div class="main-body full">
+			<div class="wrapper">
+				<main class="main-content">
+					<div class="block block-cart" id="js-cart-block">
+						<div class="pad pad-primary">
+							<div class="cart">
+								<div class="cart-content">
+									<div class="table-wrap">
+										<table class="table table-cart" id="js-cart-table">
+											<thead>
+												<tr>
+													<th>Продукт</th>
+													<th>Ед. Цена</th>
+													<th>Количество</th>
+													<th colspan="2">Крайна цена</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<a href="products-view.html" class="picture">
+															<img src="../../assets/images/temp/products-order1.jpg" alt="" />
+
+															<span class="ribbon ribbon-promo">
+																<svg aria-hidden="true" class="icon icon-svg">
+																	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../../assets/images/svg-sprite.svg#ribbon-promo"></use>
+																</svg>
+															</span>
+														</a>
+										
+														<p class="title"><a href="products-view.html">нож за проб.трион rsb fit handle бош</a></p>
+													</td>
+													<td>
+														<p class="price"><strong>35.88</strong> лв.</p>
+													</td>
+													<td>
+														<div class="field field-number">
+															<input type="number" name="qty_1" value="1" class="js-qty-product" />
+															<span class="postfix"> кв.м.</span>
+														</div>
+													</td>
+													<td>
+														<p class="price" data-product-id="1"><strong>430.56</strong> лв.</p>
+													</td>
+													<td>
+														<a href="javascript:;" class="btn btn-remove js-cart-remove" data-product-id="1">
+															<svg aria-hidden="true" class="icon icon-svg icon-remove">
+																<use xlink:href="../../assets/images/svg-sprite.svg#close"></use>
+															</svg>
+														</a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="products-view.html" class="picture">
+															<img src="../../assets/images/temp/products-order2.jpg" alt="" />
+														</a>
+										
+														<p class="title"><a href="products-view.html">КУТИЯ MEGA CANTILEVER 19"</a></p>
+													</td>
+													<td>
+														<p class="price"><strong>73.40</strong> лв.</p>
+													</td>
+													<td>
+														<div class="field field-number">
+															<input type="number" name="qty_2" value="1" class="js-qty-product" />
+															<span class="postfix"> бр.</span>
+														</div>
+													</td>
+													<td>
+														<p class="price" data-product-id="2"><strong>73.40</strong> лв.</p>
+													</td>
+													<td>
+														<a href="javascript:;" class="btn btn-remove js-cart-remove" data-product-id="2">
+															<svg aria-hidden="true" class="icon icon-svg icon-remove">
+																<use xlink:href="../../assets/images/svg-sprite.svg#close"></use>
+															</svg>
+														</a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="products-view.html" class="picture">
+															<img src="../../assets/images/temp/products-order3.jpg" alt="" />
+														</a>
+										
+														<p class="title"><a href="products-view.html">ВИНТОВЕРТ АКУМУЛАТОРЕН с.БОШ GSR 12V-15 3x2AH L-BOXX</a></p>
+
+														<p class="msg msg-warning">Количествата на този продукт могат да се редактират само от продуктовата страница.</p>
+													</td>
+													<td>
+														<p class="price"><strong>35.88</strong> лв.</p>
+													</td>
+													<td>
+														<div class="field field-number">
+															<input type="number" name="qty_3" value="1.03" class="js-qty-product" disabled />
+															<span class="postfix"> кв.м.</span>
+														</div>
+
+														<p class="note" data-product-id="3">(<strong>20</strong> бр.)</p>
+													</td>
+													<td>
+														<p class="price" data-product-id="3"><strong>35.88</strong> лв.</p>
+													</td>
+													<td>
+														<a href="javascript:;" class="btn btn-remove js-cart-remove" data-product-id="3">
+															<svg aria-hidden="true" class="icon icon-svg icon-remove">
+																<use xlink:href="../../assets/images/svg-sprite.svg#close"></use>
+															</svg>
+														</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
+									<div class="btns">
+										<a href="products-listing.html" class="btn btn-article">Продължете с пазаруването</a>
+									</div>
+									
+									<p class="msg msg-info">Уважаеми клиенти, отстъпки при въведен промо код или номер на клубна карта се начисляват само върху продукти, които не са в промоция!</p>
+								</div><!-- /.cart-content -->
+
+								<div class="cart-aside">
+									<div class="form form-discount">
+										<form action="#" novalidate>
+											<div class="form-row">
+												<label for="discount_code" class="form-label">Ако имате код за отстъпка, въведете тук:</label>
+											
+												<div class="form-controls">
+													<div class="field field-text">
+														<input type="text" name="discount_code" id="discount_code" placeholder="" />
+													</div>
+												</div>
+											</div>
+											
+											<div class="btns">
+												<button class="btn btn-primary">Добавете</button>
+											</div>
+										</form>
+									</div><!-- /.form -->
+
+									<div class="cart-summary" id="js-cart-summary">
+										<div class="summary">
+											<div class="summary-row">
+												<p class="label">Междинна цена:</p>
+												<p class="price"><strong>565.88</strong> лв.</p>
+											</div>
+										
+											<div class="summary-row">
+												<p class="label">Отстъпка:</p>
+												<p class="price"><strong>13.18</strong> лв.</p>
+											</div>
+
+											<div class="summary-row">
+												<p class="label">ДДС:</p>
+												<p class="price"><strong>113.18</strong> лв.</p>
+											</div>
+										
+											<div class="summary-row">
+												<p class="label">Крайна цена:</p>
+												<p class="price"><strong>679.06</strong> лв.</p>
+											</div>
+										</div>
+										
+										<div class="btns">
+											<a href="checkout-step2-guest.html" class="btn btn-primary">Завършете поръчката</a>
+										</div>
+									</div>
+								</div><!-- /.cart-aside -->
+							</div><!-- /.cart -->
+						</div><!-- /.pad -->
+					</div><!-- /.block -->
+				</main>
+			</div>
+		</div>
+	</div><!-- /.main -->
+
+	<!--#include virtual="../partials/footer.shtml"-->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+<script>
+	$(document).ready(function() {
+		var changeQtyDebounced = Global.debounce(function(element) {
+			var currentElement = element;
+			var id = Global.getDigits(currentElement.name);
+			var qty = currentElement.value;
+
+			ProductsActions.edit('../ajax/cart-edit.json', id, qty);
+		}, 400);
+
+		// change quantity
+		$('.js-qty-product').on('keyup', function() {
+			changeQtyDebounced(this);
+		});
+
+		// remove row from cart
+		$('.js-cart-remove').on('click', function() {
+			var $this = $(this);
+			var id = $this.attr('data-product-id');
+
+			ProductsActions.remove('../ajax/cart-remove.json', id);
+			$(this).closest('tr').remove();
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<h2>{$_labels.TOPMENU.groups} - {$_labels.MAIN_ACTIONS.add}</h2>
+<form id="main_form" enctype="multipart/form-data" action="" method="post">
+    <fieldset>
+        <legend>{$_labels.MAIN_ACTIONS.index}</legend>
+
+        {$fields}
+
+        <div class="buttons">
+            <button type="button" class="cancel" onclick="window.location='{$session->admin_return_to}';">{$_labels.BUTTONS.cancel}</button>
+            <button type="submit" class="ok">{$_labels.BUTTONS.$action}</button>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<div class="main checkout">
+		<div class="wrapper">
+			<div class="checkout-content">
+				<header class="checkout-header">
+					<a href="index.html" class="logo">
+						<img src="../../assets/images/logo2x.png" alt="logo" />
+					</a>
+
+					<div class="user-preview">
+						<!-- !!! Guest user !!! -->
+						<!-- <p class="checkout-login">Имате вече регистрация? <a href="#">Влезте от тук</a></p> -->
+
+						<!-- !!! Loggedin user !!! -->
+						<p class="checkout-greet">Здравейте, <a href="profile-personal.html">Никола Гударовски</a>!</p>
+					</div>
+				</header>
+
+				<main class="checkout-main">
+					<h1 class="title-primary">Завършете поръчката</h1>
+
+					<div class="steps">
+						<div class="steps-item is-completed">
+							<span class="number">01</span>
+							<span class="label">Количка</span>
+						</div>
+
+						<div class="steps-item is-completed">
+							<span class="number">02</span>
+							<span class="label">Лична информация</span>
+						</div>
+
+						<div class="steps-item is-completed">
+							<span class="number">03</span>
+							<span class="label">Начин на доставка</span>
+						</div>
+
+						<div class="steps-item is-selected">
+							<span class="number">04</span>
+							<span class="label">Начин на плащане</span>
+						</div>
+
+						<div class="steps-item">
+							<span class="number">05</span>
+							<span class="label">Преглед на поръчката</span>
+						</div>
+					</div>
+
+					<div class="form form-checkout step4">
+						<form action="#" novalidate>
+							<hr />
+							
+							<fieldset>
+								<legend>Изберете начин на плащане</legend>
+
+								<div class="choose-group choose-group-stripped">
+									<div class="choose radio">
+										<input type="radio" name="payment" id="payment1" />
+										<label for="payment1">Наложен платеж</label>
+
+										<span class="form-hint">(това включва и плащане на каса на магазина)</span>
+									</div>
+									
+									<div class="choose radio">
+										<input type="radio" name="payment" id="payment2" />
+										<label for="payment2">Банков превод</label>
+									</div>
+									
+									<div class="choose radio">
+										<input type="radio" name="payment" id="payment3" />
+										<label for="payment3">Кредитна / Дебитна карта</label>
+
+										<img src="../../assets/images/payment-checkout.png" alt="" class="badge-payment" />
+									</div>
+									
+									<div class="choose radio">
+										<input type="radio" name="payment" id="payment4" />
+										<label for="payment4">еPay</label>
+									</div>
+									
+									<div class="choose radio">
+										<input type="radio" name="payment" id="payment5" />
+										<label for="payment5">PayPal</label>
+									</div>
+								</div>
+							</fieldset>
+
+							<div class="btns">
+								<a href="#" class="btn btn-article"><i class="icon icon-arrow-left"></i>Върнете се към начин на доставка</a>
+
+								<button class="btn btn-primary">Изберете начин на Плащане</button>
+							</div>
+						</form>
+					</div><!-- /.form -->
+				</main><!-- /.checkout-main -->
+			</div><!-- /.checkout-content -->
+
+			<aside class="checkout-aside">
+				<!--#include virtual="../partials/checkout-aside.shtml"-->
+			</aside>
+		</div>
+	</div><!-- /.main -->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+</body>
+</html>

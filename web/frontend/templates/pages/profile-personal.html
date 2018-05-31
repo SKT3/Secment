@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<!--#include virtual="../partials/header.shtml"-->
+
+	<div class="main">
+		<div class="main-head">
+			<div class="wrapper">
+				<div class="main-head-inner">
+					<div class="main-head-inner-wrap">
+						<nav class="breadcrumbs">
+							<ul>
+								<li><a href="index.html">Начало</a></li>
+								<li>Моят профил</li>
+							</ul>
+						</nav>
+						
+						<h1 class="title-primary">Моят профил</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- !!! ADD class="full" WHEN SIDEBAR IS MISSING !!! -->
+		<div class="main-body full">
+			<div class="wrapper">
+				<main class="main-content">
+					<div class="block block-profile block-profile-personal">
+						<div class="pad pad-secondary">
+							<nav class="nav-content">
+								<ul>
+									<li class="selected"><a href="profile-personal.html">Лични данни</a></li>
+									<li><a href="profile-password-change.html">Смяна на парола</a></li>
+									<li><a href="profile-history.html">История на поръчките</a></li>
+									<li><a href="profile-newsletter.html">Електронен бюлетин</a></li>
+									<li><a href="index.html">Изход</a></li>
+								</ul>
+							</nav>
+
+							<div class="block-content">
+								<h2 class="block-title">Лични данни</h2>
+
+								<p class="block-note">Може да редактирате личните си данни тук</p>
+
+								<div class="form form-profile form-personal">
+									<div class="pad pad-basic">
+										<form action="#">
+											<div class="cols cols-full">
+												<div class="col col4of12">
+													<div class="form-row form-row-inline">
+														<label for="personal_first_name" class="form-label required">Име:</label>
+													
+														<div class="form-controls">
+															<div class="field field-text">
+																<input type="text" name="personal_first_name" id="personal_first_name" value="Никола" required />
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<div class="col col4of12">
+													<div class="form-row form-row-inline">
+														<label for="personal_last_name" class="form-label required">Фамилия:</label>
+													
+														<div class="form-controls">
+															<div class="field field-text">
+																<input type="text" name="personal_last_name" id="personal_last_name" value="Гударовски" required />
+															</div>
+														</div>
+													</div>
+												</div>
+											</div><!-- /.cols -->
+
+											<div class="cols cols-full">
+												<div class="col col4of12">
+													<div class="form-row form-row-inline">
+														<label for="email" class="form-label">Въведете вашия е-mail</label>
+													
+														<div class="form-controls">
+															<div class="field field-text">
+																<input type="email" name="email" id="email" value="test@test.com" />
+															</div>
+															
+														</div>
+													</div>
+												</div>
+												
+												<div class="col col4of12">
+													<div class="form-row form-row-inline">
+														<label for="phone" class="form-label">Телефон</label>
+													
+														<div class="form-controls">
+															<div class="field field-text">
+																<input type="tel" name="phone" id="phone" value="0888123456" />
+															</div>
+															
+														</div>
+													</div>
+												</div>
+											</div><!-- /.cols -->
+
+											<div class="btns">
+												<button class="btn btn-primary">Промени</button>
+											</div>
+										</form>
+									</div><!-- /.pad -->
+								</div><!-- /.form -->
+
+								<h2 class="block-title">Данни за фирма</h2>
+
+								<div class="form form-profile form-legal">
+									<div class="pad pad-basic">
+										<form action="#">
+											<div class="cols cols-full">
+												<div class="col col4of12">
+													<div class="form-row form-row-inline">
+														<label for="legal_organization" class="form-label">Фирма:</label>
+											
+														<div class="form-controls">
+															<div class="field field-text">
+																<input type="text" name="legal_organization" id="legal_organization">
+															</div>
+														</div>
+													</div>
+												</div>
+											
+												<div class="col col4of12">
+													<div class="form-row form-row-inline">
+														<label for="legal_person" class="form-label">МОЛ:</label>
+											
+														<div class="form-controls">
+															<div class="field field-text">
+																<input type="text" name="legal_person" id="legal_person">
+															</div>
+														</div>
+													</div>
+												</div>
+											
+												<div class="col col4of12">
+													<div class="form-row form-row-inline">
+														<label for="legal_bulstat" class="form-label">БУЛСТАТ:</label>
+											
+														<div class="form-controls">
+															<div class="field field-text">
+																<input type="text" name="legal_bulstat" id="legal_bulstat">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div><!-- /.cols -->
+
+											<div class="form-row">
+												<label for="legal_address" class="form-label">Адрес:</label>
+																						
+												<div class="form-controls">
+													<div class="field field-text">
+														<input type="text" name="legal_address" id="legal_address">
+													</div>
+												</div>
+											</div>
+
+											<div class="btns">
+												<button class="btn btn-primary">Промени</button>
+											</div>
+										</form>
+									</div><!-- /.pad -->
+								</div><!-- /.form -->
+
+								<h2 class="block-title">Адреси</h2>
+
+								<div class="addresses">
+									<div class="addresses-item">
+										<div class="pad pad-basic">
+											<div class="content">
+												<p class="title">Вашият адрес</p>
+												
+												<div class="text">
+													<p>Град: <strong>Шабла</strong></p>
+													<p>Пощенски код: <strong>5015</strong></p>
+													<p>Адрес: <strong>ул. Мусала 25, вх. А, ет. 3, ап.12</strong></p>
+												</div>
+											</div>
+
+											<div class="btns">
+												<a href="profile-address-edit.html" class="btn btn-article">Редактирайте</a>
+
+												<a href="#" class="btn btn-remove">
+													<svg aria-hidden="true" class="icon icon-svg icon-remove">
+														<use xlink:href="../../assets/images/svg-sprite.svg#close"></use>
+													</svg>
+												</a>
+											</div>
+										</div><!-- /.pad -->
+									</div>
+									
+									<div class="addresses-item">
+										<div class="pad pad-basic">
+											<div class="content">
+												<p class="title">Вашият адрес</p>
+												
+												<div class="text">
+													<p>Град: <strong>Шабла</strong></p>
+													<p>Пощенски код: <strong>5015</strong></p>
+													<p>Адрес: <strong>ул. Мусала 25, вх. А, ет. 3, ап.12</strong></p>
+												</div>
+											</div>
+
+											<div class="btns">
+												<a href="profile-address-edit.html" class="btn btn-article">Редактирайте</a>
+
+												<a href="#" class="btn btn-remove">
+													<svg aria-hidden="true" class="icon icon-svg icon-remove">
+														<use xlink:href="../../assets/images/svg-sprite.svg#close"></use>
+													</svg>
+												</a>
+											</div>
+										</div><!-- /.pad -->
+									</div>
+								</div><!-- /.addresses -->
+
+								<div class="btns">
+									<a href="#" class="btn btn-primary">Добавете нов адрес</a>
+								</div>
+							</div>
+						</div><!-- /.pad -->
+					</div><!-- /.block -->
+				</main>
+			</div>
+		</div>
+	</div><!-- /.main -->
+
+	<!--#include virtual="../partials/footer.shtml"-->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+</body>
+</html>

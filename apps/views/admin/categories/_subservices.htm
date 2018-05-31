@@ -1,0 +1,87 @@
+{if $category}
+    <ol class="dd-list" id="list_{$category->id}">
+        {if $first eq 2}
+        <li class="dd-item no-sort">
+            <div class="dd-content">
+                <div class="title">{$_labels.DB_FIELDS.title}</div>
+                <div class="actions">
+                    {$_labels.main_actions}
+                </div>
+                <div class="id">{$_labels.DB_FIELDS.id}</div>
+                <div class="actions">Активност</div>
+                <div class="clear"></div>
+            </div>
+        </li>
+        <li class="dd-item list_{$category->id}" data-id="{$category->id}">
+            <div class="dd-content">
+                <div class="title"><a href="{url_for action=edit id=$category->id section=$section}" class="edit"  title="{$_labels.MAIN_ACTIONS.edit}">{$category->title}</a></div>
+                <div class="actions">
+                    <a href="{url_for action=edit id=$category->id section=$section}" class="edit" rel="tooltip" title="{$_labels.MAIN_ACTIONS.edit}">{$_labels.MAIN_ACTIONS.edit}</a>
+                </div>
+                <div class="id">{$category->id}</div>
+                <div class="actions">
+                    {$_labels.yesno.{$category->active}}
+                </div>
+                <div class="clear"></div>
+            </div>
+            <ol class="dd-list" id="list_{$category->id}">
+        {/if}
+        {foreach from=$category->get_children() item=sub name=subs key=sid}
+        <li class="dd-item list_{$category->id}" data-id="{$sub->id}">
+            <div class="dd-content">
+                {assign var=edit_action value="edit"}
+                {if $sub->category_type eq 'product_line'}
+                    {assign var=edit_action value="edit_product_line"}
+                {/if}
+                {if $sub->category_type eq 'price_plan'}
+                    {assign var=edit_action value="edit_price_plan"}
+                {/if}
+                <div class="title"><a href="{url_for action=$edit_action id=$sub->id section=$section}" class="edit" title="{$_labels.MAIN_ACTIONS.edit}">{$sub->title}</a></div>
+                <div class="actions">
+                   <a href="{url_for action=$edit_action id=$sub->id section=$section}" class="edit" rel="tooltip" title="{$_labels.MAIN_ACTIONS.edit}">{$_labels.MAIN_ACTIONS.edit}</a>
+                    <a href="javascript:confirm_delete({$sub->id})" class="delete" rel="tooltip" title="{$_labels.MAIN_ACTIONS.delete}">{$_labels.MAIN_ACTIONS.delete}</a>
+                </div>
+                <div class="id">{$sub->id}</div>
+                <div class="br">{$_labels.br_values.{$sub->br}}</div>
+                <div class="clear"></div>
+            </div>
+            {if $sub->has_children()}
+                {include file='admin/categories/_subservices.htm' category=$sub first=false}
+            {/if}
+        </li>
+        {/foreach}
+        {if $first eq 1}
+    </ol>
+        </li>
+        {/if}
+    </ol>
+    {literal}
+    <script type="text/javascript">
+        $('#nestable #list_{/literal}{$category->id}{literal}').sortable({
+            handle: ".title",
+            placeholder: "ui-state-highlight",
+            items: "li.list_{/literal}{$category->id}{literal}:not(.no-sort)",
+            tolerance: 'pointer',
+            dropOnEmpty: false,
+            start: function( event, ui ) {
+                ui.placeholder.css('height', ui.item.height());
+            },
+            update: function(event, ui) {
+                params = {};
+                params['object_id'] = ui.item.attr('data-id');
+                prev = ui.item.prev('.dd-item');
+                if(prev.length) {
+                    params['prev_id'] = prev.attr('data-id');
+                }
+
+                nxt = ui.item.next('.dd-item');
+                if(nxt.length) {
+                    params['next_id'] = nxt.attr('data-id');
+                }
+
+                $.get(xhr_url+'?method=saveMenu',params);
+            }
+        });
+    </script>
+    {/literal}
+{/if}

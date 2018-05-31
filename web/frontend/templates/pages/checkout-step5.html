@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<div class="main checkout">
+		<div class="wrapper">
+			<div class="checkout-content">
+				<header class="checkout-header">
+					<a href="index.html" class="logo">
+						<img src="../../assets/images/logo2x.png" alt="logo" />
+					</a>
+
+					<div class="user-preview">
+						<!-- !!! Guest user !!! -->
+						<!-- <p class="checkout-login">Имате вече регистрация? <a href="#">Влезте от тук</a></p> -->
+
+						<!-- !!! Loggedin user !!! -->
+						<p class="checkout-greet">Здравейте, <a href="profile-personal.html">Никола Гударовски</a>!</p>
+					</div>
+				</header>
+
+				<main class="checkout-main">
+					<h1 class="title-primary">Завършете поръчката</h1>
+
+					<div class="steps">
+						<div class="steps-item is-completed">
+							<span class="number">01</span>
+							<span class="label">Количка</span>
+						</div>
+
+						<div class="steps-item is-completed">
+							<span class="number">02</span>
+							<span class="label">Лична информация</span>
+						</div>
+
+						<div class="steps-item is-completed">
+							<span class="number">03</span>
+							<span class="label">Начин на доставка</span>
+						</div>
+
+						<div class="steps-item is-completed">
+							<span class="number">04</span>
+							<span class="label">Начин на плащане</span>
+						</div>
+
+						<div class="steps-item is-selected">
+							<span class="number">05</span>
+							<span class="label">Преглед на поръчката</span>
+						</div>
+					</div>
+
+					<div class="form form-checkout step5">
+						<form action="#">
+							<div class="pad pad-basic preview-info">
+								<div class="article">
+									<h6>Лична информация:</h6>
+									<p>Име: <strong>Никола</strong></p>
+									<p>Фамилия: <strong>Гударовски</strong></p>
+									<p>е-mail: <strong>test@test.com</strong></p>
+									<p>Телефон: <strong>0888123456</strong></p>
+								
+									<p>&nbsp;</p>
+									
+									<h6>Фирмени данни:</h6>
+									<p>Фирма: <strong>Фирма 2 ООД</strong></p>
+									<p>МОЛ: <strong>Иван Иванов</strong></p>
+									<p>Булстат: <strong>1321324353535</strong></p>
+									<p>Адрес: <strong>ул. Мусала 25, вх. А, ет. 3, ап.12</strong></p>
+							
+									<p>&nbsp;</p>
+									
+									<h6>Начин на доставка:</h6>
+									<p>Тип: <strong>До адрес</strong></p>
+									<p>Град: <strong>Шабла</strong></p>
+									<p>Пощенски код: <strong>5015</strong></p>
+									<p>Адрес: <strong>ул. Мусала 25, вх. А, ет. 3, ап.12</strong></p>
+									
+									<p>&nbsp;</p>
+							
+									<h6>Начин на плащане</h6>
+									<p>Тип: <strong>Наложен платеж</strong></p>
+								</div>
+							</div>
+
+							<fieldset>
+								<legend>Общи условия</legend>
+
+								<div class="choose check">
+									<input type="checkbox" name="terms" id="terms">
+									<label for="terms">Съгласявам се с <a href="#" target="_blank">общите условия</a></label>
+								</div>
+							</fieldset>
+							
+							<div class="btns">
+								<a href="#" class="btn btn-article"><i class="icon icon-arrow-left"></i>Върнете се към начин на плащане</a>
+							
+								<button class="btn btn-primary">Звършете поръчката</button>
+							</div>
+						</form>
+					</div><!-- /.form -->
+				</main><!-- /.checkout-main -->
+			</div><!-- /.checkout-content -->
+
+			<aside class="checkout-aside">
+				<!--#include virtual="../partials/checkout-aside.shtml"-->
+			</aside>
+		</div>
+	</div><!-- /.main -->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+</body>
+</html>

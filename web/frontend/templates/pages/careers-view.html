@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--#include virtual="../partials/head.shtml"-->
+</head>
+<body>
+<div class="container" id="js-container">
+	<!--#include virtual="../partials/header.shtml"-->
+
+	<div class="main">
+		<div class="main-head">
+			<div class="wrapper">
+				<div class="main-head-inner">
+					<svg aria-hidden="true" class="icon icon-svg">
+						<use xlink:href="../../assets/images/svg-sprite.svg#career"></use>
+					</svg>
+
+					<div class="main-head-inner-wrap">
+						<nav class="breadcrumbs">
+							<ul>
+								<li><a href="index.html">Начало</a></li>
+								<li><a href="careers-listing.html">Работа при нас</a></li>
+								<li>Складов работник</li>
+							</ul>
+						</nav>
+						
+						<h1 class="title-primary">складов работник</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- !!! ADD class="full" WHEN SIDEBAR IS MISSING !!! -->
+		<div class="main-body full">
+			<div class="wrapper">
+				<main class="main-content">
+					<div class="block block-small block-careers-view">
+						<div class="pad pad-primary">
+							<div class="form form-basic form-careers">
+								<p class="form-title">Кандидатствайте за позицията</p>
+
+								<form action="#">
+									<div class="form-row">
+										<label for="full_name" class="form-label required">Име и фамилия:</label>
+									
+										<div class="form-controls">
+											<div class="field field-text">
+												<input type="text" name="full_name" id="full_name" required />
+											</div>
+										</div>
+									</div>
+
+									<div class="form-row">
+										<label for="email" class="form-label required">E-mail:</label>
+									
+										<div class="form-controls">
+											<div class="field field-text">
+												<input type="email" name="email" id="email" required />
+											</div>
+										</div>
+									</div>
+
+									<div class="form-row">
+										<label for="phone" class="form-label required">Телефон за връзка:</label>
+									
+										<div class="form-controls">
+											<div class="field field-text">
+												<input type="tel" name="phone" id="phone" required />
+											</div>
+										</div>
+									</div>
+
+									<div class="form-row">
+										<div class="form-row">
+											<label for="message" class="form-label">Съобщение:</label>
+										
+											<div class="form-controls">
+												<div class="field field-area">
+													<textarea name="message" id="message"></textarea>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-row">
+										<div class="form-row">
+											<label for="upload" class="form-label">CV:</label>
+										
+											<div class="form-controls">
+												<div class="field field-file">
+													<input type="file" name="upload" id="upload" />
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="captcha">
+										<img src="../../assets/images/captcha.png" alt="" />
+									</div>
+
+									<div class="btns">
+										<button class="btn btn-primary">Кандидатствай</button>
+									</div>
+								</form>
+							</div><!-- /.form -->
+						</div><!-- /.pad -->
+					</div><!-- /.block -->
+				</main>
+			</div>
+		</div>
+	</div><!-- /.main -->
+
+	<!--#include virtual="../partials/footer.shtml"-->
+</div>
+
+<!--#include virtual="../partials/scripts.shtml"-->
+</body>
+</html>

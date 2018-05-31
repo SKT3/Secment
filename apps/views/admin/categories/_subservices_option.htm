@@ -1,0 +1,8 @@
+{if $category}
+    <option value="{$category->id}"{if $current eq $category->id} selected{/if} data-slug="{$category->slug}">{"&nbsp;"|str_repeat:$category->lvl}{$category->title}</option>
+    {if $category->has_children()}
+        {foreach from=$category->get_children() item=sub name=subs key=sid}
+            {include file='admin/categories/_subservices_option.htm' category=$sub}
+        {/foreach}
+    {/if}
+{/if}

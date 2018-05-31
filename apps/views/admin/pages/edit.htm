@@ -1,0 +1,52 @@
+<div id="filemanager"></div>
+{tinymce controller=pages}
+<h2>Страница: {$form_object->title}</h2>
+{include file='admin/pages/_form.htm'}
+
+<div id="page_options">
+	{if $form_object->page_type eq 'link_OLD'}
+	<form id="option_form" class="main_form" enctype="multipart/form-data" action="" method="post" style="min-height:350px">
+		<fieldset>
+			<legend>{$_labels.MAIN_ACTIONS.edit}</legend>
+
+			<br class="clear" />
+			<label for="type">Основна страница:</label>
+			<select name="options[page_id]" id="options_page_id" class="chosen">
+				{foreach from=$all_pages item=page}
+				<option value="{$page->id}"{if $options.page_id eq $page->id} selected{/if}>{$page->title}</option>
+				{if $page->has_children()}
+					{foreach from=$page->get_children() item=p}
+						{include file='admin/pages/_subpages_option.htm' page=$p current=$options.page_id}
+					{/foreach}
+				{/if}
+				{/foreach}
+			</select>
+			<br class="clear" />
+			<br class="clear" />
+			<label for="type">{$_labels.DB_FIELDS.page_type}:</label>
+			<select name="options[page_type]">
+				<option value="link" {if $options.page_type eq 'link'} selected{/if}>Link</option>
+				<option value="mirror" {if $options.page_type eq 'mirror'} selected{/if}>Mirror</option>
+			</select>
+			<br class="clear" />
+			<br class="clear" />
+			<label>Страница от тип Link:</label>
+			<div style="float:left; width:590px; padding:7px 10px; border: 1px solid #C0C5C6; background: #EEE; color: #464646;"><p>Това е страница, която при отварянето и пренасочва към избраната страница, и реално работи само като redirect - не се запазва секцията в която е сложена при навигация - може да се използва за Бързи връзки, валутни курсове и т.н.</p></div>
+			<br class="clear" />
+			<br class="clear" />
+			<label>Страница от тип Mirror:</label>
+			 <div style="float:left; width:590px; padding:7px 10px; border: 1px solid #C0C5C6; background: #EEE; color: #464646;"><p>Това е страница, която при отварянето и взима съдържанието на избраната страница, и го показва в дадената секция - в този случай се получават 2 страници с идентично съдържание, като може да се редактира само основната(която не е Mirror).
+				За да избегнем дублирано съдържание се слага canonical tag към основната страница.</p>
+			</div>
+			<br class="clear" /><br class="clear" />
+			<br class="clear" />
+			<input type="hidden" name="id" value="{$form_object->id}" />
+			<label>&nbsp;</label>
+			<div class="buttons">
+				<button type="button" class="button close">{$_labels.BUTTONS.cancel}</button>
+				<button type="submit" class="button">{$_labels.BUTTONS.edit}</button>
+			</div>
+		</fieldset>
+	</form>
+	{/if}
+</div>

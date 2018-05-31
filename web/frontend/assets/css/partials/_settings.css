@@ -1,0 +1,30 @@
+:root {
+	--clearfix: {
+		content: '';
+		display: block;
+		clear: both;
+	};
+
+	--wrapper-width:         1200px;
+
+	--font-primary:          'Roboto', sans-serif;
+	--font-secondary:        'Roboto', serif;
+	--font-size-base:        10px;
+	--font-size-primary:     1.8rem;
+
+	--success:               #c0ecae;
+	--error:                 #cc3423;
+	--info:                  #01536a;
+	--warning:               #dad055;
+
+	--color-primary:         #303030; /* black */
+	--color-secondary:       #429EA6; /* blue */
+	--color-bg:              #ffffff; /* white */
+	--color-neutral-lt:      #dfdfdf;
+	--color-neutral-dk:      #777777;
+
+	--color-titles:          var(--color-primary);
+	--color-text:            var(--color-primary);
+	--color-text-article:    var(--color-text);
+	--color-link:            var(--color-primary);
+}

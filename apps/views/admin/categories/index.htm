@@ -1,0 +1,34 @@
+<h2>{$_labels.TOPMENU.categories}</h2>
+<ul id="main_actions">
+<li><a href="{url_for action=add section=$section}" title="{$_labels.MAIN_ACTIONS.add}" class="add">{$_labels.MAIN_ACTIONS.add}</a></li>
+</ul>
+
+<div class="dd" id="nestable">
+    {include file='admin/categories/_subservices.htm' category=$category first=1}
+</div>
+<script type="text/javascript">
+{literal}
+    $(window).load(function()
+    {
+
+        var updateOutput = function(e)
+        {
+            var list   = e.length ? e : $(e.target),
+            output = list.data('output');
+            $.ajax({
+                url: xhr_url+'?method=saveMenu',
+                data: { order: list.nestable('serialize') },
+                type: 'POST',
+                dataType: 'JSON',
+                success: function(data){
+                    
+                }
+            });
+        };
+        
+    });
+{/literal}
+</script>
+<style type="text/css">
+.ui-state-highlight { border:1px dotted #333; background:#f1f1f1; }
+</style>
